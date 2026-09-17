@@ -1,0 +1,55 @@
+=== FRESH SCAN (force_rebuild, new cache path, mimics run 1's in-memory idx before any parquet round trip) ===
+scanning 165269 candidate DICOM files under data/cq500 ...
+  ...20000/165269 headers read
+  ...40000/165269 headers read
+  ...60000/165269 headers read
+  ...80000/165269 headers read
+  ...100000/165269 headers read
+  ...120000/165269 headers read
+  ...140000/165269 headers read
+  ...160000/165269 headers read
+[cache] wrote 165269 slice headers to data/cq500/cq500_header_cache_RESCAN_TEST.parquet
+idx_fresh: 165269 rows, dtypes:
+path               str
+patient_id         str
+sop_uid            str
+series_uid         str
+series_desc        str
+kernel             str
+contrast           str
+thickness      float64
+dtype: object
+
+chosen_fresh: 22309 rows, 473 studies
+
+=== SAME fresh idx, but round-tripped through parquet (simulates what scan_dicom_headers returns on a CACHED load) ===
+idx_roundtrip: 165269 rows, dtypes:
+path               str
+patient_id         str
+sop_uid            str
+series_uid         str
+series_desc        str
+kernel             str
+contrast           str
+thickness      float64
+dtype: object
+
+chosen_rt: 22309 rows, 473 studies
+
+=== Compare fresh-idx selection vs round-tripped-idx selection vs the EXISTING production cache's selection ===
+chosen_prod (existing cache): 22309 rows
+
+0 studies differ in chosen series between fresh-scan selection and production-cache selection
+
+=== dtype comparison: fresh (pre-roundtrip) vs roundtrip ===
+  path: fresh=str  roundtrip=str
+  patient_id: fresh=str  roundtrip=str
+  sop_uid: fresh=str  roundtrip=str
+  series_uid: fresh=str  roundtrip=str
+  series_desc: fresh=str  roundtrip=str
+  kernel: fresh=str  roundtrip=str
+  contrast: fresh=str  roundtrip=str
+  thickness: fresh=float64  roundtrip=float64
+
+row order identical between fresh and roundtrip: True
+row order identical between THIS fresh scan and EXISTING production cache (tests filesystem scan-order determinism across separate scans): True

@@ -1,0 +1,735 @@
+{
+  "baseline3a_vs_baseline2": {
+    "slice_level": {
+      "auc_baseline3a": 0.61882307083615,
+      "auc_baseline2": 0.650779683872907,
+      "auc_diff": -0.03195661303675701,
+      "delong_z": -8.155747544078304,
+      "delong_p": 4.440892098500626e-16,
+      "sens_baseline3a": 0.21337691140422552,
+      "sens_baseline2": 0.25446480681685535,
+      "spec_baseline3a": 0.9734390918352496,
+      "spec_baseline2": 0.9810799010333284,
+      "n": 22309,
+      "positive_rate": 0.38401541113853455
+    },
+    "study_level_max": {
+      "auc_baseline3a": 0.8796899139262857,
+      "auc_baseline2": 0.894780401677334,
+      "auc_diff": -0.015090487751048265,
+      "delong_z": -1.0870395727716948,
+      "delong_p": 0.2770193211868457,
+      "sens_baseline3a": 0.868020304568528,
+      "sens_baseline2": 0.883248730964467,
+      "spec_baseline3a": 0.6811594202898551,
+      "spec_baseline2": 0.7463768115942029,
+      "n": 473,
+      "positive_rate": 0.41649049520492554
+    },
+    "study_level_mean": {
+      "auc_baseline3a": 0.8815382917678216,
+      "auc_baseline2": 0.9007393511366144,
+      "auc_diff": -0.019201059368792794,
+      "delong_z": -1.3939891293058502,
+      "delong_p": 0.16332088735326056,
+      "sens_baseline3a": 0.06091370558375635,
+      "sens_baseline2": 0.12690355329949238,
+      "spec_baseline3a": 1.0,
+      "spec_baseline2": 1.0,
+      "n": 473,
+      "positive_rate": 0.41649049520492554
+    }
+  },
+  "baseline3b_vs_baseline2": {
+    "slice_level": {
+      "auc_baseline3b": 0.631799068144651,
+      "auc_baseline2": 0.650779683872907,
+      "auc_diff": -0.018980615728255934,
+      "delong_z": -5.271803307564569,
+      "delong_p": 1.3508981044907387e-07,
+      "sens_baseline3b": 0.24104120462238823,
+      "sens_baseline2": 0.25446480681685535,
+      "spec_baseline3b": 0.9830446805414059,
+      "spec_baseline2": 0.9810799010333284,
+      "n": 22309,
+      "positive_rate": 0.38401541113853455
+    },
+    "study_level_max": {
+      "auc_baseline3b": 0.9011439711616274,
+      "auc_baseline2": 0.894780401677334,
+      "auc_diff": 0.0063635694842933965,
+      "delong_z": 0.5929616367761904,
+      "delong_p": 0.5532068266661374,
+      "sens_baseline3b": 0.8578680203045685,
+      "sens_baseline2": 0.883248730964467,
+      "spec_baseline3b": 0.7391304347826086,
+      "spec_baseline2": 0.7463768115942029,
+      "n": 473,
+      "positive_rate": 0.41649049520492554
+    },
+    "study_level_mean": {
+      "auc_baseline3b": 0.9052085632310747,
+      "auc_baseline2": 0.9007393511366144,
+      "auc_diff": 0.004469212094460273,
+      "delong_z": 0.4373016766939018,
+      "delong_p": 0.6618925795347486,
+      "sens_baseline3b": 0.12690355329949238,
+      "sens_baseline2": 0.12690355329949238,
+      "spec_baseline3b": 1.0,
+      "spec_baseline2": 1.0,
+      "n": 473,
+      "positive_rate": 0.41649049520492554
+    }
+  },
+  "baseline3a_vs_baseline3b": {
+    "slice_level": {
+      "auc_baseline3a": 0.61882307083615,
+      "auc_baseline3b": 0.631799068144651,
+      "auc_diff": -0.012975997308501075,
+      "delong_z": -3.340154522911587,
+      "delong_p": 0.000837317869715859,
+      "sens_baseline3a": 0.21337691140422552,
+      "sens_baseline3b": 0.24104120462238823,
+      "spec_baseline3a": 0.9734390918352496,
+      "spec_baseline3b": 0.9830446805414059,
+      "n": 22309,
+      "positive_rate": 0.38401541113853455
+    },
+    "study_level_max": {
+      "auc_baseline3a": 0.8796899139262857,
+      "auc_baseline3b": 0.9011439711616274,
+      "auc_diff": -0.02145405723534166,
+      "delong_z": -1.6805128156542246,
+      "delong_p": 0.09285758295819901,
+      "sens_baseline3a": 0.868020304568528,
+      "sens_baseline3b": 0.8578680203045685,
+      "spec_baseline3a": 0.6811594202898551,
+      "spec_baseline3b": 0.7391304347826086,
+      "n": 473,
+      "positive_rate": 0.41649049520492554
+    },
+    "study_level_mean": {
+      "auc_baseline3a": 0.8815382917678216,
+      "auc_baseline3b": 0.9052085632310747,
+      "auc_diff": -0.023670271463253068,
+      "delong_z": -2.1436270134283166,
+      "delong_p": 0.0320627845253445,
+      "sens_baseline3a": 0.06091370558375635,
+      "sens_baseline3b": 0.12690355329949238,
+      "spec_baseline3a": 1.0,
+      "spec_baseline3b": 1.0,
+      "n": 473,
+      "positive_rate": 0.41649049520492554
+    }
+  },
+  "cq500_stratified": {
+    "baseline2": {
+      "condition": "baseline2_fixed_three",
+      "site": "cq500",
+      "n_samples": 22309,
+      "n_patients": 473,
+      "pooled_auroc": 0.650779683872907,
+      "pooled_accuracy": 0.7020485006051369,
+      "pooled_accuracy_ci": [
+        0.6550820914605681,
+        0.746847530177688
+      ],
+      "pooled_sensitivity": 0.25446480681685535,
+      "pooled_sensitivity_ci": [
+        0.21776949755386663,
+        0.2932184173390164
+      ],
+      "pooled_specificity": 0.9810799010333284,
+      "pooled_specificity_ci": [
+        0.9742428517075462,
+        0.9870526058790615
+      ],
+      "auroc_epidural": 0.5939202362108968,
+      "sensitivity_epidural": 0.007874015748031496,
+      "sensitivity_epidural_ci": [
+        0.0,
+        0.025716127711829715
+      ],
+      "specificity_epidural": 0.9990879241152864,
+      "specificity_epidural_ci": [
+        0.99823712620983,
+        0.9997671535071022
+      ],
+      "auroc_intraparenchymal": 0.5905071268869674,
+      "sensitivity_intraparenchymal": 0.1418380889183809,
+      "sensitivity_intraparenchymal_ci": [
+        0.11479410312042476,
+        0.17159172168554232
+      ],
+      "specificity_intraparenchymal": 0.9947177691787974,
+      "specificity_intraparenchymal_ci": [
+        0.9920939246147062,
+        0.9967971928508566
+      ],
+      "auroc_intraventricular": 0.7374003133558664,
+      "sensitivity_intraventricular": 0.22409435551811288,
+      "sensitivity_intraventricular_ci": [
+        0.16647039265722854,
+        0.2688302138299135
+      ],
+      "specificity_intraventricular": 0.988448063630338,
+      "specificity_intraventricular_ci": [
+        0.9791733664165077,
+        0.9946796754420971
+      ],
+      "auroc_subarachnoid": 0.7547213986826637,
+      "sensitivity_subarachnoid": 0.23219936708860758,
+      "sensitivity_subarachnoid_ci": [
+        0.18505329549038158,
+        0.2825280565944533
+      ],
+      "specificity_subarachnoid": 0.9905464839997978,
+      "specificity_subarachnoid_ci": [
+        0.9868277690606737,
+        0.9933039850378241
+      ],
+      "auroc_subdural": 0.6581285059679621,
+      "sensitivity_subdural": 0.21153846153846154,
+      "sensitivity_subdural_ci": [
+        0.16148713296501463,
+        0.27212122024169016
+      ],
+      "specificity_subdural": 0.9697675571194925,
+      "specificity_subdural_ci": [
+        0.9502484028369406,
+        0.981855955247884
+      ],
+      "sensitivity_size_small": NaN,
+      "sensitivity_size_medium": NaN,
+      "sensitivity_size_large": NaN,
+      "size_stratification_note": "no lesion_size_mm3 available for this site (expected for RSNA/CQ500/PhysioNet-ICH per Section IV-E; BHSD-derived data is the primary size-stratification source)",
+      "ece": 0.2862819333710945,
+      "ece_bin_accuracy": [
+        0.3142188718481934,
+        0.5309734513274337,
+        0.49038461538461536,
+        0.5357142857142857,
+        0.4230769230769231,
+        0.6470588235294118,
+        0.7142857142857143,
+        0.72,
+        0.8301886792452831,
+        0.7049180327868853,
+        0.684931506849315,
+        0.6626506024096386,
+        0.7840909090909091,
+        0.7050359712230215,
+        0.9384775808133472
+      ],
+      "ece_bin_confidence": [
+        0.001662642405254295,
+        0.0977611257241363,
+        0.16578696911724713,
+        0.2280682632256122,
+        0.29795235051558566,
+        0.36786431512411905,
+        0.4352334299866034,
+        0.5014491552114486,
+        0.5657627515073093,
+        0.6319406188902308,
+        0.7009968226903105,
+        0.7664079673318978,
+        0.8329322250051931,
+        0.902485582468321,
+        0.9925952902116169
+      ],
+      "ece_bin_count": [
+        19235,
+        226,
+        104,
+        84,
+        78,
+        68,
+        49,
+        50,
+        53,
+        61,
+        73,
+        83,
+        88,
+        139,
+        1918
+      ]
+    },
+    "baseline3a": {
+      "condition": "baseline3a_hrt",
+      "site": "cq500",
+      "n_samples": 22309,
+      "n_patients": 473,
+      "pooled_auroc": 0.61882307083615,
+      "pooled_accuracy": 0.6815634945537675,
+      "pooled_accuracy_ci": [
+        0.6325391250029458,
+        0.7265768899512768
+      ],
+      "pooled_sensitivity": 0.21337691140422552,
+      "pooled_sensitivity_ci": [
+        0.18531163143173124,
+        0.24393095773365275
+      ],
+      "pooled_specificity": 0.9734390918352496,
+      "pooled_specificity_ci": [
+        0.9643060978831327,
+        0.9815418920423047
+      ],
+      "auroc_epidural": 0.5373463954090744,
+      "sensitivity_epidural": 0.0,
+      "sensitivity_epidural_ci": [
+        0.0,
+        0.0
+      ],
+      "specificity_epidural": 1.0,
+      "specificity_epidural_ci": [
+        1.0,
+        1.0
+      ],
+      "auroc_intraparenchymal": 0.5472948813242479,
+      "sensitivity_intraparenchymal": 0.11745189117451892,
+      "sensitivity_intraparenchymal_ci": [
+        0.09483903925150744,
+        0.14110714990958828
+      ],
+      "specificity_intraparenchymal": 0.9937350285608992,
+      "specificity_intraparenchymal_ci": [
+        0.9905504002836327,
+        0.9964020923105941
+      ],
+      "auroc_intraventricular": 0.7034809487658132,
+      "sensitivity_intraventricular": 0.17438921651221567,
+      "sensitivity_intraventricular_ci": [
+        0.13577208851558714,
+        0.21010242530382633
+      ],
+      "specificity_intraventricular": 0.9904838556954834,
+      "specificity_intraventricular_ci": [
+        0.98489091107002,
+        0.9942589836823816
+      ],
+      "auroc_subarachnoid": 0.7207649933704443,
+      "sensitivity_subarachnoid": 0.15625,
+      "sensitivity_subarachnoid_ci": [
+        0.11492205534525339,
+        0.20966687386129765
+      ],
+      "specificity_subarachnoid": 0.9929730549517214,
+      "specificity_subarachnoid_ci": [
+        0.9909222745074172,
+        0.9945925956651344
+      ],
+      "auroc_subdural": 0.6365553686646164,
+      "sensitivity_subdural": 0.1524390243902439,
+      "sensitivity_subdural_ci": [
+        0.118841163746124,
+        0.19326226666703178
+      ],
+      "specificity_subdural": 0.9783912375477029,
+      "specificity_subdural_ci": [
+        0.965336509246227,
+        0.9870740802272674
+      ],
+      "sensitivity_size_small": NaN,
+      "sensitivity_size_medium": NaN,
+      "sensitivity_size_large": NaN,
+      "size_stratification_note": "no lesion_size_mm3 available for this site (expected for RSNA/CQ500/PhysioNet-ICH per Section IV-E; BHSD-derived data is the primary size-stratification source)",
+      "ece": 0.3024882631048013,
+      "ece_bin_accuracy": [
+        0.3267423851316469,
+        0.5375939849624061,
+        0.5384615384615384,
+        0.5728155339805825,
+        0.5492957746478874,
+        0.5,
+        0.6111111111111112,
+        0.6507936507936508,
+        0.6027397260273972,
+        0.6029411764705882,
+        0.6619718309859155,
+        0.6344086021505376,
+        0.7008547008547008,
+        0.6766467065868264,
+        0.9037603569152326
+      ],
+      "ece_bin_confidence": [
+        0.0019596733072084266,
+        0.0971002175955844,
+        0.16442984422812096,
+        0.23313266979259195,
+        0.299880690977607,
+        0.3665572322512928,
+        0.4351866617798805,
+        0.5019235336591327,
+        0.5668311649805879,
+        0.629641609156833,
+        0.7012742883722547,
+        0.7652784086042835,
+        0.835215490597945,
+        0.8992512365301212,
+        0.9892911073354644
+      ],
+      "ece_bin_count": [
+        19370,
+        266,
+        130,
+        103,
+        71,
+        76,
+        72,
+        63,
+        73,
+        68,
+        71,
+        93,
+        117,
+        167,
+        1569
+      ]
+    },
+    "baseline3b": {
+      "condition": "baseline3b_wem",
+      "site": "cq500",
+      "n_samples": 22309,
+      "n_patients": 473,
+      "pooled_auroc": 0.631799068144651,
+      "pooled_accuracy": 0.6981039042538886,
+      "pooled_accuracy_ci": [
+        0.6518994471929492,
+        0.7429631671291073
+      ],
+      "pooled_sensitivity": 0.24104120462238823,
+      "pooled_sensitivity_ci": [
+        0.21094068800729068,
+        0.27551649864327327
+      ],
+      "pooled_specificity": 0.9830446805414059,
+      "pooled_specificity_ci": [
+        0.9775225704129142,
+        0.987786214848886
+      ],
+      "auroc_epidural": 0.5765786453590419,
+      "sensitivity_epidural": 0.010498687664041995,
+      "sensitivity_epidural_ci": [
+        0.0,
+        0.028807573599240265
+      ],
+      "specificity_epidural": 0.999133527909522,
+      "specificity_epidural_ci": [
+        0.998418279529184,
+        0.9997102188062552
+      ],
+      "auroc_intraparenchymal": 0.6023219315532082,
+      "sensitivity_intraparenchymal": 0.12956204379562045,
+      "sensitivity_intraparenchymal_ci": [
+        0.10459834233269726,
+        0.15747851449150874
+      ],
+      "specificity_intraparenchymal": 0.9964989865487378,
+      "specificity_intraparenchymal_ci": [
+        0.9948914523382961,
+        0.9978301586529685
+      ],
+      "auroc_intraventricular": 0.7096636485896075,
+      "sensitivity_intraventricular": 0.22662173546756528,
+      "sensitivity_intraventricular_ci": [
+        0.1744153706844511,
+        0.271021217081344
+      ],
+      "specificity_intraventricular": 0.9888268156424581,
+      "specificity_intraventricular_ci": [
+        0.9813945498185671,
+        0.9936506567146438
+      ],
+      "auroc_subarachnoid": 0.7005897428903455,
+      "sensitivity_subarachnoid": 0.247626582278481,
+      "sensitivity_subarachnoid_ci": [
+        0.2048894700605325,
+        0.2901839393350184
+      ],
+      "specificity_subarachnoid": 0.9880693594863759,
+      "specificity_subarachnoid_ci": [
+        0.9825191661131559,
+        0.9921122479305309
+      ],
+      "auroc_subdural": 0.6299903569172671,
+      "sensitivity_subdural": 0.14915572232645402,
+      "sensitivity_subdural_ci": [
+        0.10224529291247494,
+        0.2087557545204574
+      ],
+      "specificity_subdural": 0.9815136045992963,
+      "specificity_subdural_ci": [
+        0.9634008161870897,
+        0.9918726825838641
+      ],
+      "sensitivity_size_small": NaN,
+      "sensitivity_size_medium": NaN,
+      "sensitivity_size_large": NaN,
+      "size_stratification_note": "no lesion_size_mm3 available for this site (expected for RSNA/CQ500/PhysioNet-ICH per Section IV-E; BHSD-derived data is the primary size-stratification source)",
+      "ece": 0.2868950375835972,
+      "ece_bin_accuracy": [
+        0.3177871366921437,
+        0.4734848484848485,
+        0.4966442953020134,
+        0.44660194174757284,
+        0.5106382978723404,
+        0.6097560975609756,
+        0.5,
+        0.7058823529411765,
+        0.6363636363636364,
+        0.6197183098591549,
+        0.7402597402597403,
+        0.6875,
+        0.797979797979798,
+        0.7828947368421053,
+        0.9548611111111112
+      ],
+      "ece_bin_confidence": [
+        0.0019874141293721986,
+        0.09547872316430915,
+        0.16346152356807017,
+        0.2312584075244885,
+        0.297627772422547,
+        0.36644361331695463,
+        0.4312154933810234,
+        0.4963264108872881,
+        0.5646997934037988,
+        0.6321623711518838,
+        0.6980512862081651,
+        0.7636922001838684,
+        0.8330586058924897,
+        0.9054666024289633,
+        0.9913747478276491
+      ],
+      "ece_bin_count": [
+        19233,
+        264,
+        149,
+        103,
+        94,
+        82,
+        60,
+        51,
+        66,
+        71,
+        77,
+        80,
+        99,
+        152,
+        1728
+      ]
+    }
+  },
+  "cq500_subtype_baseline3a_vs_baseline2": {
+    "epidural": {
+      "auroc_baseline3a": 0.5373463954090744,
+      "auroc_baseline2": 0.5939202362108968,
+      "sensitivity_baseline3a": 0.0,
+      "sensitivity_baseline2": 0.007874015748031496,
+      "sensitivity_delta": -0.007874015748031496,
+      "meets_min_clinically_relevant_sensitivity_delta": false
+    },
+    "intraparenchymal": {
+      "auroc_baseline3a": 0.5472948813242479,
+      "auroc_baseline2": 0.5905071268869674,
+      "sensitivity_baseline3a": 0.11745189117451892,
+      "sensitivity_baseline2": 0.1418380889183809,
+      "sensitivity_delta": -0.024386197743861984,
+      "meets_min_clinically_relevant_sensitivity_delta": false
+    },
+    "intraventricular": {
+      "auroc_baseline3a": 0.7034809487658132,
+      "auroc_baseline2": 0.7374003133558664,
+      "sensitivity_baseline3a": 0.17438921651221567,
+      "sensitivity_baseline2": 0.22409435551811288,
+      "sensitivity_delta": -0.04970513900589721,
+      "meets_min_clinically_relevant_sensitivity_delta": false
+    },
+    "subarachnoid": {
+      "auroc_baseline3a": 0.7207649933704443,
+      "auroc_baseline2": 0.7547213986826637,
+      "sensitivity_baseline3a": 0.15625,
+      "sensitivity_baseline2": 0.23219936708860758,
+      "sensitivity_delta": -0.07594936708860758,
+      "meets_min_clinically_relevant_sensitivity_delta": true
+    },
+    "subdural": {
+      "auroc_baseline3a": 0.6365553686646164,
+      "auroc_baseline2": 0.6581285059679621,
+      "sensitivity_baseline3a": 0.1524390243902439,
+      "sensitivity_baseline2": 0.21153846153846154,
+      "sensitivity_delta": -0.05909943714821764,
+      "meets_min_clinically_relevant_sensitivity_delta": true
+    }
+  },
+  "cq500_subtype_baseline3b_vs_baseline2": {
+    "epidural": {
+      "auroc_baseline3b": 0.5765786453590419,
+      "auroc_baseline2": 0.5939202362108968,
+      "sensitivity_baseline3b": 0.010498687664041995,
+      "sensitivity_baseline2": 0.007874015748031496,
+      "sensitivity_delta": 0.0026246719160104987,
+      "meets_min_clinically_relevant_sensitivity_delta": false
+    },
+    "intraparenchymal": {
+      "auroc_baseline3b": 0.6023219315532082,
+      "auroc_baseline2": 0.5905071268869674,
+      "sensitivity_baseline3b": 0.12956204379562045,
+      "sensitivity_baseline2": 0.1418380889183809,
+      "sensitivity_delta": -0.012276045122760454,
+      "meets_min_clinically_relevant_sensitivity_delta": false
+    },
+    "intraventricular": {
+      "auroc_baseline3b": 0.7096636485896075,
+      "auroc_baseline2": 0.7374003133558664,
+      "sensitivity_baseline3b": 0.22662173546756528,
+      "sensitivity_baseline2": 0.22409435551811288,
+      "sensitivity_delta": 0.002527379949452402,
+      "meets_min_clinically_relevant_sensitivity_delta": false
+    },
+    "subarachnoid": {
+      "auroc_baseline3b": 0.7005897428903455,
+      "auroc_baseline2": 0.7547213986826637,
+      "sensitivity_baseline3b": 0.247626582278481,
+      "sensitivity_baseline2": 0.23219936708860758,
+      "sensitivity_delta": 0.015427215189873417,
+      "meets_min_clinically_relevant_sensitivity_delta": false
+    },
+    "subdural": {
+      "auroc_baseline3b": 0.6299903569172671,
+      "auroc_baseline2": 0.6581285059679621,
+      "sensitivity_baseline3b": 0.14915572232645402,
+      "sensitivity_baseline2": 0.21153846153846154,
+      "sensitivity_delta": -0.062382739212007515,
+      "meets_min_clinically_relevant_sensitivity_delta": true
+    }
+  },
+  "cq500_subtype_baseline3a_vs_baseline3b": {
+    "epidural": {
+      "auroc_baseline3a": 0.5373463954090744,
+      "auroc_baseline3b": 0.5765786453590419,
+      "sensitivity_baseline3a": 0.0,
+      "sensitivity_baseline3b": 0.010498687664041995,
+      "sensitivity_delta": -0.010498687664041995,
+      "meets_min_clinically_relevant_sensitivity_delta": false
+    },
+    "intraparenchymal": {
+      "auroc_baseline3a": 0.5472948813242479,
+      "auroc_baseline3b": 0.6023219315532082,
+      "sensitivity_baseline3a": 0.11745189117451892,
+      "sensitivity_baseline3b": 0.12956204379562045,
+      "sensitivity_delta": -0.01211015262110153,
+      "meets_min_clinically_relevant_sensitivity_delta": false
+    },
+    "intraventricular": {
+      "auroc_baseline3a": 0.7034809487658132,
+      "auroc_baseline3b": 0.7096636485896075,
+      "sensitivity_baseline3a": 0.17438921651221567,
+      "sensitivity_baseline3b": 0.22662173546756528,
+      "sensitivity_delta": -0.05223251895534961,
+      "meets_min_clinically_relevant_sensitivity_delta": true
+    },
+    "subarachnoid": {
+      "auroc_baseline3a": 0.7207649933704443,
+      "auroc_baseline3b": 0.7005897428903455,
+      "sensitivity_baseline3a": 0.15625,
+      "sensitivity_baseline3b": 0.247626582278481,
+      "sensitivity_delta": -0.091376582278481,
+      "meets_min_clinically_relevant_sensitivity_delta": true
+    },
+    "subdural": {
+      "auroc_baseline3a": 0.6365553686646164,
+      "auroc_baseline3b": 0.6299903569172671,
+      "sensitivity_baseline3a": 0.1524390243902439,
+      "sensitivity_baseline3b": 0.14915572232645402,
+      "sensitivity_delta": 0.003283302063789878,
+      "meets_min_clinically_relevant_sensitivity_delta": false
+    }
+  },
+  "wicl_vs_baseline3a": {
+    "slice_level": {
+      "auc_wicl": 0.6507450870913878,
+      "auc_baseline3a": 0.61882307083615,
+      "auc_diff": 0.03192201625523783,
+      "delong_z": 8.481085518533428,
+      "delong_p": 0.0,
+      "sens_wicl": 0.23240340842768764,
+      "sens_baseline3a": 0.21337691140422552,
+      "spec_wicl": 0.9802066656964051,
+      "spec_baseline3a": 0.9734390918352496,
+      "n": 22309,
+      "positive_rate": 0.38401541113853455
+    },
+    "study_level_max": {
+      "auc_wicl": 0.9023946148753035,
+      "auc_baseline3a": 0.8796899139262857,
+      "auc_diff": 0.022704700949017775,
+      "delong_z": 1.901980774055522,
+      "delong_p": 0.057173668120061416,
+      "sens_wicl": 0.8629441624365483,
+      "sens_baseline3a": 0.868020304568528,
+      "spec_wicl": 0.7644927536231884,
+      "spec_baseline3a": 0.6811594202898551,
+      "n": 473,
+      "positive_rate": 0.41649049520492554
+    },
+    "study_level_mean": {
+      "auc_wicl": 0.9151033620245714,
+      "auc_baseline3a": 0.8815382917678216,
+      "auc_diff": 0.03356507025674982,
+      "delong_z": 3.017450847775387,
+      "delong_p": 0.002549103766043892,
+      "sens_wicl": 0.08629441624365482,
+      "sens_baseline3a": 0.06091370558375635,
+      "spec_wicl": 1.0,
+      "spec_baseline3a": 1.0,
+      "n": 473,
+      "positive_rate": 0.41649049520492554
+    }
+  },
+  "wicl_vs_baseline3b": {
+    "slice_level": {
+      "auc_wicl": 0.6507450870913878,
+      "auc_baseline3b": 0.631799068144651,
+      "auc_diff": 0.018946018946736753,
+      "delong_z": 5.76625097036919,
+      "delong_p": 8.105433213501101e-09,
+      "sens_wicl": 0.23240340842768764,
+      "sens_baseline3b": 0.24104120462238823,
+      "spec_wicl": 0.9802066656964051,
+      "spec_baseline3b": 0.9830446805414059,
+      "n": 22309,
+      "positive_rate": 0.38401541113853455
+    },
+    "study_level_max": {
+      "auc_wicl": 0.9023946148753035,
+      "auc_baseline3b": 0.9011439711616274,
+      "auc_diff": 0.001250643713676114,
+      "delong_z": 0.1250454232333453,
+      "delong_p": 0.9004875899866345,
+      "sens_wicl": 0.8629441624365483,
+      "sens_baseline3b": 0.8578680203045685,
+      "spec_wicl": 0.7644927536231884,
+      "spec_baseline3b": 0.7391304347826086,
+      "n": 473,
+      "positive_rate": 0.41649049520492554
+    },
+    "study_level_mean": {
+      "auc_wicl": 0.9151033620245714,
+      "auc_baseline3b": 0.9052085632310747,
+      "auc_diff": 0.00989479879349675,
+      "delong_z": 1.2040923924459224,
+      "delong_p": 0.22855386999203597,
+      "sens_wicl": 0.08629441624365482,
+      "sens_baseline3b": 0.12690355329949238,
+      "spec_wicl": 1.0,
+      "spec_baseline3b": 1.0,
+      "n": 473,
+      "positive_rate": 0.41649049520492554
+    }
+  },
+  "supplementary_wicl_scope_note": "Pooled DeLong comparisons of WICL (audited runs/decisive_v2/decisive_wicl checkpoint, read-only, not retrained here) against baseline 3a/3b on CQ500, at all three aggregation levels. This is a partial, early contribution toward Section VI-C's H2 comparison set (which names the adaptive-window variants explicitly) -- NOT the full 45-comparison-per-pair, Bonferroni-corrected H2 test, which requires all baselines 1-5, all three external sites, and BHSD size-tercile stratification, none of which are all complete yet."
+}

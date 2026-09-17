@@ -1,0 +1,15 @@
+current CONTRAST_PATTERNS: POST\s*CONTRAST|\bCT\s*C\b|\+\s*C|ORAL\s*&?\s*IV|\d+\s*cc\s*sec|D3D
+current (post-fix) chosen: 22309 rows, 473 studies
+
+reconstructed PRE-FIX chosen: 22081 rows, 473 studies
+delta (pre_fix - current): -228
+(log's stale figure was 22,474; current on-disk CSV is 22,309; gap = 165)
+
+1 studies whose SELECTED SERIES differs between pre-fix and post-fix regex:
+       study_id                                     post_fix_series_uid  post_fix_n_slices post_fix_desc                                      pre_fix_series_uid  pre_fix_n_slices pre_fix_desc
+0  CQ500-CT-369  1.2.276.0.7230010.3.1.3.296485376.1.1521714353.2043366                256    PLAIN THIN  1.2.276.0.7230010.3.1.3.296485376.1.1521714361.2044647                28           +C
+
+sum(post_fix_n_slices) = 256
+sum(pre_fix_n_slices)  = 28
+slice delta explained by these studies = -228
+wrote gap3_regex_fix_affected_studies.csv

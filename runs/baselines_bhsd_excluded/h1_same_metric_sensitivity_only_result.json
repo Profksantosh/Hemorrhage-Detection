@@ -1,0 +1,43 @@
+{
+  "internal_sens": {
+    "sens_any": 0.7062818336162988,
+    "sens_epidural": 0.05263157894736842,
+    "sens_intraparenchymal": 0.665,
+    "sens_intraventricular": 0.6408450704225352,
+    "sens_subarachnoid": 0.37777777777777777,
+    "sens_subdural": 0.4575645756457565
+  },
+  "external_sens": {
+    "sens_any": 0.2599509746702463,
+    "sens_epidural": 0.02099737532808399,
+    "sens_intraparenchymal": 0.14299933642999335,
+    "sens_intraventricular": 0.20977253580454927,
+    "sens_subarachnoid": 0.25395569620253167,
+    "sens_subdural": 0.2274859287054409
+  },
+  "pooled_sensitivity_degradation": 0.6319444132673676,
+  "subtype_degradations": {
+    "epidural": 0.6010498687664042,
+    "intraparenchymal": 0.7849634038646718,
+    "intraventricular": 0.6726626364368572,
+    "subarachnoid": 0.3277643335815338,
+    "subdural": 0.5028331719421413
+  },
+  "stratified_sensitivity_degradation": 0.5778546829183216,
+  "observed_diff_stratified_minus_pooled": -0.05408973034904596,
+  "bootstrap": {
+    "n_bootstrap": 1000,
+    "seed": 0,
+    "n_degenerate_dropped": 0,
+    "pooled_degradation_ci": [
+      0.5767862218582516,
+      0.6843489191250691
+    ],
+    "stratified_degradation_ci": [
+      0.44776845441799706,
+      0.6813802553273878
+    ],
+    "p_value": 0.372
+  },
+  "note": "Same-metric confirmatory analysis: both pooled and stratified degradation computed on SENSITIVITY only (the 'any' label for pooled, mean of 5 subtypes for stratified), using the identical rel_deg=(internal-external)/internal transform and the identical patient-level independent two-sample bootstrap as h1_baseline2_degradation_test_bhsd_excluded.py, removing the AUROC/accuracy-vs-sensitivity metric-type heterogeneity of the original H1 pooled-degradation composite."
+}

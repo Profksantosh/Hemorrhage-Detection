@@ -1,0 +1,170 @@
+PhysioNet-ICH (ct-ich v1.3.1) real-data structure verification
+Date: 2026-09-03
+Performed by: agent task following Santosh's PhysioNet RDUA v1.5.0 sign-off
+              confirmation (2026-09-03).
+
+SOURCE
+------
+Local file (already downloaded by Santosh, not touched/moved/deleted):
+  C:\Users\santoshk\Downloads\computed-tomography-images-for-intracranial-hemorrhage-detection-and-segmentation-1.3.1.zip
+  size: 601,120,822 bytes
+  sha256: 3b3df9ed96d214fb6ff36f6329021c98c287449b24e69adc318f37d97b8c9495
+
+EXTRACTION (local, Windows machine)
+------------------------------------
+Extracted to: C:\Users\santoshk\Desktop\physionet_ich_extract\
+  computed-tomography-images-for-intracranial-hemorrhage-detection-and-segmentation-1.3.1\
+Verified against the archive's own SHA256SUMS.txt: 156/156 files OK.
+ct_scans/: 75 files, masks/: 75 files -- matches "75 of 82 patients
+released, #59-65 missing" from Read_me.txt (patient numbers run 049-130
+inclusive = 82 slots; 059-065 = 7 missing; 82-7=75, confirmed both by
+directory listing and by the CSV's unique PatientNumber values).
+
+TRANSFER TO hp100
+------------------
+Checked hp100 before transfer:
+  GPU: 1x H100 NVL, 72544/95830 MiB used, 100% util (the parallel
+  decisive-check job) -- irrelevant, this was a disk-only operation.
+  Disk: /home 5.4T total, 1.8T available -- ample.
+
+Found a PRE-EXISTING, INCOMPLETE wget mirror already at
+  /home/fcse.santoshkumar/ich_windowing/data/physionet_ich/
+  (physionet.org/files/ct-ich/1.3.1/... nested layout), finished
+  2026-09-02 06:59:39, 157 files / 2.7G. Checksum vs. its own
+  SHA256SUMS.txt: 152/156 OK, 4 FAILED (missing):
+    masks/104.nii, masks/120.nii, masks/123.nii, masks/129.nii
+  All 4 of these ARE present and checksum-clean in the local,
+  freshly-verified copy above.
+  -> This incomplete mirror was preserved (not deleted) at:
+     /home/fcse.santoshkumar/ich_windowing/data/physionet_ich_incomplete_wget_mirror_backup_20260902/
+     in case anything referenced it, but it should NOT be used going
+     forward -- it is missing 4 mask files.
+
+Action taken: scp'd the verified-complete local zip directly to hp100
+(51s for 601MB), sha256 matched exactly on both ends, unzipped on
+hp100, re-verified 156/156 SHA256SUMS.txt, then moved the flat
+contents (hemorrhage_diagnosis_raw_ct.csv, Patient_demographics.csv,
+ct_scans/, masks/, etc.) directly into
+  /home/fcse.santoshkumar/ich_windowing/data/physionet_ich/
+(flat layout, matching what ich_gen/datasets/physionet_ich.py's
+build_samples(root) expects as `root`), replacing the old incomplete
+mirror at that path. Final counts on hp100: ct_scans/ 75 files,
+masks/ 75 files, 156/156 SHA256SUMS.txt OK.
+
+Local copy of the verified extraction remains at:
+  C:\Users\santoshk\Desktop\physionet_ich_extract\
+  computed-tomography-images-for-intracranial-hemorrhage-detection-and-segmentation-1.3.1\
+Original zip untouched at:
+  C:\Users\santoshk\Downloads\computed-tomography-images-for-intracranial-hemorrhage-detection-and-segmentation-1.3.1.zip
+
+SCHEMA VERIFICATION vs. ich_gen/datasets/physionet_ich.py's docstring
+------------------------------------------------------------------------
+1. hemorrhage_diagnosis_raw_ct.csv columns:
+   EXPECTED (docstring / require_columns call):
+     PatientNumber, SliceNumber, Intraventricular, Intraparenchymal,
+     Subarachnoid, Epidural, Subdural, No_Hemorrhage, Fracture_Yes_No
+   ACTUAL (real file, verified via pandas.read_csv):
+     PatientNumber, SliceNumber, Intraventricular, Intraparenchymal,
+     Subarachnoid, Epidural, Subdural, No_Hemorrhage, Fracture_Yes_No
+   RESULT: EXACT MATCH, including casing. No COLUMN_MAP change needed.
+   (Note: the raw file has a UTF-8 BOM before "PatientNumber" on disk;
+   pandas.read_csv strips it automatically, so this does NOT cause a
+   require_columns() failure -- confirmed empirically, not just assumed.)
+
+2. ct_scans/ filename pattern:
+   EXPECTED (docstring): "<PatientNumber>.nii[.gz]", and the loader
+     builds this via `str(int(row["PatientNumber"]))`, e.g. "49.nii".
+   ACTUAL (real files): zero-padded to 3 digits, e.g. "049.nii".
+   RESULT: MISMATCH -- CONFIRMED BLOCKING BUG. build_samples(), as
+   currently written, raises FileNotFoundError on the very first CSV
+   row when run against the real data:
+     "no volume found for patient 49 in .../ct_scans (tried
+     ['.../ct_scans/49.nii', '.../ct_scans/49.nii.gz'])"
+   The CSV/column parsing itself is NOT the problem (require_columns()
+   passes cleanly) -- only the filename join is wrong. NOT patched in
+   physionet_ich.py per task scope (only COLUMN_MAP fixes were
+   pre-authorized); see scripts/smoke_test_physionet_ich.py and
+   physionet_ich_smoke_test.log for the diagnostic proof that
+   zero-padding to 3 digits (f"{int(row['PatientNumber']):03d}") makes
+   every one of the 2814 CSV rows resolve to a real file.
+
+3. masks/ filename pattern:
+   EXPECTED (docstring): "<PatientNumber>_HGE_Seg.nii[.gz]"
+   ACTUAL (real files): zero-padded 3-digit only, e.g. "049.nii" (no
+     "_HGE_Seg" suffix).
+   RESULT: MISMATCH in the docstring's description. NOT currently a
+   functional bug because build_samples() never reads masks/ (it
+   always sets lesion_size_mm3=None) -- but the docstring comment is
+   wrong and should be corrected if/when mask-based lesion sizing is
+   implemented for this site.
+   Mask value check: masks are encoded as 0 / ~255 (not literal 0/1),
+   i.e. an 8-bit-scaled binary mask, not strictly {0,1}.
+   Mask coverage: all 75 patients that have a CT volume also have a
+   mask file (75/75) -- contradicts the docstring's hedge "if present"
+   implying some patients might lack a mask; in this v1.3.1 release,
+   every released CT patient has a corresponding mask.
+
+4. patient_demographics.csv:
+   EXPECTED (docstring, lowercase): "patient_demographics.csv"
+   ACTUAL (real file): "Patient_demographics.csv" (capital P).
+   Also, the real file's header row differs from the docstring's
+   informal description ("PatientNumber, age, gender, + patient-level
+   labels"): actual first column is "Patient Number" (with a space,
+   not "PatientNumber"), and the file has a two-row merged header
+   (subtype columns Intraventricular/Intraparenchymal/... appear on a
+   SECOND header line under a merged "Hemorrhage type..." cell, not a
+   single flat header row). NOT currently a functional bug -- this
+   file is not consumed by build_samples() at all (docstring already
+   says so) -- but flagging both the filename casing (would matter on
+   Linux, case-sensitive FS -- confirmed relevant since hp100 is
+   Linux) and the two-row-header structure for whoever implements the
+   demographic-subgroup analysis mentioned in the docstring.
+
+5. Patient ID numbering / count:
+   EXPECTED (docstring): "75 of the original 82 patients... #59-65
+     confirmed missing"
+   ACTUAL: CONFIRMED EXACTLY. Patient numbers run 049-130 inclusive
+     (82 slots), with 059-065 (7 patients) missing, leaving 75.
+     Verified both via directory listing and via
+     df['PatientNumber'].unique() in the CSV.
+
+6. HU units / skull HU sanity check (docstring's "verify skull HU
+   ~700-3000" comment):
+   Spot-checked patient 049 slice 0: HU range [-1022, 2830]. Confirmed
+   the volumes are already in Hounsfield units with skull-range values
+   present (~2830 max), consistent with the docstring's assumption --
+   no separate DICOM rescale-slope/intercept step is needed for this
+   site.
+
+7. Per-patient slice count sanity check: patient 049 has 39 rows in
+   the CSV (SliceNumber 1-39) and the corresponding NIfTI volume shape
+   is (512, 512, 39) -- CSV slice count matches volume depth exactly,
+   confirming the "CSV is 1-indexed, matches volume depth" assumption
+   in the loader's inline comment.
+
+SMOKE TEST RESULT (see scripts/smoke_test_physionet_ich.py and
+physionet_ich_smoke_test.log for full output)
+------------------------------------------------------------------------
+- Unmodified build_samples(root) against real hp100 data: FAILS with
+  FileNotFoundError on the filename-join bug described in item 2
+  above. require_columns() itself does NOT fail (columns match).
+- Diagnostic-only local re-implementation (same CSV/label logic, one
+  deviation: zero-padded filename matching) against the same real
+  data: all 2814 CSV rows resolve to a real CT file, 75/75 unique
+  patients, label matrix shape (2814, 6) matching LABEL_COLUMNS order,
+  all 75 patients have a mask file, and 2 spot-checked HU loads
+  produced sane shapes/ranges.
+- CONCLUSION: this is a real, small, well-understood, single-line bug
+  (missing zero-padding in the ct_scans/<PatientNumber>.nii filename
+  join inside build_samples()), NOT a deeper schema problem. No
+  training/eval was run -- out of scope for this task.
+
+NOT DONE (explicitly out of scope for this task)
+--------------------------------------------------
+- physionet_ich.py's file-matching bug was NOT patched (only COLUMN_MAP
+  fixes were pre-authorized by the task, and no COLUMN_MAP fix was
+  needed since columns matched exactly).
+- No training or external-validation eval against WICL/baseline
+  checkpoints was run against this data.
+- decisive-check / CQ500 / score_decisive.py / leakage_check_rsna_cq500.py
+  were not touched.

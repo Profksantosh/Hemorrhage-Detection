@@ -1,0 +1,115 @@
+2026-09-11 21:09:58,519 INFO loaded 191 RSNA patient id(s) to exclude (BHSD overlap, see /home/fcse.santoshkumar/ich_windowing/data/bhsd_rsna_overlap_patient_ids.json)
+2026-09-11 21:09:58,519 INFO loading RSNA sample index (max_samples=20000)...
+2026-09-11 21:10:06,865 WARNING stage_2_train.csv contained 24 fully-duplicated (ID, Label) row(s) (4 unique sop_uid(s) affected); dropped as exact duplicates before pivoting -- see load_labels_wide comment for provenance. This is a pre-existing RSNA release data quirk, not introduced by this pipeline.
+2026-09-11 21:10:08,778 INFO using cached patient index at data/rsna/rsna-intracranial-hemorrhage-detection/patient_index_cache.parquet
+2026-09-11 21:10:11,276 INFO excluded 10088 slice(s) belonging to 191 RSNA patient(s) confirmed to overlap with BHSD (of 191 requested exclusion ids); 742715 slices remain
+2026-09-11 21:10:11,855 INFO patient-grouped 5-fold split verified leakage-free (11854 total patients)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+
+held-out validation fold: 4000 slices, 2370 patients
+
+=== RSNA in-distribution, held-out fold 0: pairwise pooled 'any' ICH ===
+
+--- baseline3a vs baseline2: pooled 'any' ICH ---
+  baseline3a                   AUROC=0.8966 sens@0.5=0.6044 spec@0.5=0.9704
+  baseline2                    AUROC=0.9345 sens@0.5=0.7063 spec@0.5=0.9818
+  diff (baseline3a-baseline2) AUROC=-0.0378  DeLong z=-4.710  p=0.0000
+
+--- baseline3b vs baseline2: pooled 'any' ICH ---
+  baseline3b                   AUROC=0.9156 sens@0.5=0.6435 spec@0.5=0.9856
+  baseline2                    AUROC=0.9345 sens@0.5=0.7063 spec@0.5=0.9818
+  diff (baseline3b-baseline2) AUROC=-0.0189  DeLong z=-2.636  p=0.0084
+
+--- baseline3a vs baseline3b: pooled 'any' ICH ---
+  baseline3a                   AUROC=0.8966 sens@0.5=0.6044 spec@0.5=0.9704
+  baseline3b                   AUROC=0.9156 sens@0.5=0.6435 spec@0.5=0.9856
+  diff (baseline3a-baseline3b) AUROC=-0.0190  DeLong z=-2.273  p=0.0230
+
+=== stratified (evaluate_pooled_and_stratified) ===
+  baseline2: pooled AUROC=0.9345  pooled accuracy=0.9413 (0.932904063324499, 0.9485271362828236)  pooled sens=0.7063 (0.6649911996530878, 0.7448393751842028)
+  baseline3a: pooled AUROC=0.8966  pooled accuracy=0.9165 (0.9068197286403935, 0.9252198406806542)  pooled sens=0.6044 (0.5612193012798339, 0.6482454232292203)
+  baseline3b: pooled AUROC=0.9156  pooled accuracy=0.9353 (0.9261461183552545, 0.9432655493474669)  pooled sens=0.6435 (0.6044295103630547, 0.6825672475737216)
+
+--- subtype table: baseline3a vs baseline2 ---
+
+subtype            AUROC(baseline3a)  AUROC(baseline2)sens(baseline3a)sens(baseline2)   delta(pp)  flag
+epidural                      0.8153            0.7835        0.0000        0.0526       -5.26  *** >=5pp delta ***
+intraparenchymal              0.9210            0.9229        0.5900        0.6650       -7.50  *** >=5pp delta ***
+intraventricular              0.9454            0.9706        0.5282        0.6408      -11.27  *** >=5pp delta ***
+subarachnoid                  0.8452            0.8846        0.3278        0.3778       -5.00  
+subdural                      0.8618            0.9138        0.3100        0.4576      -14.76  *** >=5pp delta ***
+
+--- subtype table: baseline3b vs baseline2 ---
+
+subtype            AUROC(baseline3b)  AUROC(baseline2)sens(baseline3b)sens(baseline2)   delta(pp)  flag
+epidural                      0.8187            0.7835        0.0000        0.0526       -5.26  *** >=5pp delta ***
+intraparenchymal              0.9453            0.9229        0.6450        0.6650       -2.00  
+intraventricular              0.9766            0.9706        0.7183        0.6408        7.75  *** >=5pp delta ***
+subarachnoid                  0.8917            0.8846        0.3778        0.3778        0.00  
+subdural                      0.8818            0.9138        0.3838        0.4576       -7.38  *** >=5pp delta ***
+
+--- subtype table: baseline3a vs baseline3b ---
+
+subtype            AUROC(baseline3a) AUROC(baseline3b)sens(baseline3a)sens(baseline3b)   delta(pp)  flag
+epidural                      0.8153            0.8187        0.0000        0.0000        0.00  
+intraparenchymal              0.9210            0.9453        0.5900        0.6450       -5.50  *** >=5pp delta ***
+intraventricular              0.9454            0.9766        0.5282        0.7183      -19.01  *** >=5pp delta ***
+subarachnoid                  0.8452            0.8917        0.3278        0.3778       -5.00  
+subdural                      0.8618            0.8818        0.3100        0.3838       -7.38  *** >=5pp delta ***
+
+--- EDH (H1/H2 priority subtype), baseline3a vs baseline2 ---
+  sensitivity_baseline3a=0.0000  sensitivity_baseline2=0.0526  delta=-5.26pp
+
+--- EDH (H1/H2 priority subtype), baseline3b vs baseline2 ---
+  sensitivity_baseline3b=0.0000  sensitivity_baseline2=0.0526  delta=-5.26pp
+
+--- EDH (H1/H2 priority subtype), baseline3a vs baseline3b ---
+  sensitivity_baseline3a=0.0000  sensitivity_baseline3b=0.0000  delta=+0.00pp
+
+size-tercile stratification: no lesion_size_mm3 available for this site (expected for RSNA/CQ500/PhysioNet-ICH per Section IV-E; BHSD-derived data is the primary size-stratification source)
+
+=== SUPPLEMENTARY: WICL (runs/decisive_v2/decisive_wicl, read-only) vs baseline 3a/3b -- partial contribution toward Section VI-C's H2 comparison set, NOT the full 45-comparison Bonferroni-corrected test ===
+
+--- wicl vs baseline3a: pooled 'any' ICH ---
+  wicl                         AUROC=0.9444 sens@0.5=0.6927 spec@0.5=0.9807
+  baseline3a                   AUROC=0.8966 sens@0.5=0.6044 spec@0.5=0.9704
+  diff (wicl-baseline3a) AUROC=+0.0478  DeLong z=+6.493  p=0.0000
+
+--- wicl vs baseline3b: pooled 'any' ICH ---
+  wicl                         AUROC=0.9444 sens@0.5=0.6927 spec@0.5=0.9807
+  baseline3b                   AUROC=0.9156 sens@0.5=0.6435 spec@0.5=0.9856
+  diff (wicl-baseline3b) AUROC=+0.0288  DeLong z=+4.340  p=0.0000
+
+saved runs/baselines_bhsd_excluded/baselines3ab_internal_result.json
+

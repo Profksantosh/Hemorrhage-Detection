@@ -1,0 +1,7 @@
+=== [2026-09-14T19:26:06+05:30] training condition=wicl -> runs/baselines_bhsd_excluded/wicl_ablation_pred_only --fold 0 --lambda-consistency 1.0 --lambda-embedding 0.0 ===
+=== [2026-09-14T19:45:42+05:30] done condition=wicl ===
+=== [2026-09-14T19:45:42+05:30] training condition=wicl -> runs/baselines_bhsd_excluded/wicl_ablation_embed_only --fold 0 --lambda-consistency 0.0 --lambda-embedding 0.5 ===
+=== [2026-09-14T20:05:04+05:30] done condition=wicl ===
+=== [2026-09-14T20:05:04+05:30] training condition=fixed_three_window -> runs/baselines_bhsd_excluded/baseline2_fixed_three_fold1 --fold 1 ===
+=== [2026-09-14T20:15:04+05:30] done condition=fixed_three_window ===
+ALL_ABLATION_AND_FOLD1_DONE

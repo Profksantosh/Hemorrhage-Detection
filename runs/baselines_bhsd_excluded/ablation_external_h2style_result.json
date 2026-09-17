@@ -1,0 +1,353 @@
+{
+  "note": "H2-style external scoring of the WICL component ablation (pred_only, embed_only) against baseline4c and full WICL, requested by the multi-expert review (Reviewer 2) to check whether the H4-robust embedding-only variant also does better on real external transfer than full WICL, which failed H2.",
+  "cq500_pred_only_vs_baseline4c": {
+    "slice": {
+      "auc_pred_only": 0.6318569474643838,
+      "auc_baseline4c": 0.6542187339168073,
+      "auc_diff": -0.022361786452423482,
+      "delong_z": -6.977598210247694,
+      "delong_p": 3.0027091924011984e-12,
+      "sens_pred_only": 0.259367339792226,
+      "sens_baseline4c": 0.24571028364655073,
+      "n": 22309,
+      "sensitivity_delta": 0.01365705614567525
+    },
+    "study_max": {
+      "auc_pred_only": 0.9004450820275143,
+      "auc_baseline4c": 0.9133929228279261,
+      "auc_diff": -0.01294784080041178,
+      "delong_z": -1.416401200673315,
+      "delong_p": 0.15665807259441422,
+      "sens_pred_only": 0.8883248730964467,
+      "sens_baseline4c": 0.8934010152284264,
+      "n": 473,
+      "sensitivity_delta": -0.005076142131979711
+    },
+    "study_mean": {
+      "auc_pred_only": 0.903442948576473,
+      "auc_baseline4c": 0.9167586257632603,
+      "auc_diff": -0.013315677186787278,
+      "delong_z": -1.5611620781983468,
+      "delong_p": 0.11848551398557139,
+      "sens_pred_only": 0.1065989847715736,
+      "sens_baseline4c": 0.09644670050761421,
+      "n": 473,
+      "sensitivity_delta": 0.010152284263959394
+    }
+  },
+  "cq500_embed_only_vs_baseline4c": {
+    "slice": {
+      "auc_embed_only": 0.6339056197082023,
+      "auc_baseline4c": 0.6542187339168073,
+      "auc_diff": -0.020313114208605043,
+      "delong_z": -6.3009679777651915,
+      "delong_p": 2.957925016033869e-10,
+      "sens_embed_only": 0.24991245476829696,
+      "sens_baseline4c": 0.24571028364655073,
+      "n": 22309,
+      "sensitivity_delta": 0.004202171121746229
+    },
+    "study_max": {
+      "auc_embed_only": 0.910965202677849,
+      "auc_baseline4c": 0.9133929228279261,
+      "auc_diff": -0.002427720150077084,
+      "delong_z": -0.28090004665642276,
+      "delong_p": 0.7787870648639668,
+      "sens_embed_only": 0.883248730964467,
+      "sens_baseline4c": 0.8934010152284264,
+      "n": 473,
+      "sensitivity_delta": -0.010152284263959421
+    },
+    "study_mean": {
+      "auc_embed_only": 0.9116640918119621,
+      "auc_baseline4c": 0.9167586257632603,
+      "auc_diff": -0.005094533951298219,
+      "delong_z": -0.6698068955163419,
+      "delong_p": 0.5029808972945782,
+      "sens_embed_only": 0.1116751269035533,
+      "sens_baseline4c": 0.09644670050761421,
+      "n": 473,
+      "sensitivity_delta": 0.01522842639593909
+    }
+  },
+  "cq500_pred_only_vs_wicl_full": {
+    "slice": {
+      "auc_pred_only": 0.6318569474643838,
+      "auc_wicl_full": 0.6472560743003979,
+      "auc_diff": -0.015399126836014077,
+      "delong_z": -5.367853215880778,
+      "delong_p": 7.967935733432796e-08,
+      "sens_pred_only": 0.259367339792226,
+      "sens_wicl_full": 0.25528189564608383,
+      "n": 22309,
+      "sensitivity_delta": 0.004085444146142148
+    },
+    "study_max": {
+      "auc_pred_only": 0.9004450820275143,
+      "auc_wicl_full": 0.9022015007724564,
+      "auc_diff": -0.0017564187449421453,
+      "delong_z": -0.1866437720141551,
+      "delong_p": 0.8519399446471561,
+      "sens_pred_only": 0.8883248730964467,
+      "sens_wicl_full": 0.868020304568528,
+      "n": 473,
+      "sensitivity_delta": 0.02030456852791873
+    },
+    "study_mean": {
+      "auc_pred_only": 0.903442948576473,
+      "auc_wicl_full": 0.9043809313617301,
+      "auc_diff": -0.000937982785257141,
+      "delong_z": -0.11777307791333183,
+      "delong_p": 0.9062474617730063,
+      "sens_pred_only": 0.1065989847715736,
+      "sens_wicl_full": 0.1218274111675127,
+      "n": 473,
+      "sensitivity_delta": -0.01522842639593909
+    }
+  },
+  "cq500_embed_only_vs_wicl_full": {
+    "slice": {
+      "auc_embed_only": 0.6339056197082023,
+      "auc_wicl_full": 0.6472560743003979,
+      "auc_diff": -0.013350454592195637,
+      "delong_z": -6.767247248449493,
+      "delong_p": 1.312550068632845e-11,
+      "sens_embed_only": 0.24991245476829696,
+      "sens_wicl_full": 0.25528189564608383,
+      "n": 22309,
+      "sensitivity_delta": -0.005369440877786874
+    },
+    "study_max": {
+      "auc_embed_only": 0.910965202677849,
+      "auc_wicl_full": 0.9022015007724564,
+      "auc_diff": 0.008763701905392551,
+      "delong_z": 1.2709648445615729,
+      "delong_p": 0.20374115564356243,
+      "sens_embed_only": 0.883248730964467,
+      "sens_wicl_full": 0.868020304568528,
+      "n": 473,
+      "sensitivity_delta": 0.015228426395939021
+    },
+    "study_mean": {
+      "auc_embed_only": 0.9116640918119621,
+      "auc_wicl_full": 0.9043809313617301,
+      "auc_diff": 0.007283160450231918,
+      "delong_z": 1.2256573917200213,
+      "delong_p": 0.22032763066322536,
+      "sens_embed_only": 0.1116751269035533,
+      "sens_wicl_full": 0.1218274111675127,
+      "n": 473,
+      "sensitivity_delta": -0.010152284263959394
+    }
+  },
+  "cq500_pred_only_vs_embed_only": {
+    "slice": {
+      "auc_pred_only": 0.6318569474643838,
+      "auc_embed_only": 0.6339056197082023,
+      "auc_diff": -0.002048672243818439,
+      "delong_z": -0.6987619909025554,
+      "delong_p": 0.48470078577256315,
+      "sens_pred_only": 0.259367339792226,
+      "sens_embed_only": 0.24991245476829696,
+      "n": 22309,
+      "sensitivity_delta": 0.009454885023929022
+    },
+    "study_max": {
+      "auc_pred_only": 0.9004450820275143,
+      "auc_embed_only": 0.910965202677849,
+      "auc_diff": -0.010520120650334697,
+      "delong_z": -1.2449360255082669,
+      "delong_p": 0.2131552671610164,
+      "sens_pred_only": 0.8883248730964467,
+      "sens_embed_only": 0.883248730964467,
+      "n": 473,
+      "sensitivity_delta": 0.005076142131979711
+    },
+    "study_mean": {
+      "auc_pred_only": 0.903442948576473,
+      "auc_embed_only": 0.9116640918119621,
+      "auc_diff": -0.008221143235489059,
+      "delong_z": -1.094284098557474,
+      "delong_p": 0.27383039716845703,
+      "sens_pred_only": 0.1065989847715736,
+      "sens_embed_only": 0.1116751269035533,
+      "n": 473,
+      "sensitivity_delta": -0.005076142131979697
+    }
+  },
+  "physionet_pred_only_vs_baseline4c": {
+    "slice": {
+      "auc_pred_only": 0.8571298984034832,
+      "auc_baseline4c": 0.8817882196419933,
+      "auc_diff": -0.024658321238510084,
+      "delong_z": -2.8459145029882564,
+      "delong_p": 0.0044284082990537765,
+      "sens_pred_only": 0.6226415094339622,
+      "sens_baseline4c": 0.6194968553459119,
+      "n": 2814,
+      "sensitivity_delta": 0.0031446540880503138
+    },
+    "patient_max": {
+      "auc_pred_only": 0.7941595441595443,
+      "auc_baseline4c": 0.8404558404558405,
+      "auc_diff": -0.04629629629629628,
+      "delong_z": -0.8934404636940045,
+      "delong_p": 0.3716213416593508,
+      "sens_pred_only": 1.0,
+      "sens_baseline4c": 1.0,
+      "n": 75,
+      "sensitivity_delta": 0.0
+    },
+    "patient_mean": {
+      "auc_pred_only": 0.863960113960114,
+      "auc_baseline4c": 0.8853276353276355,
+      "auc_diff": -0.021367521367521514,
+      "delong_z": -0.5852966713050916,
+      "delong_p": 0.5583482526846308,
+      "sens_pred_only": 0.0,
+      "sens_baseline4c": 0.0,
+      "n": 75,
+      "sensitivity_delta": 0.0
+    }
+  },
+  "physionet_embed_only_vs_baseline4c": {
+    "slice": {
+      "auc_embed_only": 0.8602783321238509,
+      "auc_baseline4c": 0.8817882196419933,
+      "auc_diff": -0.021509887518142423,
+      "delong_z": -2.5448684280887472,
+      "delong_p": 0.010931892028568369,
+      "sens_embed_only": 0.6666666666666666,
+      "sens_baseline4c": 0.6194968553459119,
+      "n": 2814,
+      "sensitivity_delta": 0.047169811320754707
+    },
+    "patient_max": {
+      "auc_embed_only": 0.7792022792022791,
+      "auc_baseline4c": 0.8404558404558405,
+      "auc_diff": -0.061253561253561406,
+      "delong_z": -1.2445442057803515,
+      "delong_p": 0.2132993403647072,
+      "sens_embed_only": 1.0,
+      "sens_baseline4c": 1.0,
+      "n": 75,
+      "sensitivity_delta": 0.0
+    },
+    "patient_mean": {
+      "auc_embed_only": 0.8625356125356124,
+      "auc_baseline4c": 0.8853276353276355,
+      "auc_diff": -0.02279202279202308,
+      "delong_z": -0.5648225267150342,
+      "delong_p": 0.5721944832811545,
+      "sens_embed_only": 0.0,
+      "sens_baseline4c": 0.0,
+      "n": 75,
+      "sensitivity_delta": 0.0
+    }
+  },
+  "physionet_pred_only_vs_wicl_full": {
+    "slice": {
+      "auc_pred_only": 0.8571298984034832,
+      "auc_wicl_full": 0.8629643908240606,
+      "auc_diff": -0.005834492420577431,
+      "delong_z": -0.7171459649057261,
+      "delong_p": 0.47328403648632666,
+      "sens_pred_only": 0.6226415094339622,
+      "sens_wicl_full": 0.5911949685534591,
+      "n": 2814,
+      "sensitivity_delta": 0.03144654088050314
+    },
+    "patient_max": {
+      "auc_pred_only": 0.7941595441595443,
+      "auc_wicl_full": 0.7507122507122507,
+      "auc_diff": 0.04344729344729359,
+      "delong_z": 0.8239233816064521,
+      "delong_p": 0.40998309401360733,
+      "sens_pred_only": 1.0,
+      "sens_wicl_full": 1.0,
+      "n": 75,
+      "sensitivity_delta": 0.0
+    },
+    "patient_mean": {
+      "auc_pred_only": 0.863960113960114,
+      "auc_wicl_full": 0.8433048433048432,
+      "auc_diff": 0.02065527065527073,
+      "delong_z": 0.42389414654020346,
+      "delong_p": 0.6716430132360569,
+      "sens_pred_only": 0.0,
+      "sens_wicl_full": 0.0,
+      "n": 75,
+      "sensitivity_delta": 0.0
+    }
+  },
+  "physionet_embed_only_vs_wicl_full": {
+    "slice": {
+      "auc_embed_only": 0.8602783321238509,
+      "auc_wicl_full": 0.8629643908240606,
+      "auc_diff": -0.0026860587002097702,
+      "delong_z": -0.5207129000019844,
+      "delong_p": 0.6025667865973661,
+      "sens_embed_only": 0.6666666666666666,
+      "sens_wicl_full": 0.5911949685534591,
+      "n": 2814,
+      "sensitivity_delta": 0.07547169811320753
+    },
+    "patient_max": {
+      "auc_embed_only": 0.7792022792022791,
+      "auc_wicl_full": 0.7507122507122507,
+      "auc_diff": 0.028490028490028463,
+      "delong_z": 0.6231699019125809,
+      "delong_p": 0.5331728781451939,
+      "sens_embed_only": 1.0,
+      "sens_wicl_full": 1.0,
+      "n": 75,
+      "sensitivity_delta": 0.0
+    },
+    "patient_mean": {
+      "auc_embed_only": 0.8625356125356124,
+      "auc_wicl_full": 0.8433048433048432,
+      "auc_diff": 0.019230769230769162,
+      "delong_z": 0.7064556879386215,
+      "delong_p": 0.4799048001717918,
+      "sens_embed_only": 0.0,
+      "sens_wicl_full": 0.0,
+      "n": 75,
+      "sensitivity_delta": 0.0
+    }
+  },
+  "physionet_pred_only_vs_embed_only": {
+    "slice": {
+      "auc_pred_only": 0.8571298984034832,
+      "auc_embed_only": 0.8602783321238509,
+      "auc_diff": -0.0031484337203676604,
+      "delong_z": -0.39640267158537007,
+      "delong_p": 0.6918079955331335,
+      "sens_pred_only": 0.6226415094339622,
+      "sens_embed_only": 0.6666666666666666,
+      "n": 2814,
+      "sensitivity_delta": -0.04402515723270439
+    },
+    "patient_max": {
+      "auc_pred_only": 0.7941595441595443,
+      "auc_embed_only": 0.7792022792022791,
+      "auc_diff": 0.014957264957265126,
+      "delong_z": 0.26675960353411765,
+      "delong_p": 0.7896542591491766,
+      "sens_pred_only": 1.0,
+      "sens_embed_only": 1.0,
+      "n": 75,
+      "sensitivity_delta": 0.0
+    },
+    "patient_mean": {
+      "auc_pred_only": 0.863960113960114,
+      "auc_embed_only": 0.8625356125356124,
+      "auc_diff": 0.0014245014245015675,
+      "delong_z": 0.029166769939178373,
+      "delong_p": 0.9767315836992476,
+      "sens_pred_only": 0.0,
+      "sens_embed_only": 0.0,
+      "n": 75,
+      "sensitivity_delta": 0.0
+    }
+  }
+}

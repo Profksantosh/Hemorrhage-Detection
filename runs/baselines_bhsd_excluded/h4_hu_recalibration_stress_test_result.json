@@ -1,0 +1,404 @@
+{
+  "grid_results": [
+    {
+      "scale": 0.85,
+      "offset": -60.0,
+      "baseline2_auroc_any": 0.5632617089138828,
+      "baseline2_accuracy_any": 0.858728557013118,
+      "baseline2_sensitivity_any": 0.007142857142857143,
+      "baseline2_sensitivity_edh": 0.0,
+      "wicl_auroc_any": 0.7824408259190867,
+      "wicl_accuracy_any": 0.8738647830474269,
+      "wicl_sensitivity_any": 0.11428571428571428,
+      "wicl_sensitivity_edh": 0.0
+    },
+    {
+      "scale": 0.85,
+      "offset": -30.0,
+      "baseline2_auroc_any": 0.6032566728218902,
+      "baseline2_accuracy_any": 0.8617558022199798,
+      "baseline2_sensitivity_any": 0.02142857142857143,
+      "baseline2_sensitivity_edh": 0.0,
+      "wicl_auroc_any": 0.9182390464999162,
+      "wicl_accuracy_any": 0.9334006054490414,
+      "wicl_sensitivity_any": 0.6285714285714286,
+      "wicl_sensitivity_edh": 0.0
+    },
+    {
+      "scale": 0.85,
+      "offset": 0.0,
+      "baseline2_auroc_any": 0.9018213866039952,
+      "baseline2_accuracy_any": 0.9364278506559032,
+      "baseline2_sensitivity_any": 0.6642857142857143,
+      "baseline2_sensitivity_edh": 0.0,
+      "wicl_auroc_any": 0.9410609367131106,
+      "wicl_accuracy_any": 0.934409687184662,
+      "wicl_sensitivity_any": 0.6857142857142857,
+      "wicl_sensitivity_edh": 0.0
+    },
+    {
+      "scale": 0.85,
+      "offset": 30.0,
+      "baseline2_auroc_any": 0.9079905992949471,
+      "baseline2_accuracy_any": 0.9192734611503531,
+      "baseline2_sensitivity_any": 0.6142857142857143,
+      "baseline2_sensitivity_edh": 0.0,
+      "wicl_auroc_any": 0.9502937720329024,
+      "wicl_accuracy_any": 0.934409687184662,
+      "wicl_sensitivity_any": 0.7357142857142858,
+      "wicl_sensitivity_edh": 0.0
+    },
+    {
+      "scale": 0.85,
+      "offset": 60.0,
+      "baseline2_auroc_any": 0.8266577136142353,
+      "baseline2_accuracy_any": 0.8607467204843592,
+      "baseline2_sensitivity_any": 0.36428571428571427,
+      "baseline2_sensitivity_edh": 0.0,
+      "wicl_auroc_any": 0.9042974651670305,
+      "wicl_accuracy_any": 0.9192734611503531,
+      "wicl_sensitivity_any": 0.5357142857142857,
+      "wicl_sensitivity_edh": 0.0
+    },
+    {
+      "scale": 0.9249999999999999,
+      "offset": -60.0,
+      "baseline2_auroc_any": 0.578697330871244,
+      "baseline2_accuracy_any": 0.8577194752774975,
+      "baseline2_sensitivity_any": 0.0,
+      "baseline2_sensitivity_edh": 0.0,
+      "wicl_auroc_any": 0.8043058586536846,
+      "wicl_accuracy_any": 0.8849646821392533,
+      "wicl_sensitivity_any": 0.19285714285714287,
+      "wicl_sensitivity_edh": 0.0
+    },
+    {
+      "scale": 0.9249999999999999,
+      "offset": -30.0,
+      "baseline2_auroc_any": 0.6441413463152593,
+      "baseline2_accuracy_any": 0.8647830474268415,
+      "baseline2_sensitivity_any": 0.04285714285714286,
+      "baseline2_sensitivity_edh": 0.0,
+      "wicl_auroc_any": 0.9252895752895753,
+      "wicl_accuracy_any": 0.934409687184662,
+      "wicl_sensitivity_any": 0.6642857142857143,
+      "wicl_sensitivity_edh": 0.0
+    },
+    {
+      "scale": 0.9249999999999999,
+      "offset": 0.0,
+      "baseline2_auroc_any": 0.912111801242236,
+      "baseline2_accuracy_any": 0.9394550958627649,
+      "baseline2_sensitivity_any": 0.7,
+      "baseline2_sensitivity_edh": 0.0,
+      "wicl_auroc_any": 0.9429578646969952,
+      "wicl_accuracy_any": 0.9334006054490414,
+      "wicl_sensitivity_any": 0.6928571428571428,
+      "wicl_sensitivity_edh": 0.0
+    },
+    {
+      "scale": 0.9249999999999999,
+      "offset": 30.0,
+      "baseline2_auroc_any": 0.9051955682390467,
+      "baseline2_accuracy_any": 0.9192734611503531,
+      "baseline2_sensitivity_any": 0.6,
+      "baseline2_sensitivity_edh": 0.0,
+      "wicl_auroc_any": 0.9495299647473561,
+      "wicl_accuracy_any": 0.9364278506559032,
+      "wicl_sensitivity_any": 0.75,
+      "wicl_sensitivity_edh": 0.0
+    },
+    {
+      "scale": 0.9249999999999999,
+      "offset": 60.0,
+      "baseline2_auroc_any": 0.823610877958704,
+      "baseline2_accuracy_any": 0.8597376387487387,
+      "baseline2_sensitivity_any": 0.3357142857142857,
+      "baseline2_sensitivity_edh": 0.0,
+      "wicl_auroc_any": 0.9065637065637067,
+      "wicl_accuracy_any": 0.9212916246215943,
+      "wicl_sensitivity_any": 0.5571428571428572,
+      "wicl_sensitivity_edh": 0.0
+    },
+    {
+      "scale": 1.0,
+      "offset": -60.0,
+      "baseline2_auroc_any": 0.5865620278663757,
+      "baseline2_accuracy_any": 0.8577194752774975,
+      "baseline2_sensitivity_any": 0.0,
+      "baseline2_sensitivity_edh": 0.0,
+      "wicl_auroc_any": 0.8208494208494208,
+      "wicl_accuracy_any": 0.893037336024218,
+      "wicl_sensitivity_any": 0.2642857142857143,
+      "wicl_sensitivity_edh": 0.0
+    },
+    {
+      "scale": 1.0,
+      "offset": -30.0,
+      "baseline2_auroc_any": 0.701342957864697,
+      "baseline2_accuracy_any": 0.8688193743693239,
+      "baseline2_sensitivity_any": 0.07142857142857142,
+      "baseline2_sensitivity_edh": 0.0,
+      "wicl_auroc_any": 0.929335235856975,
+      "wicl_accuracy_any": 0.9374369323915237,
+      "wicl_sensitivity_any": 0.6928571428571428,
+      "wicl_sensitivity_edh": 0.0
+    },
+    {
+      "scale": 1.0,
+      "offset": 0.0,
+      "baseline2_auroc_any": 0.92210005036092,
+      "baseline2_accuracy_any": 0.9434914228052472,
+      "baseline2_sensitivity_any": 0.75,
+      "baseline2_sensitivity_edh": 0.0,
+      "wicl_auroc_any": 0.9443427899949639,
+      "wicl_accuracy_any": 0.9364278506559032,
+      "wicl_sensitivity_any": 0.7071428571428572,
+      "wicl_sensitivity_edh": 0.0
+    },
+    {
+      "scale": 1.0,
+      "offset": 30.0,
+      "baseline2_auroc_any": 0.9003273459795199,
+      "baseline2_accuracy_any": 0.9071644803229062,
+      "baseline2_sensitivity_any": 0.5214285714285715,
+      "baseline2_sensitivity_edh": 0.0,
+      "wicl_auroc_any": 0.9484891724022159,
+      "wicl_accuracy_any": 0.9334006054490414,
+      "wicl_sensitivity_any": 0.7357142857142858,
+      "wicl_sensitivity_edh": 0.0
+    },
+    {
+      "scale": 1.0,
+      "offset": 60.0,
+      "baseline2_auroc_any": 0.8252224273963404,
+      "baseline2_accuracy_any": 0.8607467204843592,
+      "baseline2_sensitivity_any": 0.3,
+      "baseline2_sensitivity_edh": 0.0,
+      "wicl_auroc_any": 0.9104918583179452,
+      "wicl_accuracy_any": 0.9202825428859738,
+      "wicl_sensitivity_any": 0.5714285714285714,
+      "wicl_sensitivity_edh": 0.0
+    },
+    {
+      "scale": 1.075,
+      "offset": -60.0,
+      "baseline2_auroc_any": 0.5933355715964411,
+      "baseline2_accuracy_any": 0.8577194752774975,
+      "baseline2_sensitivity_any": 0.0,
+      "baseline2_sensitivity_edh": 0.0,
+      "wicl_auroc_any": 0.8419926137317443,
+      "wicl_accuracy_any": 0.9011099899091827,
+      "wicl_sensitivity_any": 0.32857142857142857,
+      "wicl_sensitivity_edh": 0.0
+    },
+    {
+      "scale": 1.075,
+      "offset": -30.0,
+      "baseline2_auroc_any": 0.7438475742823569,
+      "baseline2_accuracy_any": 0.875882946518668,
+      "baseline2_sensitivity_any": 0.12142857142857143,
+      "baseline2_sensitivity_edh": 0.0,
+      "wicl_auroc_any": 0.9315343293604164,
+      "wicl_accuracy_any": 0.9374369323915237,
+      "wicl_sensitivity_any": 0.7142857142857143,
+      "wicl_sensitivity_edh": 0.0
+    },
+    {
+      "scale": 1.075,
+      "offset": 0.0,
+      "baseline2_auroc_any": 0.9319120362598623,
+      "baseline2_accuracy_any": 0.9394550958627649,
+      "baseline2_sensitivity_any": 0.7571428571428571,
+      "baseline2_sensitivity_edh": 0.0,
+      "wicl_auroc_any": 0.9455178781265738,
+      "wicl_accuracy_any": 0.9374369323915237,
+      "wicl_sensitivity_any": 0.7214285714285714,
+      "wicl_sensitivity_edh": 0.0
+    },
+    {
+      "scale": 1.075,
+      "offset": 30.0,
+      "baseline2_auroc_any": 0.8903978512674164,
+      "baseline2_accuracy_any": 0.9011099899091827,
+      "baseline2_sensitivity_any": 0.4928571428571429,
+      "baseline2_sensitivity_edh": 0.0,
+      "wicl_auroc_any": 0.9463824072519725,
+      "wicl_accuracy_any": 0.9313824419778002,
+      "wicl_sensitivity_any": 0.7071428571428572,
+      "wicl_sensitivity_edh": 0.0
+    },
+    {
+      "scale": 1.075,
+      "offset": 60.0,
+      "baseline2_auroc_any": 0.8294107772368642,
+      "baseline2_accuracy_any": 0.8607467204843592,
+      "baseline2_sensitivity_any": 0.2857142857142857,
+      "baseline2_sensitivity_edh": 0.0,
+      "wicl_auroc_any": 0.9141262380392815,
+      "wicl_accuracy_any": 0.917255297679112,
+      "wicl_sensitivity_any": 0.5714285714285714,
+      "wicl_sensitivity_edh": 0.0
+    },
+    {
+      "scale": 1.15,
+      "offset": -60.0,
+      "baseline2_auroc_any": 0.5985563202954507,
+      "baseline2_accuracy_any": 0.8577194752774975,
+      "baseline2_sensitivity_any": 0.0,
+      "baseline2_sensitivity_edh": 0.0,
+      "wicl_auroc_any": 0.8587292261205304,
+      "wicl_accuracy_any": 0.905146316851665,
+      "wicl_sensitivity_any": 0.35714285714285715,
+      "wicl_sensitivity_edh": 0.0
+    },
+    {
+      "scale": 1.15,
+      "offset": -30.0,
+      "baseline2_auroc_any": 0.7714957193218062,
+      "baseline2_accuracy_any": 0.8859737638748738,
+      "baseline2_sensitivity_any": 0.19285714285714287,
+      "baseline2_sensitivity_edh": 0.0,
+      "wicl_auroc_any": 0.9323736780258519,
+      "wicl_accuracy_any": 0.934409687184662,
+      "wicl_sensitivity_any": 0.7071428571428572,
+      "wicl_sensitivity_edh": 0.0
+    },
+    {
+      "scale": 1.15,
+      "offset": 0.0,
+      "baseline2_auroc_any": 0.937107604498909,
+      "baseline2_accuracy_any": 0.9424823410696267,
+      "baseline2_sensitivity_any": 0.7642857142857142,
+      "baseline2_sensitivity_edh": 0.0,
+      "wicl_auroc_any": 0.9460802417324157,
+      "wicl_accuracy_any": 0.934409687184662,
+      "wicl_sensitivity_any": 0.7142857142857143,
+      "wicl_sensitivity_edh": 0.0
+    },
+    {
+      "scale": 1.15,
+      "offset": 30.0,
+      "baseline2_auroc_any": 0.8808040960214873,
+      "baseline2_accuracy_any": 0.8950554994954592,
+      "baseline2_sensitivity_any": 0.44285714285714284,
+      "baseline2_sensitivity_edh": 0.0,
+      "wicl_auroc_any": 0.9431425214033909,
+      "wicl_accuracy_any": 0.9303733602421796,
+      "wicl_sensitivity_any": 0.7,
+      "wicl_sensitivity_edh": 0.0
+    },
+    {
+      "scale": 1.15,
+      "offset": 60.0,
+      "baseline2_auroc_any": 0.8293604163169381,
+      "baseline2_accuracy_any": 0.8597376387487387,
+      "baseline2_sensitivity_any": 0.2714285714285714,
+      "baseline2_sensitivity_edh": 0.0,
+      "wicl_auroc_any": 0.9186167533993621,
+      "wicl_accuracy_any": 0.917255297679112,
+      "wicl_sensitivity_any": 0.5857142857142857,
+      "wicl_sensitivity_edh": 0.0
+    }
+  ],
+  "held_out_subset": {
+    "n_slices": 991,
+    "n_patients": 924,
+    "n_removed_for_patient_overlap_with_training_pool": 2009,
+    "index_range_in_rsna_label_csv": [
+      20000,
+      23000
+    ]
+  },
+  "h4_test_corner_degradation": {
+    "corner_keys": [
+      [
+        0.85,
+        -60.0
+      ],
+      [
+        0.85,
+        60.0
+      ],
+      [
+        1.15,
+        -60.0
+      ],
+      [
+        1.15,
+        60.0
+      ]
+    ],
+    "baseline2_identity_auroc": 0.92210005036092,
+    "wicl_identity_auroc": 0.9443427899949639,
+    "baseline2_mean_corner_degradation": 0.2360275443978191,
+    "wicl_mean_corner_degradation": 0.0829378094196909,
+    "observed_diff_b2_minus_wicl": 0.1530897349781282,
+    "n_bootstrap": 1000,
+    "p_value": 0.0,
+    "n_degenerate_dropped": 0,
+    "baseline2_degradation_ci95": [
+      0.19431762258975405,
+      0.27454271365238364
+    ],
+    "wicl_degradation_ci95": [
+      0.05979829526791064,
+      0.10708999530131504
+    ],
+    "verdict": "baseline2 degrades SIGNIFICANTLY MORE than WICL under the synthetic HU-recalibration stress test -- consistent with H4."
+  },
+  "provisional_bounds_disclosure": "The (scale, offset) grid bounds ([0.85,1.15], [-60,60] HU) are ich_gen.stress_test.make_perturbation_grid()'s own default, itself documented as provisional pending a specific CT QA-literature citation the manuscript has not yet selected (manuscript Section VI-F and the manuscript's own closing 'remaining design parameters' note both state this explicitly). This result should be reported as provisional for the same reason, not as a citation-backed final number.",
+  "held_out_subset_size_disclosure": "HOLDOUT_FINAL_N=2000 is this script's own choice (inference-tractability), not a manuscript-specified sample size.",
+  "configs": {
+    "baseline2": {
+      "condition": "fixed_three_window",
+      "rsna_root": "data/rsna/rsna-intracranial-hemorrhage-detection",
+      "fold": 0,
+      "n_folds": 5,
+      "bhsd_exclusion_json": "/home/fcse.santoshkumar/ich_windowing/data/bhsd_rsna_overlap_patient_ids.json",
+      "bhsd_exclusion": true,
+      "backbone": "densenet121",
+      "pretrained": true,
+      "epochs": 12,
+      "batch_size": 32,
+      "lr": 0.0001,
+      "weight_decay": 1e-05,
+      "num_workers": 4,
+      "seed": 0,
+      "out_dir": "runs/baselines_bhsd_excluded/baseline2_fixed_three",
+      "max_samples": 20000,
+      "lambda_consistency": 1.0,
+      "lambda_embedding": 0.5,
+      "sampling_breadth": "moderate",
+      "unlabeled_fraction": 0.5,
+      "teacher_epochs": null,
+      "coral_weight": 1.0,
+      "device": "cuda"
+    },
+    "wicl": {
+      "condition": "wicl",
+      "rsna_root": "data/rsna/rsna-intracranial-hemorrhage-detection",
+      "fold": 0,
+      "n_folds": 5,
+      "bhsd_exclusion_json": "/home/fcse.santoshkumar/ich_windowing/data/bhsd_rsna_overlap_patient_ids.json",
+      "bhsd_exclusion": true,
+      "backbone": "densenet121",
+      "pretrained": true,
+      "epochs": 12,
+      "batch_size": 32,
+      "lr": 0.0001,
+      "weight_decay": 1e-05,
+      "num_workers": 4,
+      "seed": 0,
+      "out_dir": "runs/baselines_bhsd_excluded/decisive_wicl",
+      "max_samples": 20000,
+      "lambda_consistency": 1.0,
+      "lambda_embedding": 0.5,
+      "sampling_breadth": "moderate",
+      "unlabeled_fraction": 0.5,
+      "teacher_epochs": null,
+      "coral_weight": 1.0,
+      "device": "cuda"
+    }
+  }
+}

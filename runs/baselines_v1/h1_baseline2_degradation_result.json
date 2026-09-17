@@ -1,0 +1,64 @@
+{
+  "internal_metrics": {
+    "auroc": 0.9286026839512819,
+    "accuracy": 0.9295,
+    "sens_epidural": 0.09523809523809523,
+    "sens_intraparenchymal": 0.7,
+    "sens_intraventricular": 0.717948717948718,
+    "sens_subarachnoid": 0.3813953488372093,
+    "sens_subdural": 0.5156794425087108
+  },
+  "external_metrics": {
+    "auroc": 0.650779683872907,
+    "accuracy": 0.7020485006051369,
+    "sens_epidural": 0.007874015748031496,
+    "sens_intraparenchymal": 0.1418380889183809,
+    "sens_intraventricular": 0.22409435551811288,
+    "sens_subarachnoid": 0.23219936708860758,
+    "sens_subdural": 0.21153846153846154
+  },
+  "observed_degradation": {
+    "pooled_auroc_degradation": 0.2991839296610848,
+    "pooled_accuracy_degradation": 0.24470306551356977,
+    "pooled_degradation": 0.2719434975873273,
+    "subtype_degradations": {
+      "epidural": 0.9173228346456693,
+      "intraparenchymal": 0.7973741586880273,
+      "intraventricular": 0.6878685762426285,
+      "subarachnoid": 0.39118458629206554,
+      "subdural": 0.5897869022869022
+    },
+    "stratified_degradation_mean_over_subtypes": 0.6767074116310586
+  },
+  "observed_diff_stratified_minus_pooled": 0.40476391404373135,
+  "bootstrap": {
+    "n_bootstrap": 1000,
+    "seed": 0,
+    "n_degenerate_dropped": 0,
+    "pooled_degradation_ci": [
+      0.2443067334580001,
+      0.3048065895324518
+    ],
+    "stratified_degradation_ci": [
+      0.5799453139110623,
+      0.727571907411801
+    ],
+    "edh_degradation_ci": [
+      0.5955852498017447,
+      1.0
+    ],
+    "p_value": 0.0
+  },
+  "scope_limitation": "Only CQ500 (one of three Section IV-B external sites) was available for this run; size-tercile stratification is unavailable for CQ500 (no lesion_size_mm3; BHSD is the size-stratification source per Section IV-E and was out of scope). This result tests H1's subtype-sensitivity clause against one external site only, not the full design.",
+  "config": {
+    "backbone": "densenet121",
+    "epochs": 12,
+    "batch_size": 32,
+    "lr": 0.0001,
+    "weight_decay": 1e-05,
+    "fold": 0,
+    "n_folds": 5,
+    "max_samples": 20000,
+    "seed": 0
+  }
+}

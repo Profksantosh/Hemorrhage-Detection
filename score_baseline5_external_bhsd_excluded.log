@@ -1,0 +1,67 @@
+building CQ500 external test set ...
+CQ500: 22309 slices, 473 studies
+
+=== CQ500 external -- SLICE level (noisy: study labels propagated): baseline5 vs baseline2 ===
+n = 22309, positive rate = 0.384
+  baseline5    AUROC=0.6488  sens@0.5=0.3249  spec@0.5=0.9044
+  baseline2    AUROC=0.6538  sens@0.5=0.2600  spec@0.5=0.9754
+  diff (baseline5-baseline2) AUROC=-0.0050   DeLong z=-1.436  p=0.1509
+  sensitivity delta (baseline5-baseline2) = +0.0649
+
+=== CQ500 external -- STUDY level (agg=max): baseline5 vs baseline2 ===
+n = 473, positive rate = 0.416
+  baseline5    AUROC=0.8862  sens@0.5=0.9645  spec@0.5=0.4094
+  baseline2    AUROC=0.9054  sens@0.5=0.9086  spec@0.5=0.6920
+  diff (baseline5-baseline2) AUROC=-0.0192   DeLong z=-1.503  p=0.1327
+  sensitivity delta (baseline5-baseline2) = +0.0558
+
+=== CQ500 external -- STUDY level (agg=mean): baseline5 vs baseline2 ===
+n = 473, positive rate = 0.416
+  baseline5    AUROC=0.8645  sens@0.5=0.2132  spec@0.5=0.9855
+  baseline2    AUROC=0.9063  sens@0.5=0.1624  spec@0.5=1.0000
+  diff (baseline5-baseline2) AUROC=-0.0418   DeLong z=-3.165  p=0.0015
+  sensitivity delta (baseline5-baseline2) = +0.0508
+
+=== CQ500 external -- SUBTYPE/SIZE-STRATIFIED (evaluate_pooled_and_stratified, slice level, noisy: study labels propagated) ===
+  baseline2: pooled AUROC=0.6538  pooled sens@0.5=0.2600 (0.22372529291137747, 0.29967552144939213)
+  baseline5: pooled AUROC=0.6488  pooled sens@0.5=0.3249 (0.29206907172467456, 0.3593475364938793)
+
+--- subtype table: baseline5 vs baseline2 ---
+
+subtype             AUROC(baseline5)  AUROC(baseline2)sens(baseline5)sens(baseline2)   delta(pp)  flag
+epidural                      0.5316            0.6043        0.1234        0.0210       10.24  *** >=5pp delta ***
+intraparenchymal              0.6214            0.5933        0.2522        0.1430       10.92  *** >=5pp delta ***
+intraventricular              0.7635            0.7515        0.3934        0.2098       18.37  *** >=5pp delta ***
+subarachnoid                  0.6746            0.7281        0.4153        0.2540       16.14  *** >=5pp delta ***
+subdural                      0.6076            0.6523        0.3269        0.2275        9.94  *** >=5pp delta ***
+
+--- EDH (primary H1/H2 subtype of interest), baseline5 vs baseline2 ---
+  sensitivity_baseline5=0.1234  sensitivity_baseline2=0.0210  delta=+10.24pp (threshold: 5.0pp)
+
+size-tercile stratification: no lesion_size_mm3 available for this site (expected for RSNA/CQ500/PhysioNet-ICH per Section IV-E; BHSD-derived data is the primary size-stratification source)
+
+=== SUPPLEMENTARY: WICL (runs/decisive_v2/decisive_wicl, read-only) vs baseline 5 on CQ500 -- partial contribution toward Section VI-C's H2 comparison set, NOT the full Bonferroni-corrected test ===
+
+=== CQ500 external -- SLICE level (noisy): wicl vs baseline5 ===
+n = 22309, positive rate = 0.384
+  wicl         AUROC=0.6473  sens@0.5=0.2553  spec@0.5=0.9691
+  baseline5    AUROC=0.6488  sens@0.5=0.3249  spec@0.5=0.9044
+  diff (wicl-baseline5) AUROC=-0.0015   DeLong z=-0.456  p=0.6485
+  sensitivity delta (wicl-baseline5) = -0.0696
+
+=== CQ500 external -- STUDY level (agg=max): wicl vs baseline5 ===
+n = 473, positive rate = 0.416
+  wicl         AUROC=0.9022  sens@0.5=0.8680  spec@0.5=0.6993
+  baseline5    AUROC=0.8862  sens@0.5=0.9645  spec@0.5=0.4094
+  diff (wicl-baseline5) AUROC=+0.0160   DeLong z=+1.174  p=0.2403
+  sensitivity delta (wicl-baseline5) = -0.0964
+
+=== CQ500 external -- STUDY level (agg=mean): wicl vs baseline5 ===
+n = 473, positive rate = 0.416
+  wicl         AUROC=0.9044  sens@0.5=0.1218  spec@0.5=0.9964
+  baseline5    AUROC=0.8645  sens@0.5=0.2132  spec@0.5=0.9855
+  diff (wicl-baseline5) AUROC=+0.0399   DeLong z=+2.977  p=0.0029
+  sensitivity delta (wicl-baseline5) = -0.0914
+
+saved runs/baselines_bhsd_excluded/external_cq500_baseline5_result.json
+

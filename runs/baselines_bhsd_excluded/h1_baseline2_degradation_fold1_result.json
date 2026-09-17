@@ -1,0 +1,64 @@
+{
+  "fold": 1,
+  "internal_metrics": {
+    "auroc": 0.9230207750936458,
+    "accuracy": 0.9315,
+    "sens_epidural": 0.1,
+    "sens_intraparenchymal": 0.6829268292682927,
+    "sens_intraventricular": 0.7465753424657534,
+    "sens_subarachnoid": 0.4236453201970443,
+    "sens_subdural": 0.5287356321839081
+  },
+  "external_metrics": {
+    "auroc": 0.6513021309493872,
+    "accuracy": 0.7032139495270967,
+    "sens_epidural": 0.02099737532808399,
+    "sens_intraparenchymal": 0.1425016589250166,
+    "sens_intraventricular": 0.21398483572030327,
+    "sens_subarachnoid": 0.25079113924050633,
+    "sens_subdural": 0.2171669793621013
+  },
+  "observed_degradation": {
+    "pooled_auroc_degradation": 0.2943797707225942,
+    "pooled_accuracy_degradation": 0.24507359148996596,
+    "pooled_degradation": 0.26972668110628006,
+    "subtype_degradations": {
+      "epidural": 0.7900262467191601,
+      "intraparenchymal": 0.7913368565740828,
+      "intraventricular": 0.7133781099526213,
+      "subarachnoid": 0.40801626435089783,
+      "subdural": 0.5892711477281998
+    },
+    "stratified_degradation_mean_over_subtypes": 0.6584057250649924
+  },
+  "observed_diff_stratified_minus_pooled": 0.38867904395871233,
+  "bootstrap": {
+    "n_bootstrap": 1000,
+    "seed": 0,
+    "n_degenerate_dropped": 0,
+    "pooled_degradation_ci": [
+      0.24450552980701637,
+      0.2961917497791332
+    ],
+    "stratified_degradation_ci": [
+      0.5704796985697473,
+      0.7231755060418551
+    ],
+    "edh_degradation_ci": [
+      0.41625535607745295,
+      1.0
+    ],
+    "p_value": 0.0
+  },
+  "config": {
+    "backbone": "densenet121",
+    "epochs": 12,
+    "batch_size": 32,
+    "lr": 0.0001,
+    "weight_decay": 1e-05,
+    "fold": 1,
+    "n_folds": 5,
+    "max_samples": 20000,
+    "seed": 0
+  }
+}

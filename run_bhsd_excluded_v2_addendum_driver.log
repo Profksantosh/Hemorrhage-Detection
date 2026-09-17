@@ -1,0 +1,7 @@
+[2026-09-11T13:31:22+05:30] addendum driver waiting for run_bhsd_excluded_v2.sh to finish...
+[2026-09-11T15:00:28+05:30] parent 7-condition run confirmed complete (ALL_V2_BHSD_EXCLUDED_DONE found). Starting baseline4c + baseline5 on the excluded fold.
+=== [2026-09-11T15:00:28+05:30] training condition=random_window_single -> runs/baselines_bhsd_excluded/baseline4c_random_window_single ===
+=== [2026-09-11T15:10:48+05:30] done condition=random_window_single ===
+=== [2026-09-11T15:10:48+05:30] training condition=semi_supervised -> runs/baselines_bhsd_excluded/baseline5_selftraining ===
+=== [2026-09-11T15:26:25+05:30] done condition=semi_supervised ===
+ALL_V2_ADDENDUM_BHSD_EXCLUDED_DONE

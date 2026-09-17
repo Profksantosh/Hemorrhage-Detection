@@ -1,0 +1,87 @@
+2026-09-12 04:44:38,931 INFO loaded 191 RSNA patient id(s) to exclude (BHSD overlap, see /home/fcse.santoshkumar/ich_windowing/data/bhsd_rsna_overlap_patient_ids.json)
+2026-09-12 04:44:38,931 INFO loading RSNA sample index (max_samples=20000)...
+2026-09-12 04:44:47,065 WARNING stage_2_train.csv contained 24 fully-duplicated (ID, Label) row(s) (4 unique sop_uid(s) affected); dropped as exact duplicates before pivoting -- see load_labels_wide comment for provenance. This is a pre-existing RSNA release data quirk, not introduced by this pipeline.
+2026-09-12 04:44:48,940 INFO using cached patient index at data/rsna/rsna-intracranial-hemorrhage-detection/patient_index_cache.parquet
+2026-09-12 04:44:51,358 INFO excluded 10088 slice(s) belonging to 191 RSNA patient(s) confirmed to overlap with BHSD (of 191 requested exclusion ids); 742715 slices remain
+2026-09-12 04:44:51,961 INFO patient-grouped 5-fold split verified leakage-free (11854 total patients)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+
+loading baseline2 (fixed_three_window) and WICL checkpoints (read-only) ...
+loading RSNA-internal held-out fold (fold 0) ...
+  4000 slices, 2370 patients
+building CQ500 external test set ...
+  22309 slices, 473 studies
+scoring baseline2 on rsna_internal ...
+scoring baseline2 on cq500_external ...
+scoring wicl on rsna_internal ...
+scoring wicl on cq500_external ...
+
+temperature scaling fit (baseline2, RSNA-internal, pooled 'any' only): T=2.275  NLL(T)=0.1830  NLL(T=1, uncalibrated)=0.2943
+
+temperature scaling fit (wicl, RSNA-internal, pooled 'any' only): T=2.200  NLL(T)=0.1821  NLL(T=1, uncalibrated)=0.2801
+
+[baseline2 | rsna_internal] n=4000  AUROC(any)=0.9345  ECE(any, pre-T)=0.0482  ECE(any, post-T)=0.0156
+    epidural           ECE(pre-T)=0.0056  ECE(post-T)=0.0341
+    intraparenchymal   ECE(pre-T)=0.0201  ECE(post-T)=0.0222
+    intraventricular   ECE(pre-T)=0.0148  ECE(post-T)=0.0239
+    subarachnoid       ECE(pre-T)=0.0373  ECE(post-T)=0.0307
+    subdural           ECE(pre-T)=0.0401  ECE(post-T)=0.0186
+
+[baseline2 | cq500_external] n=22309  AUROC(any)=0.6538  ECE(any, pre-T)=0.2844  ECE(any, post-T)=0.2414
+    epidural           ECE(pre-T)=0.0168  ECE(post-T)=0.0201
+    intraparenchymal   ECE(pre-T)=0.2301  ECE(post-T)=0.2028
+    intraventricular   ECE(pre-T)=0.0433  ECE(post-T)=0.0144
+    subarachnoid       ECE(pre-T)=0.0827  ECE(post-T)=0.0448
+    subdural           ECE(pre-T)=0.0947  ECE(post-T)=0.0628
+
+[wicl | rsna_internal] n=4000  AUROC(any)=0.9444  ECE(any, pre-T)=0.0500  ECE(any, post-T)=0.0178
+    epidural           ECE(pre-T)=0.0047  ECE(post-T)=0.0344
+    intraparenchymal   ECE(pre-T)=0.0201  ECE(post-T)=0.0222
+    intraventricular   ECE(pre-T)=0.0108  ECE(post-T)=0.0214
+    subarachnoid       ECE(pre-T)=0.0324  ECE(post-T)=0.0241
+    subdural           ECE(pre-T)=0.0352  ECE(post-T)=0.0219
+
+[wicl | cq500_external] n=22309  AUROC(any)=0.6473  ECE(any, pre-T)=0.2892  ECE(any, post-T)=0.2434
+    epidural           ECE(pre-T)=0.0158  ECE(post-T)=0.0230
+    intraparenchymal   ECE(pre-T)=0.2311  ECE(post-T)=0.2052
+    intraventricular   ECE(pre-T)=0.0429  ECE(post-T)=0.0152
+    subarachnoid       ECE(pre-T)=0.0840  ECE(post-T)=0.0438
+    subdural           ECE(pre-T)=0.0921  ECE(post-T)=0.0616
+
+running two-independent-sample bootstrap (1000 resamples, patients resampled independently within RSNA-internal and CQ500, mirroring h1_baseline2_degradation_test.py's methodology) ...
+
+=== H3 TEST (a): baseline2 pooled-ECE relative degradation (internal->CQ500) vs. pooled-AUROC relative degradation ===
+AUROC relative degradation:            +0.3004
+ECE relative degradation (higher=worse): +4.8963
+difference (ECE_deg - AUROC_deg):       +4.5959
+two-sided bootstrap p-value: 0.0000 (0/1000 degenerate replicates dropped)
+RESULT: ECE degrades SIGNIFICANTLY MORE than AUROC degradation would predict -- consistent with H3's first clause.
+
+=== H3 TEST (b): does WICL reduce external calibration degradation relative to baseline2? (pre-temperature-scaling) ===
+baseline2 ECE relative degradation: +4.8963
+WICL ECE relative degradation:      +4.7861
+difference (baseline2_deg - wicl_deg), >0 => WICL degrades less: +0.1102
+two-sided bootstrap p-value: 0.9500 (0/1000 degenerate replicates dropped)
+RESULT: NOT statistically significant (p >= 0.05).
+
+=== supplementary: post-temperature-scaling external ECE, baseline2 vs WICL (tests whether WICL adds calibration benefit beyond post-hoc temperature scaling alone, per Section VI-E) ===
+baseline2: pre-T=0.2844  post-T=0.2414
+wicl:      pre-T=0.2892  post-T=0.2434
+
+saved runs/baselines_bhsd_excluded/h3_calibration_ece_result.json
+

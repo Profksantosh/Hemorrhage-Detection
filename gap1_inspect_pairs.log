@@ -1,0 +1,27 @@
+inspecting 22 sampled pairs (6 hamming=0, 8 of 75 hamming=2, 8 of 221 hamming=4)
+[0] hamming=0 RSNA_4874cd8ebac6 vs CQ500_611a723ed1a3: MAE=545.4 corr=0.498 SSIM=0.890 shapes=((512, 512),(512, 512)) -> ARTIFACT
+[1] hamming=0 RSNA_4874cd8ebac6 vs CQ500_5d949b3b965b: MAE=89.8 corr=0.892 SSIM=0.935 shapes=((512, 512),(512, 512)) -> ARTIFACT
+[2] hamming=0 RSNA_d8c49e1a3b7f vs CQ500_b94475003f18: MAE=180.7 corr=0.938 SSIM=0.553 shapes=((512, 512),(512, 512)) -> UNCLEAR
+[3] hamming=0 RSNA_5e539095106b vs CQ500_b94475003f18: MAE=619.5 corr=0.667 SSIM=0.564 shapes=((512, 512),(512, 512)) -> UNCLEAR
+[4] hamming=0 RSNA_eb0baa45bec7 vs CQ500_cf40d3d16680: MAE=102.2 corr=0.960 SSIM=0.849 shapes=((512, 512),(512, 512)) -> ARTIFACT
+[5] hamming=0 RSNA_9f3d7f7c4a83 vs CQ500_cf40d3d16680: MAE=495.8 corr=0.298 SSIM=0.908 shapes=((512, 512),(512, 512)) -> ARTIFACT
+[6] hamming=2 RSNA_2896318153b2 vs CQ500_611a723ed1a3: MAE=551.9 corr=0.393 SSIM=0.886 shapes=((512, 512),(512, 512)) -> ARTIFACT
+[7] hamming=2 RSNA_4874cd8ebac6 vs CQ500_0a131b35183e: MAE=524.4 corr=0.390 SSIM=0.926 shapes=((512, 512),(512, 512)) -> ARTIFACT
+[8] hamming=2 RSNA_d8c49e1a3b7f vs CQ500_65ece67e88ef: MAE=137.3 corr=0.956 SSIM=0.574 shapes=((512, 512),(512, 512)) -> UNCLEAR
+[9] hamming=2 RSNA_d8c49e1a3b7f vs CQ500_1701892f16a4: MAE=586.7 corr=0.671 SSIM=0.566 shapes=((512, 512),(512, 512)) -> UNCLEAR
+[10] hamming=2 RSNA_97176180a538 vs CQ500_9e13726b8ebf: MAE=200.4 corr=0.929 SSIM=0.543 shapes=((512, 512),(512, 512)) -> UNCLEAR
+[11] hamming=2 RSNA_5e539095106b vs CQ500_4ecc694a5d4a: MAE=647.4 corr=0.680 SSIM=0.538 shapes=((512, 512),(512, 512)) -> UNCLEAR
+[12] hamming=2 RSNA_5e539095106b vs CQ500_17737002240f: MAE=625.1 corr=0.659 SSIM=0.557 shapes=((512, 512),(512, 512)) -> UNCLEAR
+[13] hamming=2 RSNA_eb0baa45bec7 vs CQ500_5bbe8ec2b142: MAE=138.1 corr=0.952 SSIM=0.836 shapes=((512, 512),(512, 512)) -> ARTIFACT
+[14] hamming=4 RSNA_389171e97f0b vs CQ500_064783e4d473: MAE=267.9 corr=0.873 SSIM=0.616 shapes=((512, 512),(512, 512)) -> UNCLEAR
+[15] hamming=4 RSNA_4874cd8ebac6 vs CQ500_82f4e8db5404: MAE=779.7 corr=0.316 SSIM=0.694 shapes=((512, 512),(512, 512)) -> ARTIFACT
+[16] hamming=4 RSNA_d8c49e1a3b7f vs CQ500_8074a4a1826a: MAE=153.9 corr=0.951 SSIM=0.592 shapes=((512, 512),(512, 512)) -> UNCLEAR
+[17] hamming=4 RSNA_97176180a538 vs CQ500_6e8499151436: MAE=205.8 corr=0.915 SSIM=0.539 shapes=((512, 512),(512, 512)) -> UNCLEAR
+[18] hamming=4 RSNA_91ba318ceb2d vs CQ500_b6553f2227f3: MAE=535.5 corr=0.404 SSIM=0.897 shapes=((512, 512),(512, 512)) -> ARTIFACT
+[19] hamming=4 RSNA_5e539095106b vs CQ500_efdbd4fcbd43: MAE=130.6 corr=0.868 SSIM=0.613 shapes=((512, 512),(512, 512)) -> UNCLEAR
+[20] hamming=4 RSNA_ec2d22cfde0b vs CQ500_10d0e30b2b3a: MAE=521.7 corr=0.532 SSIM=0.923 shapes=((512, 512),(512, 512)) -> ARTIFACT
+[21] hamming=4 RSNA_95d0f8f98e2b vs CQ500_670eaf8af1d7: MAE=166.6 corr=0.941 SSIM=0.569 shapes=((512, 512),(512, 512)) -> UNCLEAR
+
+wrote runs/decisive_v2/leakage_pair_review.json
+
+SUMMARY: 0 TRUE_DUPLICATE_OR_NEAR, 10 ARTIFACT, 12 UNCLEAR (of 22 sampled)

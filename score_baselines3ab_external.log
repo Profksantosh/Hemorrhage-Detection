@@ -1,0 +1,154 @@
+building CQ500 external test set ...
+CQ500: 22309 slices, 473 studies
+
+=== CQ500 external -- SLICE level (noisy: study labels propagated): baseline3a vs baseline2 ===
+n = 22309, positive rate = 0.384
+  baseline3a   AUROC=0.6188  sens@0.5=0.2134  spec@0.5=0.9734
+  baseline2    AUROC=0.6508  sens@0.5=0.2545  spec@0.5=0.9811
+  diff (baseline3a-baseline2) AUROC=-0.0320   DeLong z=-8.156  p=0.0000
+  sensitivity delta (baseline3a-baseline2) = -0.0411
+
+=== CQ500 external -- STUDY level (agg=max): baseline3a vs baseline2 ===
+n = 473, positive rate = 0.416
+  baseline3a   AUROC=0.8797  sens@0.5=0.8680  spec@0.5=0.6812
+  baseline2    AUROC=0.8948  sens@0.5=0.8832  spec@0.5=0.7464
+  diff (baseline3a-baseline2) AUROC=-0.0151   DeLong z=-1.087  p=0.2770
+  sensitivity delta (baseline3a-baseline2) = -0.0152
+
+=== CQ500 external -- STUDY level (agg=mean): baseline3a vs baseline2 ===
+n = 473, positive rate = 0.416
+  baseline3a   AUROC=0.8815  sens@0.5=0.0609  spec@0.5=1.0000
+  baseline2    AUROC=0.9007  sens@0.5=0.1269  spec@0.5=1.0000
+  diff (baseline3a-baseline2) AUROC=-0.0192   DeLong z=-1.394  p=0.1633
+  sensitivity delta (baseline3a-baseline2) = -0.0660
+
+=== CQ500 external -- SLICE level (noisy: study labels propagated): baseline3b vs baseline2 ===
+n = 22309, positive rate = 0.384
+  baseline3b   AUROC=0.6318  sens@0.5=0.2410  spec@0.5=0.9830
+  baseline2    AUROC=0.6508  sens@0.5=0.2545  spec@0.5=0.9811
+  diff (baseline3b-baseline2) AUROC=-0.0190   DeLong z=-5.272  p=0.0000
+  sensitivity delta (baseline3b-baseline2) = -0.0134
+
+=== CQ500 external -- STUDY level (agg=max): baseline3b vs baseline2 ===
+n = 473, positive rate = 0.416
+  baseline3b   AUROC=0.9011  sens@0.5=0.8579  spec@0.5=0.7391
+  baseline2    AUROC=0.8948  sens@0.5=0.8832  spec@0.5=0.7464
+  diff (baseline3b-baseline2) AUROC=+0.0064   DeLong z=+0.593  p=0.5532
+  sensitivity delta (baseline3b-baseline2) = -0.0254
+
+=== CQ500 external -- STUDY level (agg=mean): baseline3b vs baseline2 ===
+n = 473, positive rate = 0.416
+  baseline3b   AUROC=0.9052  sens@0.5=0.1269  spec@0.5=1.0000
+  baseline2    AUROC=0.9007  sens@0.5=0.1269  spec@0.5=1.0000
+  diff (baseline3b-baseline2) AUROC=+0.0045   DeLong z=+0.437  p=0.6619
+  sensitivity delta (baseline3b-baseline2) = +0.0000
+
+=== CQ500 external -- SLICE level (noisy: study labels propagated): baseline3a vs baseline3b ===
+n = 22309, positive rate = 0.384
+  baseline3a   AUROC=0.6188  sens@0.5=0.2134  spec@0.5=0.9734
+  baseline3b   AUROC=0.6318  sens@0.5=0.2410  spec@0.5=0.9830
+  diff (baseline3a-baseline3b) AUROC=-0.0130   DeLong z=-3.340  p=0.0008
+  sensitivity delta (baseline3a-baseline3b) = -0.0277
+
+=== CQ500 external -- STUDY level (agg=max): baseline3a vs baseline3b ===
+n = 473, positive rate = 0.416
+  baseline3a   AUROC=0.8797  sens@0.5=0.8680  spec@0.5=0.6812
+  baseline3b   AUROC=0.9011  sens@0.5=0.8579  spec@0.5=0.7391
+  diff (baseline3a-baseline3b) AUROC=-0.0215   DeLong z=-1.681  p=0.0929
+  sensitivity delta (baseline3a-baseline3b) = +0.0102
+
+=== CQ500 external -- STUDY level (agg=mean): baseline3a vs baseline3b ===
+n = 473, positive rate = 0.416
+  baseline3a   AUROC=0.8815  sens@0.5=0.0609  spec@0.5=1.0000
+  baseline3b   AUROC=0.9052  sens@0.5=0.1269  spec@0.5=1.0000
+  diff (baseline3a-baseline3b) AUROC=-0.0237   DeLong z=-2.144  p=0.0321
+  sensitivity delta (baseline3a-baseline3b) = -0.0660
+
+=== CQ500 external -- SUBTYPE/SIZE-STRATIFIED (evaluate_pooled_and_stratified, slice level, noisy: study labels propagated) ===
+  baseline2: pooled AUROC=0.6508  pooled sens@0.5=0.2545 (0.21776949755386663, 0.2932184173390164)
+  baseline3a: pooled AUROC=0.6188  pooled sens@0.5=0.2134 (0.18531163143173124, 0.24393095773365275)
+  baseline3b: pooled AUROC=0.6318  pooled sens@0.5=0.2410 (0.21094068800729068, 0.27551649864327327)
+
+--- subtype table: baseline3a vs baseline2 ---
+
+subtype            AUROC(baseline3a)  AUROC(baseline2)sens(baseline3a)sens(baseline2)   delta(pp)  flag
+epidural                      0.5373            0.5939        0.0000        0.0079       -0.79  
+intraparenchymal              0.5473            0.5905        0.1175        0.1418       -2.44  
+intraventricular              0.7035            0.7374        0.1744        0.2241       -4.97  
+subarachnoid                  0.7208            0.7547        0.1562        0.2322       -7.59  *** >=5pp delta ***
+subdural                      0.6366            0.6581        0.1524        0.2115       -5.91  *** >=5pp delta ***
+
+--- EDH (primary H1/H2 subtype of interest), baseline3a vs baseline2 ---
+  sensitivity_baseline3a=0.0000  sensitivity_baseline2=0.0079  delta=-0.79pp (threshold: 5.0pp)
+
+--- subtype table: baseline3b vs baseline2 ---
+
+subtype            AUROC(baseline3b)  AUROC(baseline2)sens(baseline3b)sens(baseline2)   delta(pp)  flag
+epidural                      0.5766            0.5939        0.0105        0.0079        0.26  
+intraparenchymal              0.6023            0.5905        0.1296        0.1418       -1.23  
+intraventricular              0.7097            0.7374        0.2266        0.2241        0.25  
+subarachnoid                  0.7006            0.7547        0.2476        0.2322        1.54  
+subdural                      0.6300            0.6581        0.1492        0.2115       -6.24  *** >=5pp delta ***
+
+--- EDH (primary H1/H2 subtype of interest), baseline3b vs baseline2 ---
+  sensitivity_baseline3b=0.0105  sensitivity_baseline2=0.0079  delta=+0.26pp (threshold: 5.0pp)
+
+--- subtype table: baseline3a vs baseline3b ---
+
+subtype            AUROC(baseline3a) AUROC(baseline3b)sens(baseline3a)sens(baseline3b)   delta(pp)  flag
+epidural                      0.5373            0.5766        0.0000        0.0105       -1.05  
+intraparenchymal              0.5473            0.6023        0.1175        0.1296       -1.21  
+intraventricular              0.7035            0.7097        0.1744        0.2266       -5.22  *** >=5pp delta ***
+subarachnoid                  0.7208            0.7006        0.1562        0.2476       -9.14  *** >=5pp delta ***
+subdural                      0.6366            0.6300        0.1524        0.1492        0.33  
+
+--- EDH (primary H1/H2 subtype of interest), baseline3a vs baseline3b ---
+  sensitivity_baseline3a=0.0000  sensitivity_baseline3b=0.0105  delta=-1.05pp (threshold: 5.0pp)
+
+size-tercile stratification: no lesion_size_mm3 available for this site (expected for RSNA/CQ500/PhysioNet-ICH per Section IV-E; BHSD-derived data is the primary size-stratification source)
+
+=== SUPPLEMENTARY: WICL (runs/decisive_v2/decisive_wicl, read-only) vs baseline 3a/3b on CQ500 -- partial contribution toward Section VI-C's H2 comparison set, NOT the full Bonferroni-corrected test ===
+
+=== CQ500 external -- SLICE level (noisy): wicl vs baseline3a ===
+n = 22309, positive rate = 0.384
+  wicl         AUROC=0.6507  sens@0.5=0.2324  spec@0.5=0.9802
+  baseline3a   AUROC=0.6188  sens@0.5=0.2134  spec@0.5=0.9734
+  diff (wicl-baseline3a) AUROC=+0.0319   DeLong z=+8.481  p=0.0000
+  sensitivity delta (wicl-baseline3a) = +0.0190
+
+=== CQ500 external -- STUDY level (agg=max): wicl vs baseline3a ===
+n = 473, positive rate = 0.416
+  wicl         AUROC=0.9024  sens@0.5=0.8629  spec@0.5=0.7645
+  baseline3a   AUROC=0.8797  sens@0.5=0.8680  spec@0.5=0.6812
+  diff (wicl-baseline3a) AUROC=+0.0227   DeLong z=+1.902  p=0.0572
+  sensitivity delta (wicl-baseline3a) = -0.0051
+
+=== CQ500 external -- STUDY level (agg=mean): wicl vs baseline3a ===
+n = 473, positive rate = 0.416
+  wicl         AUROC=0.9151  sens@0.5=0.0863  spec@0.5=1.0000
+  baseline3a   AUROC=0.8815  sens@0.5=0.0609  spec@0.5=1.0000
+  diff (wicl-baseline3a) AUROC=+0.0336   DeLong z=+3.017  p=0.0025
+  sensitivity delta (wicl-baseline3a) = +0.0254
+
+=== CQ500 external -- SLICE level (noisy): wicl vs baseline3b ===
+n = 22309, positive rate = 0.384
+  wicl         AUROC=0.6507  sens@0.5=0.2324  spec@0.5=0.9802
+  baseline3b   AUROC=0.6318  sens@0.5=0.2410  spec@0.5=0.9830
+  diff (wicl-baseline3b) AUROC=+0.0189   DeLong z=+5.766  p=0.0000
+  sensitivity delta (wicl-baseline3b) = -0.0086
+
+=== CQ500 external -- STUDY level (agg=max): wicl vs baseline3b ===
+n = 473, positive rate = 0.416
+  wicl         AUROC=0.9024  sens@0.5=0.8629  spec@0.5=0.7645
+  baseline3b   AUROC=0.9011  sens@0.5=0.8579  spec@0.5=0.7391
+  diff (wicl-baseline3b) AUROC=+0.0013   DeLong z=+0.125  p=0.9005
+  sensitivity delta (wicl-baseline3b) = +0.0051
+
+=== CQ500 external -- STUDY level (agg=mean): wicl vs baseline3b ===
+n = 473, positive rate = 0.416
+  wicl         AUROC=0.9151  sens@0.5=0.0863  spec@0.5=1.0000
+  baseline3b   AUROC=0.9052  sens@0.5=0.1269  spec@0.5=1.0000
+  diff (wicl-baseline3b) AUROC=+0.0099   DeLong z=+1.204  p=0.2286
+  sensitivity delta (wicl-baseline3b) = -0.0406
+
+saved runs/baselines_v1/external_cq500_baselines3ab_result.json

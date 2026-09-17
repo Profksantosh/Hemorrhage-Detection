@@ -1,0 +1,48 @@
+building PhysioNet-ICH external test set (REAL data) ...
+PhysioNet-ICH: 2814 slices, 75 patients
+
+=== PhysioNet-ICH external -- SLICE level (genuine per-slice ground truth): baseline5 vs baseline2 ===
+n = 2814, positive rate = 0.113
+  baseline5    AUROC=0.8740  sens@0.5=0.9434  spec@0.5=0.5789
+  baseline2    AUROC=0.8740  sens@0.5=0.7170  spec@0.5=0.8706
+  diff (baseline5-baseline2) AUROC=-0.0000   DeLong z=-0.004  p=0.9964
+  sensitivity delta (baseline5-baseline2) = +0.2264
+
+=== PhysioNet-ICH external -- PATIENT level (agg=max): baseline5 vs baseline2 ===
+n = 75, positive rate = 0.480
+  baseline5    AUROC=0.7443  sens@0.5=1.0000  spec@0.5=0.0000
+  baseline2    AUROC=0.8654  sens@0.5=1.0000  spec@0.5=0.0256
+  diff (baseline5-baseline2) AUROC=-0.1211   DeLong z=-2.231  p=0.0257
+  sensitivity delta (baseline5-baseline2) = +0.0000
+
+=== PhysioNet-ICH external -- PATIENT level (agg=mean): baseline5 vs baseline2 ===
+n = 75, positive rate = 0.480
+  baseline5    AUROC=0.8027  sens@0.5=0.6389  spec@0.5=0.8718
+  baseline2    AUROC=0.8711  sens@0.5=0.0278  spec@0.5=1.0000
+  diff (baseline5-baseline2) AUROC=-0.0684   DeLong z=-1.452  p=0.1465
+  sensitivity delta (baseline5-baseline2) = +0.6111
+
+=== WICL (runs/baselines_bhsd_excluded/decisive_wicl) vs baseline5 on PhysioNet-ICH ===
+
+=== PhysioNet-ICH external -- SLICE level (genuine per-slice ground truth): wicl vs baseline5 ===
+n = 2814, positive rate = 0.113
+  wicl         AUROC=0.8630  sens@0.5=0.5912  spec@0.5=0.8842
+  baseline5    AUROC=0.8740  sens@0.5=0.9434  spec@0.5=0.5789
+  diff (wicl-baseline5) AUROC=-0.0110   DeLong z=-1.107  p=0.2682
+  sensitivity delta (wicl-baseline5) = -0.3522
+
+=== PhysioNet-ICH external -- PATIENT level (agg=max): wicl vs baseline5 ===
+n = 75, positive rate = 0.480
+  wicl         AUROC=0.7507  sens@0.5=1.0000  spec@0.5=0.0513
+  baseline5    AUROC=0.7443  sens@0.5=1.0000  spec@0.5=0.0000
+  diff (wicl-baseline5) AUROC=+0.0064   DeLong z=+0.106  p=0.9156
+  sensitivity delta (wicl-baseline5) = +0.0000
+
+=== PhysioNet-ICH external -- PATIENT level (agg=mean): wicl vs baseline5 ===
+n = 75, positive rate = 0.480
+  wicl         AUROC=0.8433  sens@0.5=0.0000  spec@0.5=1.0000
+  baseline5    AUROC=0.8027  sens@0.5=0.6389  spec@0.5=0.8718
+  diff (wicl-baseline5) AUROC=+0.0406   DeLong z=+0.657  p=0.5112
+  sensitivity delta (wicl-baseline5) = -0.6389
+
+saved runs/baselines_bhsd_excluded/physionet_baseline5_vs_baseline2_and_wicl_result.json

@@ -1,0 +1,62 @@
+{
+  "criterion": "max val pooled 'any'-ICH AUROC on the patient-grouped held-out fold (fold 0), ties broken by pooled sensitivity@0.5",
+  "grid": {
+    "w1": {
+      "coral_weight": 1.0,
+      "val_pooled_auroc": 0.9244244246586562,
+      "val_pooled_sensitivity": 0.6976377952755906,
+      "val_pooled_specificity": 0.9687964338781575,
+      "val_pooled_accuracy": 0.92575,
+      "final_epoch_loss": 0.012637141573242843,
+      "final_epoch_supervised_loss": 0.011426739805843682,
+      "final_epoch_coral_loss": 0.0012104017823003233,
+      "final_epoch_weighted_coral_contribution": 0.0012104017823003233
+    },
+    "w10": {
+      "coral_weight": 10.0,
+      "val_pooled_auroc": 0.9235155783833113,
+      "val_pooled_sensitivity": 0.6598425196850394,
+      "val_pooled_specificity": 0.975334323922734,
+      "val_pooled_accuracy": 0.92525,
+      "final_epoch_loss": 0.016235371112823485,
+      "final_epoch_supervised_loss": 0.013227410779334604,
+      "final_epoch_coral_loss": 0.00030079603276681155,
+      "final_epoch_weighted_coral_contribution": 0.0030079603276681154
+    },
+    "w50": {
+      "coral_weight": 50.0,
+      "val_pooled_auroc": 0.9147738999192707,
+      "val_pooled_sensitivity": 0.6299212598425197,
+      "val_pooled_specificity": 0.9794947994056463,
+      "val_pooled_accuracy": 0.924,
+      "final_epoch_loss": 0.0201275201048702,
+      "final_epoch_supervised_loss": 0.016208774661645293,
+      "final_epoch_coral_loss": 7.837490864039865e-05,
+      "final_epoch_weighted_coral_contribution": 0.003918745432019932
+    },
+    "w200": {
+      "coral_weight": 200.0,
+      "val_pooled_auroc": 0.9131710170701174,
+      "val_pooled_sensitivity": 0.6519685039370079,
+      "val_pooled_specificity": 0.9744427934621099,
+      "val_pooled_accuracy": 0.92325,
+      "final_epoch_loss": 0.029209594164043666,
+      "final_epoch_supervised_loss": 0.024423617783002557,
+      "final_epoch_coral_loss": 2.3929881914227736e-05,
+      "final_epoch_weighted_coral_contribution": 0.004785976382845547
+    },
+    "w1000": {
+      "coral_weight": 1000.0,
+      "val_pooled_auroc": 0.9266455288928409,
+      "val_pooled_sensitivity": 0.7291338582677165,
+      "val_pooled_specificity": 0.9607726597325409,
+      "val_pooled_accuracy": 0.924,
+      "final_epoch_loss": 0.05385300949215889,
+      "final_epoch_supervised_loss": 0.048769289508461953,
+      "final_epoch_coral_loss": 5.083720092898148e-06,
+      "final_epoch_weighted_coral_contribution": 0.005083720092898147
+    }
+  },
+  "selected_weight": 1000.0,
+  "selected_key": "w1000"
+}

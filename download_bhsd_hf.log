@@ -1,0 +1,8 @@
+Fetching 3 files:   0%|          | 0/3 [00:00<?, ?it/s]Downloading 'unlabel_1980.zip' to '.cache/huggingface/download/-HYylWLPQr3VCKiAnV8PF5LWgK8=.643a43a9236ee52c331df098d1e956edf6968be5825758190d7bf90998dab0da.incomplete'
+Downloading 'FirstStage_test.zip' to '.cache/huggingface/download/DOV61LH5LG7OKZz0dW_7-Z-ldyY=.4ed88d2c6125b3df8b54883eadbc40313cc0c48916c3ffcaa1c6f62c01137bc6.incomplete'
+Downloading 'dataset.json' to '.cache/huggingface/download/sgRr3ZNkWv35IevK3hGNPpz2gGw=.81ec61b7e06f6fa8741b75117f10435c86c986cb.incomplete'
+Download complete. Moving file to dataset.json
+Download complete. Moving file to FirstStage_test.zip
+Fetching 3 files:  33%|███▎      | 1/3 [03:37<07:14, 217.22s/it]Download complete. Moving file to unlabel_1980.zip
+Fetching 3 files: 100%|██████████| 3/3 [23:00<00:00, 487.01s/it]Fetching 3 files: 100%|██████████| 3/3 [23:00<00:00, 460.03s/it]
+/home/fcse.santoshkumar/ich_windowing/data/bhsd

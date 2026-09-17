@@ -1,0 +1,64 @@
+# === Raw / restricted-use patient identifiers ===
+# RSNA 2019 is a restricted-use (Kaggle competition rules) dataset. Publishing
+# raw PatientID values is a likely data-use-agreement violation. The public,
+# hashed replacement (truncated SHA-256, matching Manuscript_G1_SCI_Full
+# Section 4.4 / Supplementary Table S2) lives in data/*_hashed.json and IS
+# committed — only the raw-ID file is excluded here.
+data/bhsd_rsna_overlap_patient_ids.json
+# BHSD's own dataset.json manifest: its imagesTr/imagesTs/labelsTr entries are
+# filenames of the form ID_<rsna-format-patient-token>_ID_<study-token>.nii.gz
+# -- i.e. it lists the same 192 raw RSNA-format patient identifiers as above,
+# just sourced from BHSD's distribution instead of ours. Excluded for the same
+# reason; obtain it directly from BHSD's own release if needed (see README).
+data/bhsd/dataset.json
+
+# === Model checkpoints / weights ===
+# The manuscripts' Data and Code Availability statements state raw model
+# checkpoints were not copied and remain server-only. Keep that true here.
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.safetensors
+
+# === Raw dataset downloads ===
+# Datasets are never included in this repo (each has its own license/DUA);
+# these patterns guard against ever accidentally committing a real download
+# staged locally under data/.
+data/rsna/
+data/cq500/
+data/bhsd/images/
+data/bhsd/masks/
+*.dcm
+*.nii
+*.nii.gz
+
+# === Superseded / noisy local artifacts (not part of the public evidence trail) ===
+# Full untrimmed download log (progress-bar spam only, no unique content beyond
+# the trimmed download_rsna.log that IS committed).
+download_rsna.log.FULL_WITH_PROGRESS_BAR.bak_excluded_from_git
+# Stale README snapshot from before real training ran; superseded by README.md,
+# and its "no real numbers were produced" claim is no longer true.
+README_hp100.md
+
+# === Python artifacts ===
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+*.egg-info/
+.eggs/
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+build/
+dist/
+*.egg
+
+# === OS / editor cruft ===
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

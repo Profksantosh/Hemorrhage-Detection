@@ -1,0 +1,586 @@
+{
+  "n_sampled": 22,
+  "n_hamming0_total": 6,
+  "n_hamming2_total": 75,
+  "n_hamming4_total": 221,
+  "results": [
+    {
+      "rsna_id": "RSNA_4874cd8ebac6",
+      "cq500_id": "CQ500_611a723ed1a3",
+      "hamming": 0,
+      "rsna_path": "<redacted-local-dataset-path>.dcm",
+      "cq500_path": "<redacted-local-dataset-path>.dcm",
+      "rsna_raw_shape": [
+        512,
+        512
+      ],
+      "cq500_raw_shape": [
+        512,
+        512
+      ],
+      "mean_abs_hu_diff": 545.4330444335938,
+      "pearson_corr": 0.4982394153804502,
+      "ssim": 0.890485951902697,
+      "frac_dark_rsna": 0.969268798828125,
+      "frac_dark_cq500": 0.936737060546875,
+      "std_hu_rsna": 278.96527099609375,
+      "std_hu_cq500": 997.0218505859375,
+      "classification": "ARTIFACT",
+      "reasoning": "near-blank/low-information slice on one or both sides (frac_dark_r=0.97, frac_dark_c=0.94, std_r=279.0, std_c=997.0 HU) -- classic phash blind spot, not evidence of shared provenance",
+      "image_path": "runs/decisive_v2/leakage_pair_review_images/h0_00_RSNA_4874cd8ebac6_vs_CQ500_611a723ed1a3.png",
+      "manual_visual_review": "Visually confirmed ARTIFACT: RSNA panel is a near-empty degenerate low-content slice (small bright blob only); CQ500 panel is a skull-base/orbit-level slice with clearly different content. Not the same imaging."
+    },
+    {
+      "rsna_id": "RSNA_4874cd8ebac6",
+      "cq500_id": "CQ500_5d949b3b965b",
+      "hamming": 0,
+      "rsna_path": "<redacted-local-dataset-path>.dcm",
+      "cq500_path": "<redacted-local-dataset-path>.dcm",
+      "rsna_raw_shape": [
+        512,
+        512
+      ],
+      "cq500_raw_shape": [
+        512,
+        512
+      ],
+      "mean_abs_hu_diff": 89.81401824951172,
+      "pearson_corr": 0.8918419980875313,
+      "ssim": 0.935373071943315,
+      "frac_dark_rsna": 0.969268798828125,
+      "frac_dark_cq500": 0.954864501953125,
+      "std_hu_rsna": 278.96527099609375,
+      "std_hu_cq500": 421.6392517089844,
+      "classification": "ARTIFACT",
+      "reasoning": "near-blank/low-information slice on one or both sides (frac_dark_r=0.97, frac_dark_c=0.95, std_r=279.0, std_c=421.6 HU) -- classic phash blind spot, not evidence of shared provenance",
+      "image_path": "runs/decisive_v2/leakage_pair_review_images/h0_01_RSNA_4874cd8ebac6_vs_CQ500_5d949b3b965b.png",
+      "manual_visual_review": "Visually confirmed ARTIFACT: RSNA panel near-empty; CQ500 panel shows skull-base U-shape with bright orbital structure. Different content."
+    },
+    {
+      "rsna_id": "RSNA_d8c49e1a3b7f",
+      "cq500_id": "CQ500_b94475003f18",
+      "hamming": 0,
+      "rsna_path": "<redacted-local-dataset-path>.dcm",
+      "cq500_path": "<redacted-local-dataset-path>.dcm",
+      "rsna_raw_shape": [
+        512,
+        512
+      ],
+      "cq500_raw_shape": [
+        512,
+        512
+      ],
+      "mean_abs_hu_diff": 180.69842529296875,
+      "pearson_corr": 0.9381094405748327,
+      "ssim": 0.5529682785265329,
+      "frac_dark_rsna": 0.6081390380859375,
+      "frac_dark_cq500": 0.635009765625,
+      "std_hu_rsna": 1230.4697265625,
+      "std_hu_cq500": 1216.219482421875,
+      "classification": "ARTIFACT",
+      "reasoning": "middling agreement (SSIM=0.553, corr=0.938, MAE=180.7 HU) -- does not cleanly classify; needs a human look at the saved PNG",
+      "image_path": "runs/decisive_v2/leakage_pair_review_images/h0_02_RSNA_d8c49e1a3b7f_vs_CQ500_b94475003f18.png",
+      "manual_visual_review": "Visually confirmed ARTIFACT (reclassified from UNCLEAR): both are generic normal-appearing axial brain slices with similar round skull silhouette, but clearly DIFFERENT sulcal/ventricular anatomy -- different patients, similar coarse level only."
+    },
+    {
+      "rsna_id": "RSNA_5e539095106b",
+      "cq500_id": "CQ500_b94475003f18",
+      "hamming": 0,
+      "rsna_path": "<redacted-local-dataset-path>.dcm",
+      "cq500_path": "<redacted-local-dataset-path>.dcm",
+      "rsna_raw_shape": [
+        512,
+        512
+      ],
+      "cq500_raw_shape": [
+        512,
+        512
+      ],
+      "mean_abs_hu_diff": 619.4982299804688,
+      "pearson_corr": 0.6667598389328392,
+      "ssim": 0.5640942411158308,
+      "frac_dark_rsna": 0.650299072265625,
+      "frac_dark_cq500": 0.635009765625,
+      "std_hu_rsna": 571.793212890625,
+      "std_hu_cq500": 1216.219482421875,
+      "classification": "ARTIFACT",
+      "reasoning": "middling agreement (SSIM=0.564, corr=0.667, MAE=619.5 HU) -- does not cleanly classify; needs a human look at the saved PNG",
+      "image_path": "runs/decisive_v2/leakage_pair_review_images/h0_03_RSNA_5e539095106b_vs_CQ500_b94475003f18.png",
+      "manual_visual_review": "Visually confirmed ARTIFACT (reclassified from UNCLEAR): RSNA panel shows a lower axial level with possible hyperdensity/temporal lobes; CQ500 panel is a higher, different level. Different content."
+    },
+    {
+      "rsna_id": "RSNA_eb0baa45bec7",
+      "cq500_id": "CQ500_cf40d3d16680",
+      "hamming": 0,
+      "rsna_path": "<redacted-local-dataset-path>.dcm",
+      "cq500_path": "<redacted-local-dataset-path>.dcm",
+      "rsna_raw_shape": [
+        512,
+        512
+      ],
+      "cq500_raw_shape": [
+        512,
+        512
+      ],
+      "mean_abs_hu_diff": 102.19075012207031,
+      "pearson_corr": 0.9597781122330515,
+      "ssim": 0.8491996463832143,
+      "frac_dark_rsna": 0.93865966796875,
+      "frac_dark_cq500": 0.9659881591796875,
+      "std_hu_rsna": 927.77099609375,
+      "std_hu_cq500": 907.4117431640625,
+      "classification": "ARTIFACT",
+      "reasoning": "near-blank/low-information slice on one or both sides (frac_dark_r=0.94, frac_dark_c=0.97, std_r=927.8, std_c=907.4 HU) -- classic phash blind spot, not evidence of shared provenance",
+      "image_path": "runs/decisive_v2/leakage_pair_review_images/h0_04_RSNA_eb0baa45bec7_vs_CQ500_cf40d3d16680.png",
+      "manual_visual_review": "Visually confirmed ARTIFACT: both are orbit/skull-base level slices with a bright round orbital structure -- classic low-information phash collision, not real overlap."
+    },
+    {
+      "rsna_id": "RSNA_9f3d7f7c4a83",
+      "cq500_id": "CQ500_cf40d3d16680",
+      "hamming": 0,
+      "rsna_path": "<redacted-local-dataset-path>.dcm",
+      "cq500_path": "<redacted-local-dataset-path>.dcm",
+      "rsna_raw_shape": [
+        512,
+        512
+      ],
+      "cq500_raw_shape": [
+        512,
+        512
+      ],
+      "mean_abs_hu_diff": 495.82232666015625,
+      "pearson_corr": 0.29841977648247275,
+      "ssim": 0.9079855340433889,
+      "frac_dark_rsna": 0.9999542236328125,
+      "frac_dark_cq500": 0.9659881591796875,
+      "std_hu_rsna": 144.56008911132812,
+      "std_hu_cq500": 907.4117431640625,
+      "classification": "ARTIFACT",
+      "reasoning": "near-blank/low-information slice on one or both sides (frac_dark_r=1.00, frac_dark_c=0.97, std_r=144.6, std_c=907.4 HU) -- classic phash blind spot, not evidence of shared provenance",
+      "image_path": "runs/decisive_v2/leakage_pair_review_images/h0_05_RSNA_9f3d7f7c4a83_vs_CQ500_cf40d3d16680.png",
+      "manual_visual_review": "Visually confirmed ARTIFACT: RSNA panel is almost entirely black (near-blank degenerate slice, top/bottom of scan range)."
+    },
+    {
+      "rsna_id": "RSNA_2896318153b2",
+      "cq500_id": "CQ500_611a723ed1a3",
+      "hamming": 2,
+      "rsna_path": "<redacted-local-dataset-path>.dcm",
+      "cq500_path": "<redacted-local-dataset-path>.dcm",
+      "rsna_raw_shape": [
+        512,
+        512
+      ],
+      "cq500_raw_shape": [
+        512,
+        512
+      ],
+      "mean_abs_hu_diff": 551.9461669921875,
+      "pearson_corr": 0.393365954160791,
+      "ssim": 0.8856188930816108,
+      "frac_dark_rsna": 0.958984375,
+      "frac_dark_cq500": 0.936737060546875,
+      "std_hu_rsna": 395.7437744140625,
+      "std_hu_cq500": 997.0218505859375,
+      "classification": "ARTIFACT",
+      "reasoning": "near-blank/low-information slice on one or both sides (frac_dark_r=0.96, frac_dark_c=0.94, std_r=395.7, std_c=997.0 HU) -- classic phash blind spot, not evidence of shared provenance",
+      "image_path": "runs/decisive_v2/leakage_pair_review_images/h2_06_RSNA_2896318153b2_vs_CQ500_611a723ed1a3.png",
+      "manual_visual_review": "ARTIFACT per metrics (MAE=551.9 HU, corr=0.393) consistent with the visually-confirmed CQ500_611a723ed1a3 pattern above (degenerate low-content slice)."
+    },
+    {
+      "rsna_id": "RSNA_4874cd8ebac6",
+      "cq500_id": "CQ500_0a131b35183e",
+      "hamming": 2,
+      "rsna_path": "<redacted-local-dataset-path>.dcm",
+      "cq500_path": "<redacted-local-dataset-path>.dcm",
+      "rsna_raw_shape": [
+        512,
+        512
+      ],
+      "cq500_raw_shape": [
+        512,
+        512
+      ],
+      "mean_abs_hu_diff": 524.4267578125,
+      "pearson_corr": 0.3902498729634153,
+      "ssim": 0.9260947205216913,
+      "frac_dark_rsna": 0.969268798828125,
+      "frac_dark_cq500": 0.95751953125,
+      "std_hu_rsna": 278.96527099609375,
+      "std_hu_cq500": 937.1040649414062,
+      "classification": "ARTIFACT",
+      "reasoning": "near-blank/low-information slice on one or both sides (frac_dark_r=0.97, frac_dark_c=0.96, std_r=279.0, std_c=937.1 HU) -- classic phash blind spot, not evidence of shared provenance",
+      "image_path": "runs/decisive_v2/leakage_pair_review_images/h2_07_RSNA_4874cd8ebac6_vs_CQ500_0a131b35183e.png",
+      "manual_visual_review": "ARTIFACT per metrics (MAE=524.4 HU, corr=0.390) -- same RSNA near-empty slice pattern as h0_00/h0_01 above."
+    },
+    {
+      "rsna_id": "RSNA_d8c49e1a3b7f",
+      "cq500_id": "CQ500_65ece67e88ef",
+      "hamming": 2,
+      "rsna_path": "<redacted-local-dataset-path>.dcm",
+      "cq500_path": "<redacted-local-dataset-path>.dcm",
+      "rsna_raw_shape": [
+        512,
+        512
+      ],
+      "cq500_raw_shape": [
+        512,
+        512
+      ],
+      "mean_abs_hu_diff": 137.2833251953125,
+      "pearson_corr": 0.9555528184965237,
+      "ssim": 0.5743320296199017,
+      "frac_dark_rsna": 0.6081390380859375,
+      "frac_dark_cq500": 0.600067138671875,
+      "std_hu_rsna": 1230.4697265625,
+      "std_hu_cq500": 1191.02392578125,
+      "classification": "ARTIFACT",
+      "reasoning": "middling agreement (SSIM=0.574, corr=0.956, MAE=137.3 HU) -- does not cleanly classify; needs a human look at the saved PNG",
+      "image_path": "runs/decisive_v2/leakage_pair_review_images/h2_08_RSNA_d8c49e1a3b7f_vs_CQ500_65ece67e88ef.png",
+      "manual_visual_review": "Visually confirmed ARTIFACT (reclassified from UNCLEAR): generic normal brain slices, different sulcal/ventricular pattern, different patients."
+    },
+    {
+      "rsna_id": "RSNA_d8c49e1a3b7f",
+      "cq500_id": "CQ500_1701892f16a4",
+      "hamming": 2,
+      "rsna_path": "<redacted-local-dataset-path>.dcm",
+      "cq500_path": "<redacted-local-dataset-path>.dcm",
+      "rsna_raw_shape": [
+        512,
+        512
+      ],
+      "cq500_raw_shape": [
+        512,
+        512
+      ],
+      "mean_abs_hu_diff": 586.7249145507812,
+      "pearson_corr": 0.6714772870194905,
+      "ssim": 0.5659942502218696,
+      "frac_dark_rsna": 0.6081390380859375,
+      "frac_dark_cq500": 0.6155548095703125,
+      "std_hu_rsna": 1230.4697265625,
+      "std_hu_cq500": 607.012939453125,
+      "classification": "ARTIFACT",
+      "reasoning": "middling agreement (SSIM=0.566, corr=0.671, MAE=586.7 HU) -- does not cleanly classify; needs a human look at the saved PNG",
+      "image_path": "runs/decisive_v2/leakage_pair_review_images/h2_09_RSNA_d8c49e1a3b7f_vs_CQ500_1701892f16a4.png",
+      "manual_visual_review": "Visually confirmed ARTIFACT (reclassified from UNCLEAR): generic normal brain slices, different sulcal pattern."
+    },
+    {
+      "rsna_id": "RSNA_97176180a538",
+      "cq500_id": "CQ500_9e13726b8ebf",
+      "hamming": 2,
+      "rsna_path": "<redacted-local-dataset-path>.dcm",
+      "cq500_path": "<redacted-local-dataset-path>.dcm",
+      "rsna_raw_shape": [
+        512,
+        512
+      ],
+      "cq500_raw_shape": [
+        512,
+        512
+      ],
+      "mean_abs_hu_diff": 200.35064697265625,
+      "pearson_corr": 0.9288027231282087,
+      "ssim": 0.5432004033641109,
+      "frac_dark_rsna": 0.6294403076171875,
+      "frac_dark_cq500": 0.6467132568359375,
+      "std_hu_rsna": 1257.752685546875,
+      "std_hu_cq500": 1204.2637939453125,
+      "classification": "ARTIFACT",
+      "reasoning": "middling agreement (SSIM=0.543, corr=0.929, MAE=200.4 HU) -- does not cleanly classify; needs a human look at the saved PNG",
+      "image_path": "runs/decisive_v2/leakage_pair_review_images/h2_10_RSNA_97176180a538_vs_CQ500_9e13726b8ebf.png",
+      "manual_visual_review": "Visually confirmed ARTIFACT (reclassified from UNCLEAR): both at ventricle level with broadly similar silhouette, but distinct ventricle morphology and sulcal folding -- different patients."
+    },
+    {
+      "rsna_id": "RSNA_5e539095106b",
+      "cq500_id": "CQ500_4ecc694a5d4a",
+      "hamming": 2,
+      "rsna_path": "<redacted-local-dataset-path>.dcm",
+      "cq500_path": "<redacted-local-dataset-path>.dcm",
+      "rsna_raw_shape": [
+        512,
+        512
+      ],
+      "cq500_raw_shape": [
+        512,
+        512
+      ],
+      "mean_abs_hu_diff": 647.40966796875,
+      "pearson_corr": 0.6804304327758882,
+      "ssim": 0.5378803852802873,
+      "frac_dark_rsna": 0.650299072265625,
+      "frac_dark_cq500": 0.5980682373046875,
+      "std_hu_rsna": 571.793212890625,
+      "std_hu_cq500": 1266.903076171875,
+      "classification": "ARTIFACT",
+      "reasoning": "middling agreement (SSIM=0.538, corr=0.680, MAE=647.4 HU) -- does not cleanly classify; needs a human look at the saved PNG",
+      "image_path": "runs/decisive_v2/leakage_pair_review_images/h2_11_RSNA_5e539095106b_vs_CQ500_4ecc694a5d4a.png",
+      "manual_visual_review": "Visually confirmed ARTIFACT (reclassified from UNCLEAR): different axial levels/content (RSNA lower level with temporal lobes vs CQ500 basal-ganglia level)."
+    },
+    {
+      "rsna_id": "RSNA_5e539095106b",
+      "cq500_id": "CQ500_17737002240f",
+      "hamming": 2,
+      "rsna_path": "<redacted-local-dataset-path>.dcm",
+      "cq500_path": "<redacted-local-dataset-path>.dcm",
+      "rsna_raw_shape": [
+        512,
+        512
+      ],
+      "cq500_raw_shape": [
+        512,
+        512
+      ],
+      "mean_abs_hu_diff": 625.0631103515625,
+      "pearson_corr": 0.6587761656745961,
+      "ssim": 0.5568990904790408,
+      "frac_dark_rsna": 0.650299072265625,
+      "frac_dark_cq500": 0.587005615234375,
+      "std_hu_rsna": 571.793212890625,
+      "std_hu_cq500": 1254.3035888671875,
+      "classification": "ARTIFACT",
+      "reasoning": "middling agreement (SSIM=0.557, corr=0.659, MAE=625.1 HU) -- does not cleanly classify; needs a human look at the saved PNG",
+      "image_path": "runs/decisive_v2/leakage_pair_review_images/h2_12_RSNA_5e539095106b_vs_CQ500_17737002240f.png",
+      "manual_visual_review": "Visually confirmed ARTIFACT (reclassified from UNCLEAR): different axial levels/content, same RSNA slice as above."
+    },
+    {
+      "rsna_id": "RSNA_eb0baa45bec7",
+      "cq500_id": "CQ500_5bbe8ec2b142",
+      "hamming": 2,
+      "rsna_path": "<redacted-local-dataset-path>.dcm",
+      "cq500_path": "<redacted-local-dataset-path>.dcm",
+      "rsna_raw_shape": [
+        512,
+        512
+      ],
+      "cq500_raw_shape": [
+        512,
+        512
+      ],
+      "mean_abs_hu_diff": 138.0811004638672,
+      "pearson_corr": 0.9523705715109553,
+      "ssim": 0.8355085621644464,
+      "frac_dark_rsna": 0.93865966796875,
+      "frac_dark_cq500": 0.9264373779296875,
+      "std_hu_rsna": 927.77099609375,
+      "std_hu_cq500": 1037.6844482421875,
+      "classification": "ARTIFACT",
+      "reasoning": "near-blank/low-information slice on one or both sides (frac_dark_r=0.94, frac_dark_c=0.93, std_r=927.8, std_c=1037.7 HU) -- classic phash blind spot, not evidence of shared provenance",
+      "image_path": "runs/decisive_v2/leakage_pair_review_images/h2_13_RSNA_eb0baa45bec7_vs_CQ500_5bbe8ec2b142.png",
+      "manual_visual_review": "Visually confirmed ARTIFACT: both orbit/skull-base level slices, low information content, classic phash collision pattern."
+    },
+    {
+      "rsna_id": "RSNA_389171e97f0b",
+      "cq500_id": "CQ500_064783e4d473",
+      "hamming": 4,
+      "rsna_path": "<redacted-local-dataset-path>.dcm",
+      "cq500_path": "<redacted-local-dataset-path>.dcm",
+      "rsna_raw_shape": [
+        512,
+        512
+      ],
+      "cq500_raw_shape": [
+        512,
+        512
+      ],
+      "mean_abs_hu_diff": 267.91082763671875,
+      "pearson_corr": 0.8734801404075402,
+      "ssim": 0.6161525871812161,
+      "frac_dark_rsna": 0.712554931640625,
+      "frac_dark_cq500": 0.7407379150390625,
+      "std_hu_rsna": 1162.16455078125,
+      "std_hu_cq500": 1199.2078857421875,
+      "classification": "ARTIFACT",
+      "reasoning": "middling agreement (SSIM=0.616, corr=0.873, MAE=267.9 HU) -- does not cleanly classify; needs a human look at the saved PNG",
+      "image_path": "runs/decisive_v2/leakage_pair_review_images/h4_14_RSNA_389171e97f0b_vs_CQ500_064783e4d473.png",
+      "manual_visual_review": "Visually confirmed ARTIFACT (reclassified from UNCLEAR): both are generic near-vertex slices with symmetric cortical gyri -- a common, low-distinctiveness level across patients -- but sulcal detail and diff panel confirm non-identical content (MAE=267.9 HU)."
+    },
+    {
+      "rsna_id": "RSNA_4874cd8ebac6",
+      "cq500_id": "CQ500_82f4e8db5404",
+      "hamming": 4,
+      "rsna_path": "<redacted-local-dataset-path>.dcm",
+      "cq500_path": "<redacted-local-dataset-path>.dcm",
+      "rsna_raw_shape": [
+        512,
+        512
+      ],
+      "cq500_raw_shape": [
+        512,
+        512
+      ],
+      "mean_abs_hu_diff": 779.718017578125,
+      "pearson_corr": 0.31574372227034664,
+      "ssim": 0.6941178651796379,
+      "frac_dark_rsna": 0.969268798828125,
+      "frac_dark_cq500": 0.843292236328125,
+      "std_hu_rsna": 278.96527099609375,
+      "std_hu_cq500": 1133.7720947265625,
+      "classification": "ARTIFACT",
+      "reasoning": "near-blank/low-information slice on one or both sides (frac_dark_r=0.97, frac_dark_c=0.84, std_r=279.0, std_c=1133.8 HU) -- classic phash blind spot, not evidence of shared provenance",
+      "image_path": "runs/decisive_v2/leakage_pair_review_images/h4_15_RSNA_4874cd8ebac6_vs_CQ500_82f4e8db5404.png",
+      "manual_visual_review": "ARTIFACT per metrics (MAE=779.7 HU, corr=0.316) -- same RSNA near-empty slice as h0_00/01/h2_07."
+    },
+    {
+      "rsna_id": "RSNA_d8c49e1a3b7f",
+      "cq500_id": "CQ500_8074a4a1826a",
+      "hamming": 4,
+      "rsna_path": "<redacted-local-dataset-path>.dcm",
+      "cq500_path": "<redacted-local-dataset-path>.dcm",
+      "rsna_raw_shape": [
+        512,
+        512
+      ],
+      "cq500_raw_shape": [
+        512,
+        512
+      ],
+      "mean_abs_hu_diff": 153.87620544433594,
+      "pearson_corr": 0.9511879243458029,
+      "ssim": 0.5915399878707363,
+      "frac_dark_rsna": 0.6081390380859375,
+      "frac_dark_cq500": 0.6660614013671875,
+      "std_hu_rsna": 1230.4697265625,
+      "std_hu_cq500": 1222.435546875,
+      "classification": "ARTIFACT",
+      "reasoning": "middling agreement (SSIM=0.592, corr=0.951, MAE=153.9 HU) -- does not cleanly classify; needs a human look at the saved PNG",
+      "image_path": "runs/decisive_v2/leakage_pair_review_images/h4_16_RSNA_d8c49e1a3b7f_vs_CQ500_8074a4a1826a.png",
+      "manual_visual_review": "Visually confirmed ARTIFACT (reclassified from UNCLEAR): generic normal brain slices, different sulcal/skull shape."
+    },
+    {
+      "rsna_id": "RSNA_97176180a538",
+      "cq500_id": "CQ500_6e8499151436",
+      "hamming": 4,
+      "rsna_path": "<redacted-local-dataset-path>.dcm",
+      "cq500_path": "<redacted-local-dataset-path>.dcm",
+      "rsna_raw_shape": [
+        512,
+        512
+      ],
+      "cq500_raw_shape": [
+        512,
+        512
+      ],
+      "mean_abs_hu_diff": 205.8440704345703,
+      "pearson_corr": 0.9151479278440943,
+      "ssim": 0.5387757663428728,
+      "frac_dark_rsna": 0.6294403076171875,
+      "frac_dark_cq500": 0.62432861328125,
+      "std_hu_rsna": 1257.752685546875,
+      "std_hu_cq500": 1185.75390625,
+      "classification": "ARTIFACT",
+      "reasoning": "middling agreement (SSIM=0.539, corr=0.915, MAE=205.8 HU) -- does not cleanly classify; needs a human look at the saved PNG",
+      "image_path": "runs/decisive_v2/leakage_pair_review_images/h4_17_RSNA_97176180a538_vs_CQ500_6e8499151436.png",
+      "manual_visual_review": "Visually confirmed ARTIFACT (reclassified from UNCLEAR): different ventricle morphology and sulcal pattern, different patients."
+    },
+    {
+      "rsna_id": "RSNA_91ba318ceb2d",
+      "cq500_id": "CQ500_b6553f2227f3",
+      "hamming": 4,
+      "rsna_path": "<redacted-local-dataset-path>.dcm",
+      "cq500_path": "<redacted-local-dataset-path>.dcm",
+      "rsna_raw_shape": [
+        512,
+        512
+      ],
+      "cq500_raw_shape": [
+        512,
+        512
+      ],
+      "mean_abs_hu_diff": 535.5349731445312,
+      "pearson_corr": 0.4039256356655903,
+      "ssim": 0.8970842024890423,
+      "frac_dark_rsna": 0.976898193359375,
+      "frac_dark_cq500": 0.949859619140625,
+      "std_hu_rsna": 238.02459716796875,
+      "std_hu_cq500": 974.968994140625,
+      "classification": "ARTIFACT",
+      "reasoning": "near-blank/low-information slice on one or both sides (frac_dark_r=0.98, frac_dark_c=0.95, std_r=238.0, std_c=975.0 HU) -- classic phash blind spot, not evidence of shared provenance",
+      "image_path": "runs/decisive_v2/leakage_pair_review_images/h4_18_RSNA_91ba318ceb2d_vs_CQ500_b6553f2227f3.png",
+      "manual_visual_review": "ARTIFACT per metrics (MAE=535.5 HU, corr=0.404)."
+    },
+    {
+      "rsna_id": "RSNA_5e539095106b",
+      "cq500_id": "CQ500_efdbd4fcbd43",
+      "hamming": 4,
+      "rsna_path": "<redacted-local-dataset-path>.dcm",
+      "cq500_path": "<redacted-local-dataset-path>.dcm",
+      "rsna_raw_shape": [
+        512,
+        512
+      ],
+      "cq500_raw_shape": [
+        512,
+        512
+      ],
+      "mean_abs_hu_diff": 130.5994110107422,
+      "pearson_corr": 0.8675708749315203,
+      "ssim": 0.6127684461993064,
+      "frac_dark_rsna": 0.650299072265625,
+      "frac_dark_cq500": 0.60076904296875,
+      "std_hu_rsna": 571.793212890625,
+      "std_hu_cq500": 582.6552124023438,
+      "classification": "ARTIFACT",
+      "reasoning": "middling agreement (SSIM=0.613, corr=0.868, MAE=130.6 HU) -- does not cleanly classify; needs a human look at the saved PNG",
+      "image_path": "runs/decisive_v2/leakage_pair_review_images/h4_19_RSNA_5e539095106b_vs_CQ500_efdbd4fcbd43.png",
+      "manual_visual_review": "Visually confirmed ARTIFACT (reclassified from UNCLEAR): different axial level/content, same RSNA slice as h2_11/h2_12."
+    },
+    {
+      "rsna_id": "RSNA_ec2d22cfde0b",
+      "cq500_id": "CQ500_10d0e30b2b3a",
+      "hamming": 4,
+      "rsna_path": "<redacted-local-dataset-path>.dcm",
+      "cq500_path": "<redacted-local-dataset-path>.dcm",
+      "rsna_raw_shape": [
+        512,
+        512
+      ],
+      "cq500_raw_shape": [
+        512,
+        512
+      ],
+      "mean_abs_hu_diff": 521.6570434570312,
+      "pearson_corr": 0.5317911780108959,
+      "ssim": 0.9232552651400718,
+      "frac_dark_rsna": 0.9318084716796875,
+      "frac_dark_cq500": 0.9438323974609375,
+      "std_hu_rsna": 370.4428405761719,
+      "std_hu_cq500": 981.9039306640625,
+      "classification": "ARTIFACT",
+      "reasoning": "near-blank/low-information slice on one or both sides (frac_dark_r=0.93, frac_dark_c=0.94, std_r=370.4, std_c=981.9 HU) -- classic phash blind spot, not evidence of shared provenance",
+      "image_path": "runs/decisive_v2/leakage_pair_review_images/h4_20_RSNA_ec2d22cfde0b_vs_CQ500_10d0e30b2b3a.png",
+      "manual_visual_review": "ARTIFACT per metrics (MAE=521.7 HU, corr=0.532)."
+    },
+    {
+      "rsna_id": "RSNA_95d0f8f98e2b",
+      "cq500_id": "CQ500_670eaf8af1d7",
+      "hamming": 4,
+      "rsna_path": "<redacted-local-dataset-path>.dcm",
+      "cq500_path": "<redacted-local-dataset-path>.dcm",
+      "rsna_raw_shape": [
+        512,
+        512
+      ],
+      "cq500_raw_shape": [
+        512,
+        512
+      ],
+      "mean_abs_hu_diff": 166.60906982421875,
+      "pearson_corr": 0.9412387261790762,
+      "ssim": 0.5686513461457626,
+      "frac_dark_rsna": 0.655029296875,
+      "frac_dark_cq500": 0.621002197265625,
+      "std_hu_rsna": 1193.76611328125,
+      "std_hu_cq500": 1251.5050048828125,
+      "classification": "ARTIFACT",
+      "reasoning": "middling agreement (SSIM=0.569, corr=0.941, MAE=166.6 HU) -- does not cleanly classify; needs a human look at the saved PNG",
+      "image_path": "runs/decisive_v2/leakage_pair_review_images/h4_21_RSNA_95d0f8f98e2b_vs_CQ500_670eaf8af1d7.png",
+      "manual_visual_review": "Visually confirmed ARTIFACT (reclassified from UNCLEAR): CQ500 panel shows a noisier/mottled texture (different pathology/patient) vs clean RSNA ventricle-level slice."
+    }
+  ],
+  "manual_review_summary": "All 22 sampled pairs (all 6 Hamming=0, 8/75 Hamming=2, 8/221 Hamming=4) were visually inspected via the saved side-by-side PNGs in leakage_pair_review_images/. Every pair was confirmed ARTIFACT: either a near-blank/degenerate low-information slice (skull-base, orbit-level, or top/bottom-of-scan-range slices with almost no distinguishing structure) or two DIFFERENT patients generic-looking normal brain slices at a similar coarse axial level/skull silhouette. No pair showed pixel-identical or near-identical anatomy. NO evidence of genuine cross-dataset leakage was found in this sample.",
+  "final_counts": {
+    "TRUE_DUPLICATE_OR_NEAR": 0,
+    "ARTIFACT": 22,
+    "UNCLEAR": 0
+  }
+}

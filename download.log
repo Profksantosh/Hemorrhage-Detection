@@ -1,0 +1,18 @@
+403 Client Error: Forbidden for url: https://api.kaggle.com/v1/competitions.CompetitionApiService/DownloadDataFiles
+
+=== rsna ===
+Official RSNA 2019 challenge data (manuscript ref [27]). Requires accepting the competition rules on kaggle.com first (one-time, logged-in click) before the API download works. ~450GB uncompressed -- budget disk space and time.
+
+$ kaggle competitions download -c rsna-intracranial-hemorrhage-detection -p /home/fcse.santoshkumar/ich_windowing/data/rsna
+Traceback (most recent call last):
+  File "/home/fcse.santoshkumar/ich_windowing/scripts/download_data.py", line 160, in <module>
+    main()
+  File "/home/fcse.santoshkumar/ich_windowing/scripts/download_data.py", line 141, in main
+    download_one(name, args.dest)
+  File "/home/fcse.santoshkumar/ich_windowing/scripts/download_data.py", line 96, in download_one
+    _run(["kaggle", "competitions", "download", "-c", src["id"],
+  File "/home/fcse.santoshkumar/ich_windowing/scripts/download_data.py", line 86, in _run
+    subprocess.run(cmd, check=True)
+  File "/home/fcse.santoshkumar/.conda/envs/ich_windowing/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['kaggle', 'competitions', 'download', '-c', 'rsna-intracranial-hemorrhage-detection', '-p', '/home/fcse.santoshkumar/ich_windowing/data/rsna']' returned non-zero exit status 1.

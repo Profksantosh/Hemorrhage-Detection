@@ -1,0 +1,79 @@
+{
+  "test": "H1 BHSD-external-site degradation test",
+  "external_site": "BHSD",
+  "checkpoint": "runs/baselines_bhsd_excluded/baseline2_fixed_three/checkpoint_last.pt",
+  "bhsd_exclusion_confirmed": true,
+  "n_bhsd_volumes": 192,
+  "internal_metrics": {
+    "auroc": 0.9344620097069356,
+    "accuracy": 0.94125,
+    "sens_epidural": 0.05263157894736842,
+    "sens_intraparenchymal": 0.665,
+    "sens_intraventricular": 0.6408450704225352,
+    "sens_subarachnoid": 0.37777777777777777,
+    "sens_subdural": 0.4575645756457565
+  },
+  "external_metrics": {
+    "auroc": 0.8617842519014284,
+    "accuracy": 0.8071517801374141,
+    "sens_epidural": 0.20441988950276244,
+    "sens_intraparenchymal": 0.7260428410372041,
+    "sens_intraventricular": 0.3281907433380084,
+    "sens_subarachnoid": 0.4672131147540984,
+    "sens_subdural": 0.27058823529411763
+  },
+  "observed_degradation": {
+    "pooled_auroc_degradation": 0.07777497324722736,
+    "pooled_accuracy_degradation": 0.1424682282736637,
+    "pooled_degradation": 0.11012160076044553,
+    "subtype_degradations": {
+      "epidural": -2.8839779005524866,
+      "intraparenchymal": -0.09179374592060756,
+      "intraventricular": 0.4878781807253056,
+      "subarachnoid": -0.23674059787849575,
+      "subdural": 0.40863377609108165
+    },
+    "stratified_degradation_mean_over_subtypes": -0.4632000575070405
+  },
+  "observed_diff_stratified_minus_pooled": -0.573321658267486,
+  "bootstrap": {
+    "n_bootstrap": 1000,
+    "seed": 0,
+    "n_degenerate_dropped": 0,
+    "pooled_degradation_ci": [
+      0.09011763467969233,
+      0.13039387419766815
+    ],
+    "stratified_degradation_ci": [
+      -0.9120101649193726,
+      0.2264309431732956
+    ],
+    "edh_degradation_ci": [
+      -5.2874653219281,
+      0.18257575757575747
+    ],
+    "p_value": 0.62
+  },
+  "size_tercile_status": "SKIPPED -- RSNA training pool has no lesion_size_mm3 (masks unavailable; rsna.py returns None for all samples), so training-distribution tercile thresholds cannot be established. Using BHSD test data alone to define thresholds would be test-set contamination. Size-tercile results are absent from this output. Raw BHSD positive-slice size statistics are reported below.",
+  "bhsd_size_stats_positive_slices": {
+    "n_positive_slices_with_size": 2367,
+    "min_mm3": 9.791141510009766,
+    "p25_mm3": 1850.363740682602,
+    "median_mm3": 10033.472262382507,
+    "p75_mm3": 35609.00688171387,
+    "max_mm3": 194150.86105120182,
+    "mean_mm3": 24810.643868130424
+  },
+  "h1_result": "NOT CONFIRMED (p >= 0.05)",
+  "config": {
+    "backbone": "densenet121",
+    "epochs": 12,
+    "batch_size": 32,
+    "lr": 0.0001,
+    "weight_decay": 1e-05,
+    "fold": 0,
+    "n_folds": 5,
+    "max_samples": 20000,
+    "seed": 0
+  }
+}

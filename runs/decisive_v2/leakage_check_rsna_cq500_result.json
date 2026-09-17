@@ -1,0 +1,132 @@
+{
+  "rsna_training_pool": {
+    "rsna_root": "data/rsna/rsna-intracranial-hemorrhage-detection",
+    "fold": 0,
+    "n_folds": 5,
+    "seed": 0,
+    "max_samples": 20000,
+    "n_train_slices": 16000,
+    "n_train_patients": 9512
+  },
+  "cq500": {
+    "n_slices": 22309,
+    "n_studies": 473
+  },
+  "check1_exact_id_overlap": {
+    "method": "verify_disjoint_from_external (exhaustive over all patient/study IDs)",
+    "result": "PASS: no patient/study ID string shared between the RSNA training pool and CQ500."
+  },
+  "check2_phash_near_duplicates": {
+    "method": "find_near_duplicates (imagehash.phash, brain window 40/80, Hamming distance)",
+    "max_hamming_distance": 4,
+    "n_rsna_hashed": 400,
+    "n_cq500_hashed": 2000,
+    "n_compared_pairs": 800000,
+    "subsampled": true,
+    "seed": 0,
+    "n_hits": 302,
+    "top_hits": [
+      {
+        "rsna_id": "RSNA_4874cd8ebac6",
+        "cq500_id": "CQ500_611a723ed1a3",
+        "hamming": 0
+      },
+      {
+        "rsna_id": "RSNA_4874cd8ebac6",
+        "cq500_id": "CQ500_5d949b3b965b",
+        "hamming": 0
+      },
+      {
+        "rsna_id": "RSNA_d8c49e1a3b7f",
+        "cq500_id": "CQ500_b94475003f18",
+        "hamming": 0
+      },
+      {
+        "rsna_id": "RSNA_5e539095106b",
+        "cq500_id": "CQ500_b94475003f18",
+        "hamming": 0
+      },
+      {
+        "rsna_id": "RSNA_eb0baa45bec7",
+        "cq500_id": "CQ500_cf40d3d16680",
+        "hamming": 0
+      },
+      {
+        "rsna_id": "RSNA_9f3d7f7c4a83",
+        "cq500_id": "CQ500_cf40d3d16680",
+        "hamming": 0
+      },
+      {
+        "rsna_id": "RSNA_2896318153b2",
+        "cq500_id": "CQ500_611a723ed1a3",
+        "hamming": 2
+      },
+      {
+        "rsna_id": "RSNA_2896318153b2",
+        "cq500_id": "CQ500_5d949b3b965b",
+        "hamming": 2
+      },
+      {
+        "rsna_id": "RSNA_2896318153b2",
+        "cq500_id": "CQ500_5d3569dcd882",
+        "hamming": 2
+      },
+      {
+        "rsna_id": "RSNA_2896318153b2",
+        "cq500_id": "CQ500_0a131b35183e",
+        "hamming": 2
+      },
+      {
+        "rsna_id": "RSNA_2896318153b2",
+        "cq500_id": "CQ500_d0b3bc0d2966",
+        "hamming": 2
+      },
+      {
+        "rsna_id": "RSNA_2896318153b2",
+        "cq500_id": "CQ500_3a444da19d0c",
+        "hamming": 2
+      },
+      {
+        "rsna_id": "RSNA_4874cd8ebac6",
+        "cq500_id": "CQ500_c959de214b98",
+        "hamming": 2
+      },
+      {
+        "rsna_id": "RSNA_4874cd8ebac6",
+        "cq500_id": "CQ500_8dcc9feb6451",
+        "hamming": 2
+      },
+      {
+        "rsna_id": "RSNA_4874cd8ebac6",
+        "cq500_id": "CQ500_10d0e30b2b3a",
+        "hamming": 2
+      },
+      {
+        "rsna_id": "RSNA_4874cd8ebac6",
+        "cq500_id": "CQ500_0a131b35183e",
+        "hamming": 2
+      },
+      {
+        "rsna_id": "RSNA_4874cd8ebac6",
+        "cq500_id": "CQ500_9d0bd6259109",
+        "hamming": 2
+      },
+      {
+        "rsna_id": "RSNA_4874cd8ebac6",
+        "cq500_id": "CQ500_5c5b1c01893e",
+        "hamming": 2
+      },
+      {
+        "rsna_id": "RSNA_4874cd8ebac6",
+        "cq500_id": "CQ500_b2c1133ae714",
+        "hamming": 2
+      },
+      {
+        "rsna_id": "RSNA_4874cd8ebac6",
+        "cq500_id": "CQ500_3a444da19d0c",
+        "hamming": 2
+      }
+    ],
+    "result": "FLAGGED: 302 near-duplicate candidate pair(s) found in the subsample -- inspect before trusting the CQ500 zero-shot result as leakage-free."
+  }
+}

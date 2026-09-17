@@ -1,0 +1,25 @@
+building CQ500 external test set ...
+CQ500: 22309 slices, 473 studies
+
+=== CQ500 external -- SLICE level (noisy: study labels propagated) ===
+n = 22309, positive rate = 0.384
+  WICL        AUROC=0.6507  sens@0.5=0.2324  spec@0.5=0.9802
+  baseline 4c AUROC=0.6442  sens@0.5=0.2442  spec@0.5=0.9795
+  diff (WICL-4c) AUROC=+0.0065   DeLong z=+2.314  p=0.0207
+  sensitivity delta = -0.0118
+
+=== CQ500 external -- STUDY level (agg=max) ===
+n = 473, positive rate = 0.416
+  WICL        AUROC=0.9024  sens@0.5=0.8629  spec@0.5=0.7645
+  baseline 4c AUROC=0.9056  sens@0.5=0.8985  spec@0.5=0.7536
+  diff (WICL-4c) AUROC=-0.0032   DeLong z=-0.375  p=0.7078
+  sensitivity delta = -0.0355
+
+=== CQ500 external -- STUDY level (agg=mean) ===
+n = 473, positive rate = 0.416
+  WICL        AUROC=0.9151  sens@0.5=0.0863  spec@0.5=1.0000
+  baseline 4c AUROC=0.9125  sens@0.5=0.1066  spec@0.5=1.0000
+  diff (WICL-4c) AUROC=+0.0026   DeLong z=+0.370  p=0.7113
+  sensitivity delta = -0.0203
+
+saved runs/decisive_v2/external_cq500_result.json

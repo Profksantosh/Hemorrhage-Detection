@@ -1,0 +1,346 @@
+{
+  "cq500_slice_level": {
+    "auc_wicl": 0.6472560743003979,
+    "auc_baseline4c": 0.6542187339168073,
+    "auc_diff": -0.006962659616409406,
+    "delong_p": 0.028383623509965927,
+    "sens_wicl": 0.25528189564608383,
+    "sens_baseline4c": 0.24571028364655073,
+    "spec_wicl": 0.9690729151506331,
+    "spec_baseline4c": 0.9719109299956338,
+    "n": 22309,
+    "positive_rate": 0.38401541113853455
+  },
+  "cq500_study_level_max": {
+    "auc_wicl": 0.9022015007724564,
+    "auc_baseline4c": 0.9133929228279261,
+    "auc_diff": -0.011191422055469635,
+    "delong_p": 0.20860184736492648,
+    "sens_wicl": 0.868020304568528,
+    "sens_baseline4c": 0.8934010152284264,
+    "spec_wicl": 0.6992753623188406,
+    "spec_baseline4c": 0.7101449275362319,
+    "n": 473,
+    "positive_rate": 0.41649049520492554
+  },
+  "cq500_study_level_mean": {
+    "auc_wicl": 0.9043809313617301,
+    "auc_baseline4c": 0.9167586257632603,
+    "auc_diff": -0.012377694401530137,
+    "delong_p": 0.116904385645898,
+    "sens_wicl": 0.1218274111675127,
+    "sens_baseline4c": 0.09644670050761421,
+    "spec_wicl": 0.9963768115942029,
+    "spec_baseline4c": 1.0,
+    "n": 473,
+    "positive_rate": 0.41649049520492554
+  },
+  "cq500_stratified_wicl": {
+    "condition": "wicl",
+    "site": "cq500",
+    "n_samples": 22309,
+    "n_patients": 473,
+    "pooled_auroc": 0.647256074300398,
+    "pooled_accuracy": 0.6949661571563046,
+    "pooled_accuracy_ci": [
+      0.6468049233022707,
+      0.7375574709695562
+    ],
+    "pooled_sensitivity": 0.25528189564608383,
+    "pooled_sensitivity_ci": [
+      0.22107873746042153,
+      0.2936859244837404
+    ],
+    "pooled_specificity": 0.9690729151506331,
+    "pooled_specificity_ci": [
+      0.955593297480409,
+      0.9803656818624695
+    ],
+    "auroc_epidural": 0.5924889234248857,
+    "sensitivity_epidural": 0.0,
+    "sensitivity_epidural_ci": [
+      0.0,
+      0.0
+    ],
+    "specificity_epidural": 0.9996351696461145,
+    "specificity_epidural_ci": [
+      0.9992830689786235,
+      0.9999102015440884
+    ],
+    "auroc_intraparenchymal": 0.6276754381728296,
+    "sensitivity_intraparenchymal": 0.13453881884538818,
+    "sensitivity_intraparenchymal_ci": [
+      0.11009764696054873,
+      0.16134196448647414
+    ],
+    "specificity_intraparenchymal": 0.9960690375284074,
+    "specificity_intraparenchymal_ci": [
+      0.9938701702262892,
+      0.9977342080749863
+    ],
+    "auroc_intraventricular": 0.7599643368445539,
+    "sensitivity_intraventricular": 0.21061499578770007,
+    "sensitivity_intraventricular_ci": [
+      0.15317711341529378,
+      0.2528436442152369
+    ],
+    "specificity_intraventricular": 0.993561215793959,
+    "specificity_intraventricular_ci": [
+      0.9875374321175904,
+      0.9974544774840616
+    ],
+    "auroc_subarachnoid": 0.7436580077161372,
+    "sensitivity_subarachnoid": 0.24248417721518986,
+    "sensitivity_subarachnoid_ci": [
+      0.20422228892523053,
+      0.28867738855601577
+    ],
+    "specificity_subarachnoid": 0.9862999848339316,
+    "specificity_subarachnoid_ci": [
+      0.9804000737216615,
+      0.9906061559019461
+    ],
+    "auroc_subdural": 0.6569141358824311,
+    "sensitivity_subdural": 0.20403377110694185,
+    "sensitivity_subdural_ci": [
+      0.1539568894688512,
+      0.2666703724291273
+    ],
+    "specificity_subdural": 0.9691728205382366,
+    "specificity_subdural_ci": [
+      0.9496421904270511,
+      0.9824873974476886
+    ],
+    "sensitivity_size_small": NaN,
+    "sensitivity_size_medium": NaN,
+    "sensitivity_size_large": NaN,
+    "size_stratification_note": "no lesion_size_mm3 available for this site (expected for RSNA/CQ500/PhysioNet-ICH per Section IV-E; BHSD-derived data is the primary size-stratification source)",
+    "ece": 0.2891611477897511,
+    "ece_bin_accuracy": [
+      0.31867669489296796,
+      0.42201834862385323,
+      0.4793388429752066,
+      0.4827586206896552,
+      0.4470588235294118,
+      0.4626865671641791,
+      0.660377358490566,
+      0.49056603773584906,
+      0.5833333333333334,
+      0.4909090909090909,
+      0.6547619047619048,
+      0.569620253164557,
+      0.6355140186915887,
+      0.7251461988304093,
+      0.8987593052109181
+    ],
+    "ece_bin_confidence": [
+      0.0023469912646089984,
+      0.09752184480702111,
+      0.16326028330266967,
+      0.229250254173731,
+      0.2986022447838503,
+      0.36589123419861297,
+      0.434983307460569,
+      0.5007394012415184,
+      0.5651786062452528,
+      0.6279857429591092,
+      0.704016367594401,
+      0.7690693811525272,
+      0.8374666499200268,
+      0.9046284479704517,
+      0.990817319636901
+    ],
+    "ece_bin_count": [
+      19013,
+      218,
+      121,
+      116,
+      85,
+      67,
+      53,
+      53,
+      72,
+      55,
+      84,
+      79,
+      107,
+      171,
+      2015
+    ]
+  },
+  "cq500_stratified_baseline4c": {
+    "condition": "random_window_single",
+    "site": "cq500",
+    "n_samples": 22309,
+    "n_patients": 473,
+    "pooled_auroc": 0.6542187339168074,
+    "pooled_accuracy": 0.6930386839392173,
+    "pooled_accuracy_ci": [
+      0.6466778806798207,
+      0.7368477663510027
+    ],
+    "pooled_sensitivity": 0.24571028364655073,
+    "pooled_sensitivity_ci": [
+      0.21258132928115958,
+      0.2824782499653258
+    ],
+    "pooled_specificity": 0.9719109299956338,
+    "pooled_specificity_ci": [
+      0.9582669888304155,
+      0.9833075671182837
+    ],
+    "auroc_epidural": 0.6126968503937008,
+    "sensitivity_epidural": 0.0,
+    "sensitivity_epidural_ci": [
+      0.0,
+      0.0
+    ],
+    "specificity_epidural": 0.9997719810288216,
+    "specificity_epidural_ci": [
+      0.9994289537557466,
+      1.0
+    ],
+    "auroc_intraparenchymal": 0.6087380719103492,
+    "sensitivity_intraparenchymal": 0.13503649635036497,
+    "sensitivity_intraparenchymal_ci": [
+      0.11102564653491662,
+      0.15996895383039764
+    ],
+    "specificity_intraparenchymal": 0.9959461949511701,
+    "specificity_intraparenchymal_ci": [
+      0.9940333817123921,
+      0.9974672850728266
+    ],
+    "auroc_intraventricular": 0.7163074040035555,
+    "sensitivity_intraventricular": 0.2064026958719461,
+    "sensitivity_intraventricular_ci": [
+      0.15096211551208327,
+      0.24962510638981225
+    ],
+    "specificity_intraventricular": 0.9934665277909289,
+    "specificity_intraventricular_ci": [
+      0.9874930808675605,
+      0.9970794526494798
+    ],
+    "auroc_subarachnoid": 0.7247490959551391,
+    "sensitivity_subarachnoid": 0.2088607594936709,
+    "sensitivity_subarachnoid_ci": [
+      0.16389658356417358,
+      0.2583462918660287
+    ],
+    "specificity_subarachnoid": 0.9908498053687882,
+    "specificity_subarachnoid_ci": [
+      0.98689877008663,
+      0.9937718775875753
+    ],
+    "auroc_subdural": 0.6546067420588578,
+    "sensitivity_subdural": 0.21106941838649157,
+    "sensitivity_subdural_ci": [
+      0.1555383708940934,
+      0.27569242328377097
+    ],
+    "specificity_subdural": 0.9678842246121822,
+    "specificity_subdural_ci": [
+      0.9485653671246984,
+      0.9820667120556493
+    ],
+    "sensitivity_size_small": NaN,
+    "sensitivity_size_medium": NaN,
+    "sensitivity_size_large": NaN,
+    "size_stratification_note": "no lesion_size_mm3 available for this site (expected for RSNA/CQ500/PhysioNet-ICH per Section IV-E; BHSD-derived data is the primary size-stratification source)",
+    "ece": 0.28978521539398583,
+    "ece_bin_accuracy": [
+      0.3175821287779238,
+      0.5217391304347826,
+      0.5147058823529411,
+      0.41964285714285715,
+      0.6458333333333334,
+      0.625,
+      0.52,
+      0.5384615384615384,
+      0.5942028985507246,
+      0.5909090909090909,
+      0.5662650602409639,
+      0.7040816326530612,
+      0.6551724137931034,
+      0.75,
+      0.9085992428339643
+    ],
+    "ece_bin_confidence": [
+      0.0023335303845191313,
+      0.09765979461371899,
+      0.16187303677639542,
+      0.23009908332356385,
+      0.29953840530167025,
+      0.36467838452921975,
+      0.4384390060106913,
+      0.5008298347775753,
+      0.5675707234852556,
+      0.6341096379540183,
+      0.6984909578978297,
+      0.7706456737858909,
+      0.8352645152601702,
+      0.9049604816929154,
+      0.9893466916001765
+    ],
+    "ece_bin_count": [
+      19025,
+      276,
+      136,
+      112,
+      96,
+      72,
+      75,
+      52,
+      69,
+      66,
+      83,
+      98,
+      116,
+      184,
+      1849
+    ]
+  },
+  "cq500_stratified_subtype_summary": {
+    "epidural": {
+      "auroc_wicl": 0.5924889234248857,
+      "auroc_baseline4c": 0.6126968503937008,
+      "sensitivity_wicl": 0.0,
+      "sensitivity_baseline4c": 0.0,
+      "sensitivity_delta_wicl_minus_baseline4c": 0.0,
+      "meets_min_clinically_relevant_sensitivity_delta": false
+    },
+    "intraparenchymal": {
+      "auroc_wicl": 0.6276754381728296,
+      "auroc_baseline4c": 0.6087380719103492,
+      "sensitivity_wicl": 0.13453881884538818,
+      "sensitivity_baseline4c": 0.13503649635036497,
+      "sensitivity_delta_wicl_minus_baseline4c": -0.0004976775049767845,
+      "meets_min_clinically_relevant_sensitivity_delta": false
+    },
+    "intraventricular": {
+      "auroc_wicl": 0.7599643368445539,
+      "auroc_baseline4c": 0.7163074040035555,
+      "sensitivity_wicl": 0.21061499578770007,
+      "sensitivity_baseline4c": 0.2064026958719461,
+      "sensitivity_delta_wicl_minus_baseline4c": 0.004212299915753975,
+      "meets_min_clinically_relevant_sensitivity_delta": false
+    },
+    "subarachnoid": {
+      "auroc_wicl": 0.7436580077161372,
+      "auroc_baseline4c": 0.7247490959551391,
+      "sensitivity_wicl": 0.24248417721518986,
+      "sensitivity_baseline4c": 0.2088607594936709,
+      "sensitivity_delta_wicl_minus_baseline4c": 0.03362341772151897,
+      "meets_min_clinically_relevant_sensitivity_delta": false
+    },
+    "subdural": {
+      "auroc_wicl": 0.6569141358824311,
+      "auroc_baseline4c": 0.6546067420588578,
+      "sensitivity_wicl": 0.20403377110694185,
+      "sensitivity_baseline4c": 0.21106941838649157,
+      "sensitivity_delta_wicl_minus_baseline4c": -0.007035647279549723,
+      "meets_min_clinically_relevant_sensitivity_delta": false
+    }
+  }
+}

@@ -1,0 +1,42 @@
+building CQ500 external test set ...
+CQ500: 22309 slices, 473 studies
+
+=== CQ500 external -- SLICE level (noisy: study labels propagated) ===
+n = 22309, positive rate = 0.384
+  baseline1 (fixed_single) AUROC=0.6265  sens@0.5=0.2525  spec@0.5=0.9728
+  baseline2 (fixed_three)  AUROC=0.6538  sens@0.5=0.2600  spec@0.5=0.9754
+  diff (b1-b2) AUROC=-0.0273   DeLong z=-7.865  p=0.0000
+  sensitivity delta (b1-b2) = -0.0075
+
+=== CQ500 external -- STUDY level (agg=max) ===
+n = 473, positive rate = 0.416
+  baseline1 (fixed_single) AUROC=0.8945  sens@0.5=0.9036  spec@0.5=0.6268
+  baseline2 (fixed_three)  AUROC=0.9054  sens@0.5=0.9086  spec@0.5=0.6920
+  diff (b1-b2) AUROC=-0.0109   DeLong z=-1.047  p=0.2951
+  sensitivity delta (b1-b2) = -0.0051
+
+=== CQ500 external -- STUDY level (agg=mean) ===
+n = 473, positive rate = 0.416
+  baseline1 (fixed_single) AUROC=0.8930  sens@0.5=0.1218  spec@0.5=1.0000
+  baseline2 (fixed_three)  AUROC=0.9063  sens@0.5=0.1624  spec@0.5=1.0000
+  diff (b1-b2) AUROC=-0.0133   DeLong z=-1.411  p=0.1583
+  sensitivity delta (b1-b2) = -0.0406
+
+=== CQ500 external -- SUBTYPE/SIZE-STRATIFIED (evaluate_pooled_and_stratified, slice level, noisy: study labels propagated) ===
+pooled AUROC   b1=0.6265  b2=0.6538
+pooled sens@0.5 b1=0.2525 (0.21834613165631464, 0.28923740530646547)  b2=0.2600 (0.22372529291137747, 0.29967552144939213)
+
+subtype            AUROC(b1) AUROC(b2)  sens(b1)  sens(b2)   delta(pp)  flag
+epidural              0.6079    0.6043    0.0000    0.0210       -2.10  
+intraparenchymal      0.6107    0.5933    0.1316    0.1430       -1.14  
+intraventricular      0.7188    0.7515    0.2308    0.2098        2.11  
+subarachnoid          0.7235    0.7281    0.2314    0.2540       -2.25  
+subdural              0.6295    0.6523    0.2205    0.2275       -0.70  
+
+--- EDH (primary H1/H2 subtype of interest) ---
+  baseline1 sens=0.0000  baseline2 sens=0.0210  delta(b1-b2)=-2.10pp (threshold: 5.0pp)
+
+size-tercile stratification: no lesion_size_mm3 available for this site (expected for RSNA/CQ500/PhysioNet-ICH per Section IV-E; BHSD-derived data is the primary size-stratification source)
+
+saved runs/baselines_bhsd_excluded/external_cq500_baselines_result.json
+

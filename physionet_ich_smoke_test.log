@@ -1,0 +1,29 @@
+PhysioNet-ICH root: data/physionet_ich
+======================================================================
+STEP 1: calling the SHIPPED, UNMODIFIED build_samples() ...
+======================================================================
+CONFIRMED FAILURE (as expected given the real file naming):
+  no volume found for patient 49 in data/physionet_ich/ct_scans (tried ['data/physionet_ich/ct_scans/49.nii', 'data/physionet_ich/ct_scans/49.nii.gz'])
+
+  require_columns() did NOT raise -- i.e. the CSV column check passed cleanly against the real hemorrhage_diagnosis_raw_ct.csv. The failure is purely in the ct_scans/<PatientNumber>.nii filename join: the loader builds the filename via str(int(row['PatientNumber'])) (no zero-padding), e.g. '49.nii', but the real released files are zero-padded to 3 digits, e.g. '049.nii'.
+
+======================================================================
+STEP 2: diagnostic-only re-implementation with zero-padded filename matching, to sanity-check the rest of the schema
+======================================================================
+CSV columns found: ['PatientNumber', 'SliceNumber', 'Intraventricular', 'Intraparenchymal', 'Subarachnoid', 'Epidural', 'Subdural', 'No_Hemorrhage', 'Fracture_Yes_No']
+Missing required columns: NONE
+Total CSV rows (= candidate samples): 2814
+Unique patients referenced in CSV: 75
+Rows with a matching CT volume file (zero-padded match): 2814
+Rows with NO matching CT volume file: 0
+Label matrix shape: (2814, 6) (expect (n_rows, 6), columns=('any', 'epidural', 'intraparenchymal', 'intraventricular', 'subarachnoid', 'subdural'))
+Positive rate per column: {'any': np.float32(0.113), 'epidural': np.float32(0.0615), 'intraparenchymal': np.float32(0.0259), 'intraventricular': np.float32(0.0085), 'subarachnoid': np.float32(0.0064), 'subdural': np.float32(0.0199)}
+Patients with a mask file present: 75 / 75
+
+Spot-checking HU loading for 2 patients ...
+  patient 049: volume shape (512, 512, 39), slice0 shape (512, 512), slice0 HU range [-1022.0, 2830.0]
+  patient 050: volume shape (512, 512, 32), slice0 shape (512, 512), slice0 HU range [-1015.0, 1860.0]
+
+======================================================================
+SUMMARY: with zero-padded filenames, all rows resolve to a real CT volume file, columns match exactly, and the label schema/shape is sane. The ONLY blocking discrepancy found is the non-zero-padded filename join in build_samples().
+======================================================================

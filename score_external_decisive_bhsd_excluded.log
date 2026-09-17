@@ -1,0 +1,40 @@
+building CQ500 external test set ...
+CQ500: 22309 slices, 473 studies
+
+=== CQ500 external -- SLICE level (noisy: study labels propagated) ===
+n = 22309, positive rate = 0.384
+  WICL        AUROC=0.6473  sens@0.5=0.2553  spec@0.5=0.9691
+  baseline 4c AUROC=0.6542  sens@0.5=0.2457  spec@0.5=0.9719
+  diff (WICL-4c) AUROC=-0.0070   DeLong z=-2.192  p=0.0284
+  sensitivity delta = +0.0096
+
+=== CQ500 external -- STUDY level (agg=max) ===
+n = 473, positive rate = 0.416
+  WICL        AUROC=0.9022  sens@0.5=0.8680  spec@0.5=0.6993
+  baseline 4c AUROC=0.9134  sens@0.5=0.8934  spec@0.5=0.7101
+  diff (WICL-4c) AUROC=-0.0112   DeLong z=-1.257  p=0.2086
+  sensitivity delta = -0.0254
+
+=== CQ500 external -- STUDY level (agg=mean) ===
+n = 473, positive rate = 0.416
+  WICL        AUROC=0.9044  sens@0.5=0.1218  spec@0.5=0.9964
+  baseline 4c AUROC=0.9168  sens@0.5=0.0964  spec@0.5=1.0000
+  diff (WICL-4c) AUROC=-0.0124   DeLong z=-1.568  p=0.1169
+  sensitivity delta = +0.0254
+
+=== CQ500 external -- SUBTYPE/SIZE-STRATIFIED (evaluate_pooled_and_stratified, slice level, noisy: study labels propagated) ===
+pooled AUROC   WICL=0.6473  baseline4c=0.6542
+pooled sens@0.5 WICL=0.2553 (0.22107873746042153, 0.2936859244837404)  baseline4c=0.2457 (0.21258132928115958, 0.2824782499653258)
+
+subtype             AUROC(W)  AUROC(B)   sens(W)   sens(B)   delta(pp)  flag
+epidural              0.5925    0.6127    0.0000    0.0000        0.00  
+intraparenchymal      0.6277    0.6087    0.1345    0.1350       -0.05  
+intraventricular      0.7600    0.7163    0.2106    0.2064        0.42  
+subarachnoid          0.7437    0.7247    0.2425    0.2089        3.36  
+subdural              0.6569    0.6546    0.2040    0.2111       -0.70  
+
+--- EDH (primary H2 subtype of interest) ---
+  WICL sens=0.0000  baseline4c sens=0.0000  delta=+0.00pp (threshold: 5.0pp) -- does NOT meet the clinically-relevant sensitivity-delta threshold
+
+saved runs/baselines_bhsd_excluded/external_cq500_result.json
+

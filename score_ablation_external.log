@@ -1,0 +1,228 @@
+building CQ500 external test set ...
+CQ500: 22309 slices, 473 studies
+building PhysioNet-ICH external test set ...
+PhysioNet-ICH: 2814 slices, 75 patients
+
+scoring baseline4c (baseline4c_random_window_single, wicl_wrapper=False) ...
+
+scoring pred_only (wicl_ablation_pred_only, wicl_wrapper=True) ...
+
+scoring embed_only (wicl_ablation_embed_only, wicl_wrapper=True) ...
+
+scoring wicl_full (decisive_wicl, wicl_wrapper=True) ...
+
+==================== CQ500 ====================
+
+=== CQ500 slice: pred_only vs baseline4c ===
+n = 22309, positive rate = 0.384
+  pred_only      AUROC=0.6319  sens@0.5=0.2594  spec@0.5=0.9657
+  baseline4c     AUROC=0.6542  sens@0.5=0.2457  spec@0.5=0.9719
+  diff (pred_only-baseline4c) AUROC=-0.0224   DeLong z=-6.978  p=0.0000
+  sensitivity delta (pred_only-baseline4c) = +0.0137
+
+=== CQ500 study(agg=max): pred_only vs baseline4c ===
+n = 473, positive rate = 0.416
+  pred_only      AUROC=0.9004  sens@0.5=0.8883  spec@0.5=0.6775
+  baseline4c     AUROC=0.9134  sens@0.5=0.8934  spec@0.5=0.7101
+  diff (pred_only-baseline4c) AUROC=-0.0129   DeLong z=-1.416  p=0.1567
+  sensitivity delta (pred_only-baseline4c) = -0.0051
+
+=== CQ500 study(agg=mean): pred_only vs baseline4c ===
+n = 473, positive rate = 0.416
+  pred_only      AUROC=0.9034  sens@0.5=0.1066  spec@0.5=0.9964
+  baseline4c     AUROC=0.9168  sens@0.5=0.0964  spec@0.5=1.0000
+  diff (pred_only-baseline4c) AUROC=-0.0133   DeLong z=-1.561  p=0.1185
+  sensitivity delta (pred_only-baseline4c) = +0.0102
+
+=== CQ500 slice: embed_only vs baseline4c ===
+n = 22309, positive rate = 0.384
+  embed_only     AUROC=0.6339  sens@0.5=0.2499  spec@0.5=0.9699
+  baseline4c     AUROC=0.6542  sens@0.5=0.2457  spec@0.5=0.9719
+  diff (embed_only-baseline4c) AUROC=-0.0203   DeLong z=-6.301  p=0.0000
+  sensitivity delta (embed_only-baseline4c) = +0.0042
+
+=== CQ500 study(agg=max): embed_only vs baseline4c ===
+n = 473, positive rate = 0.416
+  embed_only     AUROC=0.9110  sens@0.5=0.8832  spec@0.5=0.7210
+  baseline4c     AUROC=0.9134  sens@0.5=0.8934  spec@0.5=0.7101
+  diff (embed_only-baseline4c) AUROC=-0.0024   DeLong z=-0.281  p=0.7788
+  sensitivity delta (embed_only-baseline4c) = -0.0102
+
+=== CQ500 study(agg=mean): embed_only vs baseline4c ===
+n = 473, positive rate = 0.416
+  embed_only     AUROC=0.9117  sens@0.5=0.1117  spec@0.5=1.0000
+  baseline4c     AUROC=0.9168  sens@0.5=0.0964  spec@0.5=1.0000
+  diff (embed_only-baseline4c) AUROC=-0.0051   DeLong z=-0.670  p=0.5030
+  sensitivity delta (embed_only-baseline4c) = +0.0152
+
+=== CQ500 slice: pred_only vs wicl_full ===
+n = 22309, positive rate = 0.384
+  pred_only      AUROC=0.6319  sens@0.5=0.2594  spec@0.5=0.9657
+  wicl_full      AUROC=0.6473  sens@0.5=0.2553  spec@0.5=0.9691
+  diff (pred_only-wicl_full) AUROC=-0.0154   DeLong z=-5.368  p=0.0000
+  sensitivity delta (pred_only-wicl_full) = +0.0041
+
+=== CQ500 study(agg=max): pred_only vs wicl_full ===
+n = 473, positive rate = 0.416
+  pred_only      AUROC=0.9004  sens@0.5=0.8883  spec@0.5=0.6775
+  wicl_full      AUROC=0.9022  sens@0.5=0.8680  spec@0.5=0.6993
+  diff (pred_only-wicl_full) AUROC=-0.0018   DeLong z=-0.187  p=0.8519
+  sensitivity delta (pred_only-wicl_full) = +0.0203
+
+=== CQ500 study(agg=mean): pred_only vs wicl_full ===
+n = 473, positive rate = 0.416
+  pred_only      AUROC=0.9034  sens@0.5=0.1066  spec@0.5=0.9964
+  wicl_full      AUROC=0.9044  sens@0.5=0.1218  spec@0.5=0.9964
+  diff (pred_only-wicl_full) AUROC=-0.0009   DeLong z=-0.118  p=0.9062
+  sensitivity delta (pred_only-wicl_full) = -0.0152
+
+=== CQ500 slice: embed_only vs wicl_full ===
+n = 22309, positive rate = 0.384
+  embed_only     AUROC=0.6339  sens@0.5=0.2499  spec@0.5=0.9699
+  wicl_full      AUROC=0.6473  sens@0.5=0.2553  spec@0.5=0.9691
+  diff (embed_only-wicl_full) AUROC=-0.0134   DeLong z=-6.767  p=0.0000
+  sensitivity delta (embed_only-wicl_full) = -0.0054
+
+=== CQ500 study(agg=max): embed_only vs wicl_full ===
+n = 473, positive rate = 0.416
+  embed_only     AUROC=0.9110  sens@0.5=0.8832  spec@0.5=0.7210
+  wicl_full      AUROC=0.9022  sens@0.5=0.8680  spec@0.5=0.6993
+  diff (embed_only-wicl_full) AUROC=+0.0088   DeLong z=+1.271  p=0.2037
+  sensitivity delta (embed_only-wicl_full) = +0.0152
+
+=== CQ500 study(agg=mean): embed_only vs wicl_full ===
+n = 473, positive rate = 0.416
+  embed_only     AUROC=0.9117  sens@0.5=0.1117  spec@0.5=1.0000
+  wicl_full      AUROC=0.9044  sens@0.5=0.1218  spec@0.5=0.9964
+  diff (embed_only-wicl_full) AUROC=+0.0073   DeLong z=+1.226  p=0.2203
+  sensitivity delta (embed_only-wicl_full) = -0.0102
+
+=== CQ500 slice: pred_only vs embed_only ===
+n = 22309, positive rate = 0.384
+  pred_only      AUROC=0.6319  sens@0.5=0.2594  spec@0.5=0.9657
+  embed_only     AUROC=0.6339  sens@0.5=0.2499  spec@0.5=0.9699
+  diff (pred_only-embed_only) AUROC=-0.0020   DeLong z=-0.699  p=0.4847
+  sensitivity delta (pred_only-embed_only) = +0.0095
+
+=== CQ500 study(agg=max): pred_only vs embed_only ===
+n = 473, positive rate = 0.416
+  pred_only      AUROC=0.9004  sens@0.5=0.8883  spec@0.5=0.6775
+  embed_only     AUROC=0.9110  sens@0.5=0.8832  spec@0.5=0.7210
+  diff (pred_only-embed_only) AUROC=-0.0105   DeLong z=-1.245  p=0.2132
+  sensitivity delta (pred_only-embed_only) = +0.0051
+
+=== CQ500 study(agg=mean): pred_only vs embed_only ===
+n = 473, positive rate = 0.416
+  pred_only      AUROC=0.9034  sens@0.5=0.1066  spec@0.5=0.9964
+  embed_only     AUROC=0.9117  sens@0.5=0.1117  spec@0.5=1.0000
+  diff (pred_only-embed_only) AUROC=-0.0082   DeLong z=-1.094  p=0.2738
+  sensitivity delta (pred_only-embed_only) = -0.0051
+
+==================== PhysioNet-ICH ====================
+
+=== PhysioNet slice: pred_only vs baseline4c ===
+n = 2814, positive rate = 0.113
+  pred_only      AUROC=0.8571  sens@0.5=0.6226  spec@0.5=0.8710
+  baseline4c     AUROC=0.8818  sens@0.5=0.6195  spec@0.5=0.9046
+  diff (pred_only-baseline4c) AUROC=-0.0247   DeLong z=-2.846  p=0.0044
+  sensitivity delta (pred_only-baseline4c) = +0.0031
+
+=== PhysioNet patient(agg=max): pred_only vs baseline4c ===
+n = 75, positive rate = 0.480
+  pred_only      AUROC=0.7942  sens@0.5=1.0000  spec@0.5=0.0256
+  baseline4c     AUROC=0.8405  sens@0.5=1.0000  spec@0.5=0.0513
+  diff (pred_only-baseline4c) AUROC=-0.0463   DeLong z=-0.893  p=0.3716
+  sensitivity delta (pred_only-baseline4c) = +0.0000
+
+=== PhysioNet patient(agg=mean): pred_only vs baseline4c ===
+n = 75, positive rate = 0.480
+  pred_only      AUROC=0.8640  sens@0.5=0.0000  spec@0.5=1.0000
+  baseline4c     AUROC=0.8853  sens@0.5=0.0000  spec@0.5=1.0000
+  diff (pred_only-baseline4c) AUROC=-0.0214   DeLong z=-0.585  p=0.5583
+  sensitivity delta (pred_only-baseline4c) = +0.0000
+
+=== PhysioNet slice: embed_only vs baseline4c ===
+n = 2814, positive rate = 0.113
+  embed_only     AUROC=0.8603  sens@0.5=0.6667  spec@0.5=0.8490
+  baseline4c     AUROC=0.8818  sens@0.5=0.6195  spec@0.5=0.9046
+  diff (embed_only-baseline4c) AUROC=-0.0215   DeLong z=-2.545  p=0.0109
+  sensitivity delta (embed_only-baseline4c) = +0.0472
+
+=== PhysioNet patient(agg=max): embed_only vs baseline4c ===
+n = 75, positive rate = 0.480
+  embed_only     AUROC=0.7792  sens@0.5=1.0000  spec@0.5=0.0256
+  baseline4c     AUROC=0.8405  sens@0.5=1.0000  spec@0.5=0.0513
+  diff (embed_only-baseline4c) AUROC=-0.0613   DeLong z=-1.245  p=0.2133
+  sensitivity delta (embed_only-baseline4c) = +0.0000
+
+=== PhysioNet patient(agg=mean): embed_only vs baseline4c ===
+n = 75, positive rate = 0.480
+  embed_only     AUROC=0.8625  sens@0.5=0.0000  spec@0.5=1.0000
+  baseline4c     AUROC=0.8853  sens@0.5=0.0000  spec@0.5=1.0000
+  diff (embed_only-baseline4c) AUROC=-0.0228   DeLong z=-0.565  p=0.5722
+  sensitivity delta (embed_only-baseline4c) = +0.0000
+
+=== PhysioNet slice: pred_only vs wicl_full ===
+n = 2814, positive rate = 0.113
+  pred_only      AUROC=0.8571  sens@0.5=0.6226  spec@0.5=0.8710
+  wicl_full      AUROC=0.8630  sens@0.5=0.5912  spec@0.5=0.8842
+  diff (pred_only-wicl_full) AUROC=-0.0058   DeLong z=-0.717  p=0.4733
+  sensitivity delta (pred_only-wicl_full) = +0.0314
+
+=== PhysioNet patient(agg=max): pred_only vs wicl_full ===
+n = 75, positive rate = 0.480
+  pred_only      AUROC=0.7942  sens@0.5=1.0000  spec@0.5=0.0256
+  wicl_full      AUROC=0.7507  sens@0.5=1.0000  spec@0.5=0.0513
+  diff (pred_only-wicl_full) AUROC=+0.0434   DeLong z=+0.824  p=0.4100
+  sensitivity delta (pred_only-wicl_full) = +0.0000
+
+=== PhysioNet patient(agg=mean): pred_only vs wicl_full ===
+n = 75, positive rate = 0.480
+  pred_only      AUROC=0.8640  sens@0.5=0.0000  spec@0.5=1.0000
+  wicl_full      AUROC=0.8433  sens@0.5=0.0000  spec@0.5=1.0000
+  diff (pred_only-wicl_full) AUROC=+0.0207   DeLong z=+0.424  p=0.6716
+  sensitivity delta (pred_only-wicl_full) = +0.0000
+
+=== PhysioNet slice: embed_only vs wicl_full ===
+n = 2814, positive rate = 0.113
+  embed_only     AUROC=0.8603  sens@0.5=0.6667  spec@0.5=0.8490
+  wicl_full      AUROC=0.8630  sens@0.5=0.5912  spec@0.5=0.8842
+  diff (embed_only-wicl_full) AUROC=-0.0027   DeLong z=-0.521  p=0.6026
+  sensitivity delta (embed_only-wicl_full) = +0.0755
+
+=== PhysioNet patient(agg=max): embed_only vs wicl_full ===
+n = 75, positive rate = 0.480
+  embed_only     AUROC=0.7792  sens@0.5=1.0000  spec@0.5=0.0256
+  wicl_full      AUROC=0.7507  sens@0.5=1.0000  spec@0.5=0.0513
+  diff (embed_only-wicl_full) AUROC=+0.0285   DeLong z=+0.623  p=0.5332
+  sensitivity delta (embed_only-wicl_full) = +0.0000
+
+=== PhysioNet patient(agg=mean): embed_only vs wicl_full ===
+n = 75, positive rate = 0.480
+  embed_only     AUROC=0.8625  sens@0.5=0.0000  spec@0.5=1.0000
+  wicl_full      AUROC=0.8433  sens@0.5=0.0000  spec@0.5=1.0000
+  diff (embed_only-wicl_full) AUROC=+0.0192   DeLong z=+0.706  p=0.4799
+  sensitivity delta (embed_only-wicl_full) = +0.0000
+
+=== PhysioNet slice: pred_only vs embed_only ===
+n = 2814, positive rate = 0.113
+  pred_only      AUROC=0.8571  sens@0.5=0.6226  spec@0.5=0.8710
+  embed_only     AUROC=0.8603  sens@0.5=0.6667  spec@0.5=0.8490
+  diff (pred_only-embed_only) AUROC=-0.0031   DeLong z=-0.396  p=0.6918
+  sensitivity delta (pred_only-embed_only) = -0.0440
+
+=== PhysioNet patient(agg=max): pred_only vs embed_only ===
+n = 75, positive rate = 0.480
+  pred_only      AUROC=0.7942  sens@0.5=1.0000  spec@0.5=0.0256
+  embed_only     AUROC=0.7792  sens@0.5=1.0000  spec@0.5=0.0256
+  diff (pred_only-embed_only) AUROC=+0.0150   DeLong z=+0.267  p=0.7897
+  sensitivity delta (pred_only-embed_only) = +0.0000
+
+=== PhysioNet patient(agg=mean): pred_only vs embed_only ===
+n = 75, positive rate = 0.480
+  pred_only      AUROC=0.8640  sens@0.5=0.0000  spec@0.5=1.0000
+  embed_only     AUROC=0.8625  sens@0.5=0.0000  spec@0.5=1.0000
+  diff (pred_only-embed_only) AUROC=+0.0014   DeLong z=+0.029  p=0.9767
+  sensitivity delta (pred_only-embed_only) = +0.0000
+
+saved runs/baselines_bhsd_excluded/ablation_external_h2style_result.json

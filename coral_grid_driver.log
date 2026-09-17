@@ -1,0 +1,11 @@
+=== training dg_coral coral_weight=1 ===
+=== done w=1 ===
+=== training dg_coral coral_weight=10 ===
+=== done w=10 ===
+=== training dg_coral coral_weight=50 ===
+=== done w=50 ===
+=== training dg_coral coral_weight=200 ===
+=== done w=200 ===
+=== training dg_coral coral_weight=1000 ===
+=== done w=1000 ===
+ALL_CORAL_GRID_DONE

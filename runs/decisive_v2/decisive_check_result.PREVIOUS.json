@@ -1,0 +1,10 @@
+{
+  "auc_wicl": 0.9199124849364112,
+  "auc_baseline4c": 0.9249869546395854,
+  "auc_diff": -0.005074469703174156,
+  "delong_z": -0.9006497233626721,
+  "delong_p": 0.367774588184302,
+  "sensitivity_delta": 0.0,
+  "n_val_slices": 4000,
+  "n_val_patients": 2378
+}

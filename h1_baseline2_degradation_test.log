@@ -1,0 +1,44 @@
+2026-09-08 01:54:35,414 INFO loading RSNA sample index (max_samples=20000)...
+2026-09-08 01:54:45,496 INFO using cached patient index at data/rsna/rsna-intracranial-hemorrhage-detection/patient_index_cache.parquet
+2026-09-08 01:54:46,025 INFO patient-grouped 5-fold split verified leakage-free (11890 total patients)
+loading RSNA internal held-out fold ...
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+internal (RSNA fold 0): 4000 slices, 2378 patients
+building CQ500 external test set ...
+external (CQ500): 22309 slices, 473 studies
+
+=== baseline 2 (fixed_three_window): internal RSNA vs external CQ500 ===
+internal AUROC=0.9286  external AUROC=0.6508  relative degradation=+0.2992
+internal accuracy=0.9295  external accuracy=0.7020  relative degradation=+0.2447
+pooled degradation (mean of AUROC/accuracy relative degradation) = +0.2719
+
+per-subtype sensitivity relative degradation:
+  epidural           internal_sens=0.0952  external_sens=0.0079  rel_degradation=+0.9173
+  intraparenchymal   internal_sens=0.7000  external_sens=0.1418  rel_degradation=+0.7974
+  intraventricular   internal_sens=0.7179  external_sens=0.2241  rel_degradation=+0.6879
+  subarachnoid       internal_sens=0.3814  external_sens=0.2322  rel_degradation=+0.3912
+  subdural           internal_sens=0.5157  external_sens=0.2115  rel_degradation=+0.5898
+
+stratified degradation (mean over 5 subtypes) = +0.6767
+EDH-specific relative degradation = +0.9173 (H1/H2 priority subtype)
+
+observed H1 test statistic (stratified - pooled degradation) = +0.4048
+
+running 1000-resample independent two-sample bootstrap (patients resampled within each site, RSNA-internal and CQ500 resampled independently) ...
+
+=== H1 TEST RESULT (baseline 2, RSNA-internal -> CQ500-external) ===
+pooled degradation:      +0.2719 95% CI (0.2443067334580001, 0.3048065895324518)
+stratified degradation:  +0.6767 95% CI (0.5799453139110623, 0.727571907411801)
+EDH-specific degradation:+0.9173 95% CI (0.5955852498017447, 1.0)
+difference (stratified - pooled): +0.4048
+two-sided bootstrap p-value: 0.0000 (0/1000 degenerate replicates dropped)
+RESULT: stratified sensitivity degradation IS statistically significantly LARGER than pooled AUROC/accuracy degradation -- consistent with H1 (subtype-only test; size-tercile clause untested, see module docstring).
+
+saved runs/baselines_v1/h1_baseline2_degradation_result.json

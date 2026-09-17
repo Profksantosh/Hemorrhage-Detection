@@ -1,0 +1,27 @@
+NOTE (public-release trim, 2026-09-17): the original file was ~7MB, almost
+entirely a `kaggle` CLI download progress bar (tens of thousands of
+carriage-return-updated `NN%|...` lines with no information beyond "the
+download was in progress"). That progress-bar spam has been stripped; every
+line below with actual content (the command invoked, and the script's own
+printed status/instructions) is preserved verbatim. A copy of the untrimmed
+original is kept outside version control as
+`download_rsna.log.FULL_WITH_PROGRESS_BAR.bak_excluded_from_git` (see
+.gitignore) for anyone who wants the raw artifact.
+
+---
+
+Downloading rsna-intracranial-hemorrhage-detection.zip to data/rsna
+
+
+
+=== rsna ===
+Official RSNA 2019 challenge data (manuscript ref [27]). Requires accepting the competition rules on kaggle.com first (one-time, logged-in click) before the API download works. ~450GB uncompressed -- budget disk space and time.
+
+$ kaggle competitions download -c rsna-intracranial-hemorrhage-detection -p data/rsna
+  unzipping rsna-intracranial-hemorrhage-detection.zip ...
+  done -- leaving rsna-intracranial-hemorrhage-detection.zip in place in case you need to re-extract; delete it manually once you've verified the extracted contents.
+
+=== PhysioNet-ICH (manuscript ref [29]) is NOT downloaded by this script ===
+It is restricted-access: register at https://physionet.org, sign the Restricted Health Data Use Agreement (v1.5.0), then download manually from https://physionet.org/content/ct-ich/1.3.1/ into data/physionet_ich. Start this today if you haven't already -- the approval step, not the download itself, is what takes time.
+
+Next: point each ich_gen loader at data/<name> and read that loader's 'SCHEMA ASSUMPTION' docstring before trusting its output against what you actually downloaded (see code/README.md's 'Getting the data' section).

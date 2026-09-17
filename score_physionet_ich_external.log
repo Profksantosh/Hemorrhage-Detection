@@ -1,0 +1,345 @@
+building PhysioNet-ICH external test set (REAL data, no synthetic fallback -- build_samples() raises if any expected file is missing) ...
+PhysioNet-ICH: 2814 slices, 75 patients (75 patients / 2814 slices expected for the full real site per physionet_ich_loader_verification.log; if --max-physionet-slices was NOT passed and these numbers differ, treat that as a real discrepancy to investigate, not something to silently proceed past)
+
+=== PhysioNet-ICH per-subtype POSITIVE PATIENT counts (pooled across the whole 75-patient site) ===
+  epidural           n_positive_patients= 21
+  intraparenchymal   n_positive_patients= 16
+  intraventricular   n_positive_patients=  5 *** SEVERE SMALL-N (<10 positive patients) ***
+  subarachnoid       n_positive_patients=  7 *** SEVERE SMALL-N (<10 positive patients) ***
+  subdural           n_positive_patients=  4 *** SEVERE SMALL-N (<10 positive patients) ***
+  any (pooled)       n_positive_patients= 36 / 75 total patients
+
+=== PhysioNet-ICH external -- SLICE level (genuine per-slice ground truth): baseline1 vs baseline2 ===
+n = 2814, positive rate = 0.113
+  baseline1    AUROC=0.8311  sens@0.5=0.4560  spec@0.5=0.9083
+  baseline2    AUROC=0.8568  sens@0.5=0.6667  spec@0.5=0.8526
+  diff (baseline1-baseline2) AUROC=-0.0257   DeLong z=-2.599  p=0.0094
+  sensitivity delta (baseline1-baseline2) = -0.2107
+
+=== PhysioNet-ICH external -- PATIENT level (agg=max): baseline1 vs baseline2 ===
+n = 75, positive rate = 0.480
+  baseline1    AUROC=0.7457  sens@0.5=0.9722  spec@0.5=0.0000
+  baseline2    AUROC=0.8397  sens@0.5=1.0000  spec@0.5=0.0000
+  diff (baseline1-baseline2) AUROC=-0.0940   DeLong z=-1.660  p=0.0969
+  sensitivity delta (baseline1-baseline2) = -0.0278
+
+=== PhysioNet-ICH external -- PATIENT level (agg=mean): baseline1 vs baseline2 ===
+n = 75, positive rate = 0.480
+  baseline1    AUROC=0.8198  sens@0.5=0.0000  spec@0.5=1.0000
+  baseline2    AUROC=0.8611  sens@0.5=0.0278  spec@0.5=1.0000
+  diff (baseline1-baseline2) AUROC=-0.0413   DeLong z=-0.941  p=0.3467
+  sensitivity delta (baseline1-baseline2) = -0.0278
+
+=== PhysioNet-ICH external -- SLICE level (genuine per-slice ground truth): baseline3a vs baseline2 ===
+n = 2814, positive rate = 0.113
+  baseline3a   AUROC=0.7745  sens@0.5=0.3491  spec@0.5=0.8990
+  baseline2    AUROC=0.8568  sens@0.5=0.6667  spec@0.5=0.8526
+  diff (baseline3a-baseline2) AUROC=-0.0823   DeLong z=-5.928  p=0.0000
+  sensitivity delta (baseline3a-baseline2) = -0.3176
+
+=== PhysioNet-ICH external -- PATIENT level (agg=max): baseline3a vs baseline2 ===
+n = 75, positive rate = 0.480
+  baseline3a   AUROC=0.6474  sens@0.5=1.0000  spec@0.5=0.0513
+  baseline2    AUROC=0.8397  sens@0.5=1.0000  spec@0.5=0.0000
+  diff (baseline3a-baseline2) AUROC=-0.1923   DeLong z=-2.524  p=0.0116
+  sensitivity delta (baseline3a-baseline2) = +0.0000
+
+=== PhysioNet-ICH external -- PATIENT level (agg=mean): baseline3a vs baseline2 ===
+n = 75, positive rate = 0.480
+  baseline3a   AUROC=0.7899  sens@0.5=0.0000  spec@0.5=1.0000
+  baseline2    AUROC=0.8611  sens@0.5=0.0278  spec@0.5=1.0000
+  diff (baseline3a-baseline2) AUROC=-0.0712   DeLong z=-1.156  p=0.2478
+  sensitivity delta (baseline3a-baseline2) = -0.0278
+
+=== PhysioNet-ICH external -- SLICE level (genuine per-slice ground truth): baseline3b vs baseline2 ===
+n = 2814, positive rate = 0.113
+  baseline3b   AUROC=0.7734  sens@0.5=0.5503  spec@0.5=0.8305
+  baseline2    AUROC=0.8568  sens@0.5=0.6667  spec@0.5=0.8526
+  diff (baseline3b-baseline2) AUROC=-0.0834   DeLong z=-6.854  p=0.0000
+  sensitivity delta (baseline3b-baseline2) = -0.1164
+
+=== PhysioNet-ICH external -- PATIENT level (agg=max): baseline3b vs baseline2 ===
+n = 75, positive rate = 0.480
+  baseline3b   AUROC=0.6902  sens@0.5=1.0000  spec@0.5=0.0256
+  baseline2    AUROC=0.8397  sens@0.5=1.0000  spec@0.5=0.0000
+  diff (baseline3b-baseline2) AUROC=-0.1496   DeLong z=-2.696  p=0.0070
+  sensitivity delta (baseline3b-baseline2) = +0.0000
+
+=== PhysioNet-ICH external -- PATIENT level (agg=mean): baseline3b vs baseline2 ===
+n = 75, positive rate = 0.480
+  baseline3b   AUROC=0.8241  sens@0.5=0.0556  spec@0.5=1.0000
+  baseline2    AUROC=0.8611  sens@0.5=0.0278  spec@0.5=1.0000
+  diff (baseline3b-baseline2) AUROC=-0.0370   DeLong z=-0.947  p=0.3434
+  sensitivity delta (baseline3b-baseline2) = +0.0278
+
+=== PhysioNet-ICH external -- SLICE level (genuine per-slice ground truth): baseline4a vs baseline2 ===
+n = 2814, positive rate = 0.113
+  baseline4a   AUROC=0.8699  sens@0.5=0.7673  spec@0.5=0.8145
+  baseline2    AUROC=0.8568  sens@0.5=0.6667  spec@0.5=0.8526
+  diff (baseline4a-baseline2) AUROC=+0.0131   DeLong z=+1.599  p=0.1098
+  sensitivity delta (baseline4a-baseline2) = +0.1006
+
+=== PhysioNet-ICH external -- PATIENT level (agg=max): baseline4a vs baseline2 ===
+n = 75, positive rate = 0.480
+  baseline4a   AUROC=0.8305  sens@0.5=1.0000  spec@0.5=0.0000
+  baseline2    AUROC=0.8397  sens@0.5=1.0000  spec@0.5=0.0000
+  diff (baseline4a-baseline2) AUROC=-0.0093   DeLong z=-0.145  p=0.8844
+  sensitivity delta (baseline4a-baseline2) = +0.0000
+
+=== PhysioNet-ICH external -- PATIENT level (agg=mean): baseline4a vs baseline2 ===
+n = 75, positive rate = 0.480
+  baseline4a   AUROC=0.8697  sens@0.5=0.0000  spec@0.5=1.0000
+  baseline2    AUROC=0.8611  sens@0.5=0.0278  spec@0.5=1.0000
+  diff (baseline4a-baseline2) AUROC=+0.0085   DeLong z=+0.278  p=0.7813
+  sensitivity delta (baseline4a-baseline2) = -0.0278
+
+=== PhysioNet-ICH external -- SLICE level (genuine per-slice ground truth): baseline4b vs baseline2 ===
+n = 2814, positive rate = 0.113
+  baseline4b   AUROC=0.8587  sens@0.5=0.7013  spec@0.5=0.8313
+  baseline2    AUROC=0.8568  sens@0.5=0.6667  spec@0.5=0.8526
+  diff (baseline4b-baseline2) AUROC=+0.0019   DeLong z=+0.227  p=0.8206
+  sensitivity delta (baseline4b-baseline2) = +0.0346
+
+=== PhysioNet-ICH external -- PATIENT level (agg=max): baseline4b vs baseline2 ===
+n = 75, positive rate = 0.480
+  baseline4b   AUROC=0.7023  sens@0.5=1.0000  spec@0.5=0.0000
+  baseline2    AUROC=0.8397  sens@0.5=1.0000  spec@0.5=0.0000
+  diff (baseline4b-baseline2) AUROC=-0.1375   DeLong z=-2.207  p=0.0273
+  sensitivity delta (baseline4b-baseline2) = +0.0000
+
+=== PhysioNet-ICH external -- PATIENT level (agg=mean): baseline4b vs baseline2 ===
+n = 75, positive rate = 0.480
+  baseline4b   AUROC=0.8355  sens@0.5=0.0000  spec@0.5=1.0000
+  baseline2    AUROC=0.8611  sens@0.5=0.0278  spec@0.5=1.0000
+  diff (baseline4b-baseline2) AUROC=-0.0256   DeLong z=-0.661  p=0.5087
+  sensitivity delta (baseline4b-baseline2) = -0.0278
+
+=== PhysioNet-ICH external -- SLICE level (genuine per-slice ground truth): baseline3a vs baseline3b ===
+n = 2814, positive rate = 0.113
+  baseline3a   AUROC=0.7745  sens@0.5=0.3491  spec@0.5=0.8990
+  baseline3b   AUROC=0.7734  sens@0.5=0.5503  spec@0.5=0.8305
+  diff (baseline3a-baseline3b) AUROC=+0.0011   DeLong z=+0.067  p=0.9464
+  sensitivity delta (baseline3a-baseline3b) = -0.2013
+
+=== PhysioNet-ICH external -- PATIENT level (agg=max): baseline3a vs baseline3b ===
+n = 75, positive rate = 0.480
+  baseline3a   AUROC=0.6474  sens@0.5=1.0000  spec@0.5=0.0513
+  baseline3b   AUROC=0.6902  sens@0.5=1.0000  spec@0.5=0.0256
+  diff (baseline3a-baseline3b) AUROC=-0.0427   DeLong z=-0.566  p=0.5713
+  sensitivity delta (baseline3a-baseline3b) = +0.0000
+
+=== PhysioNet-ICH external -- PATIENT level (agg=mean): baseline3a vs baseline3b ===
+n = 75, positive rate = 0.480
+  baseline3a   AUROC=0.7899  sens@0.5=0.0000  spec@0.5=1.0000
+  baseline3b   AUROC=0.8241  sens@0.5=0.0556  spec@0.5=1.0000
+  diff (baseline3a-baseline3b) AUROC=-0.0342   DeLong z=-0.517  p=0.6050
+  sensitivity delta (baseline3a-baseline3b) = -0.0556
+
+=== PhysioNet-ICH external -- SLICE level (genuine per-slice ground truth): baseline4a vs baseline4b ===
+n = 2814, positive rate = 0.113
+  baseline4a   AUROC=0.8699  sens@0.5=0.7673  spec@0.5=0.8145
+  baseline4b   AUROC=0.8587  sens@0.5=0.7013  spec@0.5=0.8313
+  diff (baseline4a-baseline4b) AUROC=+0.0111   DeLong z=+1.437  p=0.1507
+  sensitivity delta (baseline4a-baseline4b) = +0.0660
+
+=== PhysioNet-ICH external -- PATIENT level (agg=max): baseline4a vs baseline4b ===
+n = 75, positive rate = 0.480
+  baseline4a   AUROC=0.8305  sens@0.5=1.0000  spec@0.5=0.0000
+  baseline4b   AUROC=0.7023  sens@0.5=1.0000  spec@0.5=0.0000
+  diff (baseline4a-baseline4b) AUROC=+0.1282   DeLong z=+1.763  p=0.0779
+  sensitivity delta (baseline4a-baseline4b) = +0.0000
+
+=== PhysioNet-ICH external -- PATIENT level (agg=mean): baseline4a vs baseline4b ===
+n = 75, positive rate = 0.480
+  baseline4a   AUROC=0.8697  sens@0.5=0.0000  spec@0.5=1.0000
+  baseline4b   AUROC=0.8355  sens@0.5=0.0000  spec@0.5=1.0000
+  diff (baseline4a-baseline4b) AUROC=+0.0342   DeLong z=+0.891  p=0.3729
+  sensitivity delta (baseline4a-baseline4b) = +0.0000
+
+=== PhysioNet-ICH external -- SUBTYPE/SIZE-STRATIFIED (evaluate_pooled_and_stratified, slice level: genuine per-slice ground truth for this site, unlike CQ500) ===
+  baseline1: pooled AUROC=0.8311  pooled sens@0.5=0.4560 (0.37182374881701274, 0.5479613088847854)
+  baseline2: pooled AUROC=0.8568  pooled sens@0.5=0.6667 (0.580760538969976, 0.7538959353211689)
+  baseline3a: pooled AUROC=0.7745  pooled sens@0.5=0.3491 (0.2703740142863508, 0.4413514392766597)
+  baseline3b: pooled AUROC=0.7734  pooled sens@0.5=0.5503 (0.4647887323943662, 0.6432184809397306)
+  baseline4a: pooled AUROC=0.8699  pooled sens@0.5=0.7673 (0.6922979797979798, 0.8401501360518147)
+  baseline4b: pooled AUROC=0.8587  pooled sens@0.5=0.7013 (0.6314471120672159, 0.7664431015914801)
+
+--- subtype table: baseline1 vs baseline2 ---
+
+subtype            n_pos_pat  AUROC(baseline1)  AUROC(baseline2)sens(baseline1)sens(baseline2)   delta(pp)  flag
+epidural                  21            0.6996            0.7433        0.0000        0.0636       -6.36   *** >=5pp delta ***
+intraparenchymal          16            0.8500            0.9079        0.2740        0.4110      -13.70   *** >=5pp delta ***
+intraventricular           5            0.9184            0.9122        0.1667        0.3750      -20.83   *** >=5pp delta, SEVERE SMALL-N (n_pos_pat=5) ***
+subarachnoid               7            0.8200            0.8121        0.1111        0.2778      -16.67   *** >=5pp delta, SEVERE SMALL-N (n_pos_pat=7) ***
+subdural                   4            0.7441            0.7963        0.0893        0.2500      -16.07   *** >=5pp delta, SEVERE SMALL-N (n_pos_pat=4) ***
+
+--- EDH (primary H1/H2 subtype of interest), baseline1 vs baseline2 (n_positive_patients=21) ---
+  sensitivity_baseline1=0.0000  sensitivity_baseline2=0.0636  delta=-6.36pp (threshold: 5.0pp)
+
+--- subtype table: baseline3a vs baseline2 ---
+
+subtype            n_pos_pat AUROC(baseline3a)  AUROC(baseline2)sens(baseline3a)sens(baseline2)   delta(pp)  flag
+epidural                  21            0.7283            0.7433        0.0000        0.0636       -6.36   *** >=5pp delta ***
+intraparenchymal          16            0.7630            0.9079        0.1644        0.4110      -24.66   *** >=5pp delta ***
+intraventricular           5            0.8107            0.9122        0.1667        0.3750      -20.83   *** >=5pp delta, SEVERE SMALL-N (n_pos_pat=5) ***
+subarachnoid               7            0.5777            0.8121        0.0556        0.2778      -22.22   *** >=5pp delta, SEVERE SMALL-N (n_pos_pat=7) ***
+subdural                   4            0.7094            0.7963        0.0536        0.2500      -19.64   *** >=5pp delta, SEVERE SMALL-N (n_pos_pat=4) ***
+
+--- EDH (primary H1/H2 subtype of interest), baseline3a vs baseline2 (n_positive_patients=21) ---
+  sensitivity_baseline3a=0.0000  sensitivity_baseline2=0.0636  delta=-6.36pp (threshold: 5.0pp)
+
+--- subtype table: baseline3b vs baseline2 ---
+
+subtype            n_pos_pat AUROC(baseline3b)  AUROC(baseline2)sens(baseline3b)sens(baseline2)   delta(pp)  flag
+epidural                  21            0.6286            0.7433        0.0578        0.0636       -0.58  
+intraparenchymal          16            0.8441            0.9079        0.3836        0.4110       -2.74  
+intraventricular           5            0.8974            0.9122        0.2083        0.3750      -16.67   *** >=5pp delta, SEVERE SMALL-N (n_pos_pat=5) ***
+subarachnoid               7            0.8735            0.8121        0.5556        0.2778       27.78   *** >=5pp delta, SEVERE SMALL-N (n_pos_pat=7) ***
+subdural                   4            0.7322            0.7963        0.0179        0.2500      -23.21   *** >=5pp delta, SEVERE SMALL-N (n_pos_pat=4) ***
+
+--- EDH (primary H1/H2 subtype of interest), baseline3b vs baseline2 (n_positive_patients=21) ---
+  sensitivity_baseline3b=0.0578  sensitivity_baseline2=0.0636  delta=-0.58pp (threshold: 5.0pp)
+
+--- subtype table: baseline4a vs baseline2 ---
+
+subtype            n_pos_pat AUROC(baseline4a)  AUROC(baseline2)sens(baseline4a)sens(baseline2)   delta(pp)  flag
+epidural                  21            0.7897            0.7433        0.0058        0.0636       -5.78   *** >=5pp delta ***
+intraparenchymal          16            0.8972            0.9079        0.4110        0.4110        0.00  
+intraventricular           5            0.9434            0.9122        0.2917        0.3750       -8.33   *** >=5pp delta, SEVERE SMALL-N (n_pos_pat=5) ***
+subarachnoid               7            0.8595            0.8121        0.5556        0.2778       27.78   *** >=5pp delta, SEVERE SMALL-N (n_pos_pat=7) ***
+subdural                   4            0.8536            0.7963        0.2857        0.2500        3.57   *** SEVERE SMALL-N (n_pos_pat=4) ***
+
+--- EDH (primary H1/H2 subtype of interest), baseline4a vs baseline2 (n_positive_patients=21) ---
+  sensitivity_baseline4a=0.0058  sensitivity_baseline2=0.0636  delta=-5.78pp (threshold: 5.0pp)
+
+--- subtype table: baseline4b vs baseline2 ---
+
+subtype            n_pos_pat AUROC(baseline4b)  AUROC(baseline2)sens(baseline4b)sens(baseline2)   delta(pp)  flag
+epidural                  21            0.7940            0.7433        0.0000        0.0636       -6.36   *** >=5pp delta ***
+intraparenchymal          16            0.8917            0.9079        0.2603        0.4110      -15.07   *** >=5pp delta ***
+intraventricular           5            0.9157            0.9122        0.2083        0.3750      -16.67   *** >=5pp delta, SEVERE SMALL-N (n_pos_pat=5) ***
+subarachnoid               7            0.8784            0.8121        0.0556        0.2778      -22.22   *** >=5pp delta, SEVERE SMALL-N (n_pos_pat=7) ***
+subdural                   4            0.7950            0.7963        0.0714        0.2500      -17.86   *** >=5pp delta, SEVERE SMALL-N (n_pos_pat=4) ***
+
+--- EDH (primary H1/H2 subtype of interest), baseline4b vs baseline2 (n_positive_patients=21) ---
+  sensitivity_baseline4b=0.0000  sensitivity_baseline2=0.0636  delta=-6.36pp (threshold: 5.0pp)
+
+--- subtype table: baseline3a vs baseline3b ---
+
+subtype            n_pos_pat AUROC(baseline3a) AUROC(baseline3b)sens(baseline3a)sens(baseline3b)   delta(pp)  flag
+epidural                  21            0.7283            0.6286        0.0000        0.0578       -5.78   *** >=5pp delta ***
+intraparenchymal          16            0.7630            0.8441        0.1644        0.3836      -21.92   *** >=5pp delta ***
+intraventricular           5            0.8107            0.8974        0.1667        0.2083       -4.17   *** SEVERE SMALL-N (n_pos_pat=5) ***
+subarachnoid               7            0.5777            0.8735        0.0556        0.5556      -50.00   *** >=5pp delta, SEVERE SMALL-N (n_pos_pat=7) ***
+subdural                   4            0.7094            0.7322        0.0536        0.0179        3.57   *** SEVERE SMALL-N (n_pos_pat=4) ***
+
+--- EDH (primary H1/H2 subtype of interest), baseline3a vs baseline3b (n_positive_patients=21) ---
+  sensitivity_baseline3a=0.0000  sensitivity_baseline3b=0.0578  delta=-5.78pp (threshold: 5.0pp)
+
+--- subtype table: baseline4a vs baseline4b ---
+
+subtype            n_pos_pat AUROC(baseline4a) AUROC(baseline4b)sens(baseline4a)sens(baseline4b)   delta(pp)  flag
+epidural                  21            0.7897            0.7940        0.0058        0.0000        0.58  
+intraparenchymal          16            0.8972            0.8917        0.4110        0.2603       15.07   *** >=5pp delta ***
+intraventricular           5            0.9434            0.9157        0.2917        0.2083        8.33   *** >=5pp delta, SEVERE SMALL-N (n_pos_pat=5) ***
+subarachnoid               7            0.8595            0.8784        0.5556        0.0556       50.00   *** >=5pp delta, SEVERE SMALL-N (n_pos_pat=7) ***
+subdural                   4            0.8536            0.7950        0.2857        0.0714       21.43   *** >=5pp delta, SEVERE SMALL-N (n_pos_pat=4) ***
+
+--- EDH (primary H1/H2 subtype of interest), baseline4a vs baseline4b (n_positive_patients=21) ---
+  sensitivity_baseline4a=0.0058  sensitivity_baseline4b=0.0000  delta=+0.58pp (threshold: 5.0pp)
+
+size-tercile stratification: no lesion_size_mm3 available for this site (expected for RSNA/CQ500/PhysioNet-ICH per Section IV-E; BHSD-derived data is the primary size-stratification source)
+
+=== WICL (runs/decisive_v2/decisive_wicl, read-only) vs baseline4c (runs/decisive_v2/decisive_random_window_single, read-only) and vs baseline3a/3b on PhysioNet-ICH ===
+
+=== PhysioNet-ICH external -- SLICE level (genuine per-slice ground truth): wicl vs baseline4c ===
+n = 2814, positive rate = 0.113
+  wicl         AUROC=0.8294  sens@0.5=0.5881  spec@0.5=0.8714
+  baseline4c   AUROC=0.8723  sens@0.5=0.5943  spec@0.5=0.8950
+  diff (wicl-baseline4c) AUROC=-0.0429   DeLong z=-4.745  p=0.0000
+  sensitivity delta (wicl-baseline4c) = -0.0063
+
+=== PhysioNet-ICH external -- PATIENT level (agg=max): wicl vs baseline4c ===
+n = 75, positive rate = 0.480
+  wicl         AUROC=0.7187  sens@0.5=1.0000  spec@0.5=0.0000
+  baseline4c   AUROC=0.7493  sens@0.5=0.9722  spec@0.5=0.0513
+  diff (wicl-baseline4c) AUROC=-0.0306   DeLong z=-0.523  p=0.6006
+  sensitivity delta (wicl-baseline4c) = +0.0278
+
+=== PhysioNet-ICH external -- PATIENT level (agg=mean): wicl vs baseline4c ===
+n = 75, positive rate = 0.480
+  wicl         AUROC=0.8162  sens@0.5=0.0000  spec@0.5=1.0000
+  baseline4c   AUROC=0.8383  sens@0.5=0.0000  spec@0.5=1.0000
+  diff (wicl-baseline4c) AUROC=-0.0221   DeLong z=-0.499  p=0.6176
+  sensitivity delta (wicl-baseline4c) = +0.0000
+
+=== PhysioNet-ICH external -- SLICE level (genuine per-slice ground truth): wicl vs baseline3a ===
+n = 2814, positive rate = 0.113
+  wicl         AUROC=0.8294  sens@0.5=0.5881  spec@0.5=0.8714
+  baseline3a   AUROC=0.7745  sens@0.5=0.3491  spec@0.5=0.8990
+  diff (wicl-baseline3a) AUROC=+0.0548   DeLong z=+3.589  p=0.0003
+  sensitivity delta (wicl-baseline3a) = +0.2390
+
+=== PhysioNet-ICH external -- PATIENT level (agg=max): wicl vs baseline3a ===
+n = 75, positive rate = 0.480
+  wicl         AUROC=0.7187  sens@0.5=1.0000  spec@0.5=0.0000
+  baseline3a   AUROC=0.6474  sens@0.5=1.0000  spec@0.5=0.0513
+  diff (wicl-baseline3a) AUROC=+0.0712   DeLong z=+0.898  p=0.3690
+  sensitivity delta (wicl-baseline3a) = +0.0000
+
+=== PhysioNet-ICH external -- PATIENT level (agg=mean): wicl vs baseline3a ===
+n = 75, positive rate = 0.480
+  wicl         AUROC=0.8162  sens@0.5=0.0000  spec@0.5=1.0000
+  baseline3a   AUROC=0.7899  sens@0.5=0.0000  spec@0.5=1.0000
+  diff (wicl-baseline3a) AUROC=+0.0264   DeLong z=+0.381  p=0.7033
+  sensitivity delta (wicl-baseline3a) = +0.0000
+
+=== PhysioNet-ICH external -- SLICE level (genuine per-slice ground truth): wicl vs baseline3b ===
+n = 2814, positive rate = 0.113
+  wicl         AUROC=0.8294  sens@0.5=0.5881  spec@0.5=0.8714
+  baseline3b   AUROC=0.7734  sens@0.5=0.5503  spec@0.5=0.8305
+  diff (wicl-baseline3b) AUROC=+0.0559   DeLong z=+5.041  p=0.0000
+  sensitivity delta (wicl-baseline3b) = +0.0377
+
+=== PhysioNet-ICH external -- PATIENT level (agg=max): wicl vs baseline3b ===
+n = 75, positive rate = 0.480
+  wicl         AUROC=0.7187  sens@0.5=1.0000  spec@0.5=0.0000
+  baseline3b   AUROC=0.6902  sens@0.5=1.0000  spec@0.5=0.0256
+  diff (wicl-baseline3b) AUROC=+0.0285   DeLong z=+0.492  p=0.6229
+  sensitivity delta (wicl-baseline3b) = +0.0000
+
+=== PhysioNet-ICH external -- PATIENT level (agg=mean): wicl vs baseline3b ===
+n = 75, positive rate = 0.480
+  wicl         AUROC=0.8162  sens@0.5=0.0000  spec@0.5=1.0000
+  baseline3b   AUROC=0.8241  sens@0.5=0.0556  spec@0.5=1.0000
+  diff (wicl-baseline3b) AUROC=-0.0078   DeLong z=-0.186  p=0.8523
+  sensitivity delta (wicl-baseline3b) = -0.0556
+
+--- subtype table: wicl vs baseline4c ---
+
+subtype            n_pos_pat       AUROC(wicl) AUROC(baseline4c)    sens(wicl)sens(baseline4c)   delta(pp)  flag
+epidural                  21            0.7584            0.8067        0.0058        0.0058        0.00  
+intraparenchymal          16            0.8822            0.9142        0.3973        0.4247       -2.74  
+intraventricular           5            0.9086            0.9570        0.2500        0.4167      -16.67   *** >=5pp delta, SEVERE SMALL-N (n_pos_pat=5) ***
+subarachnoid               7            0.7981            0.8843        0.1667        0.3333      -16.67   *** >=5pp delta, SEVERE SMALL-N (n_pos_pat=7) ***
+subdural                   4            0.8178            0.7909        0.1964        0.0357       16.07   *** >=5pp delta, SEVERE SMALL-N (n_pos_pat=4) ***
+
+--- subtype table: wicl vs baseline3a ---
+
+subtype            n_pos_pat       AUROC(wicl) AUROC(baseline3a)    sens(wicl)sens(baseline3a)   delta(pp)  flag
+epidural                  21            0.7584            0.7283        0.0058        0.0000        0.58  
+intraparenchymal          16            0.8822            0.7630        0.3973        0.1644       23.29   *** >=5pp delta ***
+intraventricular           5            0.9086            0.8107        0.2500        0.1667        8.33   *** >=5pp delta, SEVERE SMALL-N (n_pos_pat=5) ***
+subarachnoid               7            0.7981            0.5777        0.1667        0.0556       11.11   *** >=5pp delta, SEVERE SMALL-N (n_pos_pat=7) ***
+subdural                   4            0.8178            0.7094        0.1964        0.0536       14.29   *** >=5pp delta, SEVERE SMALL-N (n_pos_pat=4) ***
+
+--- subtype table: wicl vs baseline3b ---
+
+subtype            n_pos_pat       AUROC(wicl) AUROC(baseline3b)    sens(wicl)sens(baseline3b)   delta(pp)  flag
+epidural                  21            0.7584            0.6286        0.0058        0.0578       -5.20   *** >=5pp delta ***
+intraparenchymal          16            0.8822            0.8441        0.3973        0.3836        1.37  
+intraventricular           5            0.9086            0.8974        0.2500        0.2083        4.17   *** SEVERE SMALL-N (n_pos_pat=5) ***
+subarachnoid               7            0.7981            0.8735        0.1667        0.5556      -38.89   *** >=5pp delta, SEVERE SMALL-N (n_pos_pat=7) ***
+subdural                   4            0.8178            0.7322        0.1964        0.0179       17.86   *** >=5pp delta, SEVERE SMALL-N (n_pos_pat=4) ***
+
+saved runs/baselines_v1/physionet_ich_external_result.json

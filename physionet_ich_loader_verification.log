@@ -1,0 +1,29 @@
+PhysioNet-ICH (ct-ich v1.3.1) REAL LOADER verification, post zero-padding fix
+Date: 2026-09-03
+Purpose: confirm the shipped, public ich_gen.datasets.physionet_ich.build_samples()
+  entry point (not the bypass scripts/smoke_test_physionet_ich.py diagnostic
+  re-implementation) now runs end-to-end against the real, restricted-access
+  PhysioNet-ICH data staged on hp100 at
+  /home/fcse.santoshkumar/ich_windowing/data/physionet_ich/, after fixing the
+  filename zero-padding bug documented in
+  physionet_ich_structure_verification.log (item 2).
+Data source: REAL data (not synthetic) -- 156/156 SHA256-verified v1.3.1
+  download, see physionet_ich_structure_verification.log for full provenance.
+Ran via: scripts/verify_real_loader.py, conda env `ich_windowing` on hp100.
+Scope note: this is a loader-correctness verification only -- no training or
+  external-validation evaluation was run against this data.
+------------------------------------------------------------------------
+root = /home/fcse.santoshkumar/ich_windowing/data/physionet_ich
+root exists = True
+build_samples() succeeded: 2814 samples
+unique patients: 75
+first 5 patient_ids: ['PhysioNetICH_049', 'PhysioNetICH_050', 'PhysioNetICH_051', 'PhysioNetICH_052', 'PhysioNetICH_053']
+last 5 patient_ids: ['PhysioNetICH_126', 'PhysioNetICH_127', 'PhysioNetICH_128', 'PhysioNetICH_129', 'PhysioNetICH_130']
+  sample_id=PhysioNetICH_049_1 patient_id=PhysioNetICH_049 site=physionet_ich labels_shape=(6,) lesion_size_mm3=None
+  sample_id=PhysioNetICH_049_2 patient_id=PhysioNetICH_049 site=physionet_ich labels_shape=(6,) lesion_size_mm3=None
+  sample_id=PhysioNetICH_049_3 patient_id=PhysioNetICH_049 site=physionet_ich labels_shape=(6,) lesion_size_mm3=None
+  hu_loader() for PhysioNetICH_049_1: shape=(512, 512), dtype=float32, range=[-1022.0, 2830.0]
+  hu_loader() for PhysioNetICH_049_2: shape=(512, 512), dtype=float32, range=[-1018.0, 2914.0]
+
+VERIFICATION PASSED: real build_samples() loader runs end-to-end against real data with no FileNotFoundError.
+

@@ -1,0 +1,15 @@
+=== [2026-09-11T13:00:35+05:30] training condition=fixed_single_window -> runs/baselines_bhsd_excluded/baseline1_fixed_single ===
+=== [2026-09-11T13:15:20+05:30] done condition=fixed_single_window ===
+=== [2026-09-11T13:15:20+05:30] training condition=fixed_three_window -> runs/baselines_bhsd_excluded/baseline2_fixed_three ===
+=== [2026-09-11T13:30:05+05:30] done condition=fixed_three_window ===
+=== [2026-09-11T13:30:05+05:30] training condition=adaptive_hrt -> runs/baselines_bhsd_excluded/baseline3a_hrt ===
+=== [2026-09-11T13:59:31+05:30] done condition=adaptive_hrt ===
+=== [2026-09-11T13:59:31+05:30] training condition=adaptive_wem -> runs/baselines_bhsd_excluded/baseline3b_wem ===
+=== [2026-09-11T14:15:11+05:30] done condition=adaptive_wem ===
+=== [2026-09-11T14:15:11+05:30] training condition=dg_augment -> runs/baselines_bhsd_excluded/baseline4a_augmentation ===
+=== [2026-09-11T14:30:59+05:30] done condition=dg_augment ===
+=== [2026-09-11T14:30:59+05:30] training condition=dg_coral -> runs/baselines_bhsd_excluded/baseline4b_coral ===
+=== [2026-09-11T14:41:15+05:30] done condition=dg_coral ===
+=== [2026-09-11T14:41:15+05:30] training condition=wicl -> runs/baselines_bhsd_excluded/decisive_wicl ===
+=== [2026-09-11T15:00:19+05:30] done condition=wicl ===
+ALL_V2_BHSD_EXCLUDED_DONE

@@ -1,0 +1,62 @@
+2026-09-11 08:54:20,986 INFO loading RSNA sample index (max_samples=20000)...
+2026-09-11 08:54:31,364 INFO using cached patient index at data/rsna/rsna-intracranial-hemorrhage-detection/patient_index_cache.parquet
+2026-09-11 08:54:31,976 INFO patient-grouped 5-fold split verified leakage-free (11890 total patients)
+held-out validation fold: 4000 slices, 2378 patients
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+
+=== RSNA in-distribution, held-out fold 0: pairwise pooled 'any' ICH ===
+
+--- baseline5 vs baseline2: pooled 'any' ICH ---
+  baseline5                    AUROC=0.9257 sens@0.5=0.8268 spec@0.5=0.8713
+  baseline2                    AUROC=0.9286 sens@0.5=0.6819 spec@0.5=0.9762
+  diff (baseline5-baseline2) AUROC=-0.0029  DeLong z=-0.467  p=0.6402
+
+=== stratified (evaluate_pooled_and_stratified) ===
+  baseline2: pooled AUROC=0.9286  pooled accuracy=0.9295 (0.9211963766769716, 0.938396842278537)  pooled sens=0.6819 (0.6485101446754523, 0.7181497965841581)
+  baseline5: pooled AUROC=0.9257  pooled accuracy=0.8642 (0.8527154776198503, 0.876377489038789)  pooled sens=0.8268 (0.7971681022696199, 0.8597154095841522)
+
+--- subtype table: baseline5 vs baseline2 ---
+
+subtype             AUROC(baseline5)  AUROC(baseline2)sens(baseline5)sens(baseline2)   delta(pp)  flag
+epidural                      0.8337            0.8544        0.6667        0.0952       57.14  *** >=5pp delta ***
+intraparenchymal              0.9352            0.9527        0.8667        0.7000       16.67  *** >=5pp delta ***
+intraventricular              0.9557            0.9584        0.9103        0.7179       19.23  *** >=5pp delta ***
+subarachnoid                  0.8887            0.9035        0.7907        0.3814       40.93  *** >=5pp delta ***
+subdural                      0.8919            0.8907        0.7909        0.5157       27.53  *** >=5pp delta ***
+
+--- EDH (H1/H2 priority subtype), baseline5 vs baseline2 ---
+  sensitivity_baseline5=0.6667  sensitivity_baseline2=0.0952  delta=+57.14pp
+
+size-tercile stratification: no lesion_size_mm3 available for this site (expected for RSNA/CQ500/PhysioNet-ICH per Section IV-E; BHSD-derived data is the primary size-stratification source)
+
+=== SUPPLEMENTARY: WICL (runs/decisive_v2/decisive_wicl, read-only) vs baseline 5 -- partial contribution toward Section VI-C's H2 comparison set, NOT the full 45-comparison-per-pair, Bonferroni-corrected test ===
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+
+--- wicl vs baseline5: pooled 'any' ICH ---
+  wicl                         AUROC=0.9199 sens@0.5=0.6709 spec@0.5=0.9789
+  baseline5                    AUROC=0.9257 sens@0.5=0.8268 spec@0.5=0.8713
+  diff (wicl-baseline5) AUROC=-0.0058  DeLong z=-0.973  p=0.3306
+
+saved runs/baselines_v1/baselines5_internal_result.json

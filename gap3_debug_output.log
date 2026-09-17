@@ -1,0 +1,31 @@
+[note] 6/491 studies where aggregated 'any' != union(subtypes). Left AS-IS (not reconciled); 'any' is the readers' own ICH call.
+labels: 491 rows, study_id dtype=str
+[cache] using data/cq500/cq500_header_cache.parquet
+chosen: 22309 rows, patient_id dtype=str
+
+=== ROW COUNTS ===
+len(chosen)  = 22309
+len(labels)  = 491
+len(merged)  = 22309
+chosen - merged = 0
+
+=== RAW (as-shipped) set-diff diagnostics ===
+unlabeled_raw (chosen pid not in labels sid): 0 -> []
+unimaged_raw (labels sid not in chosen pid): 18 -> ['CQ500-CT-120', 'CQ500-CT-123', 'CQ500-CT-160', 'CQ500-CT-173', 'CQ500-CT-189', 'CQ500-CT-221', 'CQ500-CT-233', 'CQ500-CT-244', 'CQ500-CT-269', 'CQ500-CT-296']
+
+=== DUPLICATE KEY CHECK ===
+chosen['patient_id'] duplicated distinct-value count (dup ROWS by pid, expected since many slices per study): 21836 dup rows out of 22309 (this is EXPECTED -- multiple slices per study)
+labels['study_id'] duplicated ROWS (should be 0 if one row per study): 0
+
+=== NORMALIZED (astype(str).str.strip()) comparison ===
+unlabeled_norm: 0 -> []
+IDs that were flagged 'unlabeled' RAW but actually match after normalization (i.e. whitespace/dtype was the culprit): 0 -> []
+
+=== EXACT DROPPED ROWS (by path, ground truth) ===
+chosen paths: 22309, merged paths: 22309, dropped: 0
+dropped rows grouped by patient_id (0 distinct patient_id(s) affected):
+Series([], )
+
+=== CHARACTER-LEVEL INSPECTION of affected patient_id/study_id ===
+
+wrote /home/fcse.santoshkumar/ich_windowing/gap3_dropped_rows_detail.csv (0 dropped rows, full detail)

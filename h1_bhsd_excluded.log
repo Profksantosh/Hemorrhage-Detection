@@ -1,0 +1,49 @@
+2026-09-12 04:38:56,432 INFO loaded 191 RSNA patient id(s) to exclude (BHSD overlap, see /home/fcse.santoshkumar/ich_windowing/data/bhsd_rsna_overlap_patient_ids.json)
+2026-09-12 04:38:56,432 INFO loading RSNA sample index (max_samples=20000)...
+2026-09-12 04:39:04,509 WARNING stage_2_train.csv contained 24 fully-duplicated (ID, Label) row(s) (4 unique sop_uid(s) affected); dropped as exact duplicates before pivoting -- see load_labels_wide comment for provenance. This is a pre-existing RSNA release data quirk, not introduced by this pipeline.
+2026-09-12 04:39:06,338 INFO using cached patient index at data/rsna/rsna-intracranial-hemorrhage-detection/patient_index_cache.parquet
+2026-09-12 04:39:08,852 INFO excluded 10088 slice(s) belonging to 191 RSNA patient(s) confirmed to overlap with BHSD (of 191 requested exclusion ids); 742715 slices remain
+2026-09-12 04:39:09,322 INFO patient-grouped 5-fold split verified leakage-free (11854 total patients)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+/home/fcse.santoshkumar/ich_windowing/ich_gen/datasets/common.py:171: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  labels = torch.from_numpy(s.labels)
+
+loading RSNA internal held-out fold ...
+internal (RSNA fold 0): 4000 slices, 2370 patients
+building CQ500 external test set ...
+external (CQ500): 22309 slices, 473 studies
+
+=== baseline 2 (fixed_three_window): internal RSNA vs external CQ500 ===
+internal AUROC=0.9345  external AUROC=0.6538  relative degradation=+0.3004
+internal accuracy=0.9413  external accuracy=0.7007  relative degradation=+0.2556
+pooled degradation (mean of AUROC/accuracy relative degradation) = +0.2780
+
+per-subtype sensitivity relative degradation:
+  epidural           internal_sens=0.0526  external_sens=0.0210  rel_degradation=+0.6010
+  intraparenchymal   internal_sens=0.6650  external_sens=0.1430  rel_degradation=+0.7850
+  intraventricular   internal_sens=0.6408  external_sens=0.2098  rel_degradation=+0.6727
+  subarachnoid       internal_sens=0.3778  external_sens=0.2540  rel_degradation=+0.3278
+  subdural           internal_sens=0.4576  external_sens=0.2275  rel_degradation=+0.5028
+
+stratified degradation (mean over 5 subtypes) = +0.5779
+EDH-specific relative degradation = +0.6010 (H1/H2 priority subtype)
+
+observed H1 test statistic (stratified - pooled degradation) = +0.2998
+
+running 1000-resample independent two-sample bootstrap (patients resampled within each site, RSNA-internal and CQ500 resampled independently) ...
+
+=== H1 TEST RESULT (baseline 2, RSNA-internal -> CQ500-external) ===
+pooled degradation:      +0.2780 95% CI (0.2501318994714963, 0.30456769210569795)
+stratified degradation:  +0.5779 95% CI (0.44776845441799706, 0.6813802553273878)
+EDH-specific degradation:+0.6010 95% CI (-0.09991815283880406, 1.0)
+difference (stratified - pooled): +0.2998
+two-sided bootstrap p-value: 0.0020 (0/1000 degenerate replicates dropped)
+RESULT: stratified sensitivity degradation IS statistically significantly LARGER than pooled AUROC/accuracy degradation -- consistent with H1 (subtype-only test; size-tercile clause untested, see module docstring).
+
+saved runs/baselines_bhsd_excluded/h1_baseline2_degradation_result.json
+

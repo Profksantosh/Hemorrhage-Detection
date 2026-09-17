@@ -1,0 +1,111 @@
+building CQ500 external test set ...
+CQ500: 22309 slices, 473 studies
+
+=== CQ500 external -- SLICE level (noisy: study labels propagated): baseline4a vs baseline2 ===
+n = 22309, positive rate = 0.384
+  baseline4a   AUROC=0.6607  sens@0.5=0.2695  spec@0.5=0.9758
+  baseline2    AUROC=0.6538  sens@0.5=0.2600  spec@0.5=0.9754
+  diff (baseline4a-baseline2) AUROC=+0.0070   DeLong z=+2.054  p=0.0400
+  sensitivity delta (baseline4a-baseline2) = +0.0096
+
+=== CQ500 external -- STUDY level (agg=max): baseline4a vs baseline2 ===
+n = 473, positive rate = 0.416
+  baseline4a   AUROC=0.9116  sens@0.5=0.8883  spec@0.5=0.6993
+  baseline2    AUROC=0.9054  sens@0.5=0.9086  spec@0.5=0.6920
+  diff (baseline4a-baseline2) AUROC=+0.0062   DeLong z=+0.694  p=0.4879
+  sensitivity delta (baseline4a-baseline2) = -0.0203
+
+=== CQ500 external -- STUDY level (agg=mean): baseline4a vs baseline2 ===
+n = 473, positive rate = 0.416
+  baseline4a   AUROC=0.9140  sens@0.5=0.1574  spec@0.5=0.9964
+  baseline2    AUROC=0.9063  sens@0.5=0.1624  spec@0.5=1.0000
+  diff (baseline4a-baseline2) AUROC=+0.0077   DeLong z=+0.979  p=0.3274
+  sensitivity delta (baseline4a-baseline2) = -0.0051
+
+=== CQ500 external -- SLICE level (noisy: study labels propagated): baseline4b vs baseline2 ===
+n = 22309, positive rate = 0.384
+  baseline4b   AUROC=0.6223  sens@0.5=0.2571  spec@0.5=0.9742
+  baseline2    AUROC=0.6538  sens@0.5=0.2600  spec@0.5=0.9754
+  diff (baseline4b-baseline2) AUROC=-0.0314   DeLong z=-9.463  p=0.0000
+  sensitivity delta (baseline4b-baseline2) = -0.0028
+
+=== CQ500 external -- STUDY level (agg=max): baseline4b vs baseline2 ===
+n = 473, positive rate = 0.416
+  baseline4b   AUROC=0.8909  sens@0.5=0.9086  spec@0.5=0.6449
+  baseline2    AUROC=0.9054  sens@0.5=0.9086  spec@0.5=0.6920
+  diff (baseline4b-baseline2) AUROC=-0.0146   DeLong z=-1.187  p=0.2351
+  sensitivity delta (baseline4b-baseline2) = +0.0000
+
+=== CQ500 external -- STUDY level (agg=mean): baseline4b vs baseline2 ===
+n = 473, positive rate = 0.416
+  baseline4b   AUROC=0.8904  sens@0.5=0.1421  spec@0.5=1.0000
+  baseline2    AUROC=0.9063  sens@0.5=0.1624  spec@0.5=1.0000
+  diff (baseline4b-baseline2) AUROC=-0.0159   DeLong z=-1.433  p=0.1518
+  sensitivity delta (baseline4b-baseline2) = -0.0203
+
+=== CQ500 external -- SLICE level (noisy: study labels propagated): baseline4a vs baseline4b ===
+n = 22309, positive rate = 0.384
+  baseline4a   AUROC=0.6607  sens@0.5=0.2695  spec@0.5=0.9758
+  baseline4b   AUROC=0.6223  sens@0.5=0.2571  spec@0.5=0.9742
+  diff (baseline4a-baseline4b) AUROC=+0.0384   DeLong z=+10.421  p=0.0000
+  sensitivity delta (baseline4a-baseline4b) = +0.0124
+
+=== CQ500 external -- STUDY level (agg=max): baseline4a vs baseline4b ===
+n = 473, positive rate = 0.416
+  baseline4a   AUROC=0.9116  sens@0.5=0.8883  spec@0.5=0.6993
+  baseline4b   AUROC=0.8909  sens@0.5=0.9086  spec@0.5=0.6449
+  diff (baseline4a-baseline4b) AUROC=+0.0207   DeLong z=+1.947  p=0.0515
+  sensitivity delta (baseline4a-baseline4b) = -0.0203
+
+=== CQ500 external -- STUDY level (agg=mean): baseline4a vs baseline4b ===
+n = 473, positive rate = 0.416
+  baseline4a   AUROC=0.9140  sens@0.5=0.1574  spec@0.5=0.9964
+  baseline4b   AUROC=0.8904  sens@0.5=0.1421  spec@0.5=1.0000
+  diff (baseline4a-baseline4b) AUROC=+0.0236   DeLong z=+2.340  p=0.0193
+  sensitivity delta (baseline4a-baseline4b) = +0.0152
+
+=== CQ500 external -- SUBTYPE/SIZE-STRATIFIED (evaluate_pooled_and_stratified, slice level, noisy: study labels propagated) ===
+  baseline2: pooled AUROC=0.6538  pooled sens@0.5=0.2600 (0.22372529291137747, 0.29967552144939213)
+  baseline4a: pooled AUROC=0.6607  pooled sens@0.5=0.2695 (0.23233797387708857, 0.3116322483760687)
+  baseline4b: pooled AUROC=0.6223  pooled sens@0.5=0.2571 (0.2185789175200849, 0.29991046685732403)
+
+--- subtype table: baseline4a vs baseline2 ---
+
+subtype            AUROC(baseline4a)  AUROC(baseline2)sens(baseline4a)sens(baseline2)   delta(pp)  flag
+epidural                      0.6048            0.6043        0.0420        0.0210        2.10  
+intraparenchymal              0.5973            0.5933        0.1385        0.1430       -0.45  
+intraventricular              0.7488            0.7515        0.2224        0.2098        1.26  
+subarachnoid                  0.7592            0.7281        0.2777        0.2540        2.37  
+subdural                      0.6674            0.6523        0.2312        0.2275        0.38  
+
+--- EDH (primary H1/H2 subtype of interest), baseline4a vs baseline2 ---
+  sensitivity_baseline4a=0.0420  sensitivity_baseline2=0.0210  delta=+2.10pp (threshold: 5.0pp)
+
+--- subtype table: baseline4b vs baseline2 ---
+
+subtype            AUROC(baseline4b)  AUROC(baseline2)sens(baseline4b)sens(baseline2)   delta(pp)  flag
+epidural                      0.6217            0.6043        0.0000        0.0210       -2.10  
+intraparenchymal              0.5998            0.5933        0.0642        0.1430       -7.88  *** >=5pp delta ***
+intraventricular              0.7355            0.7515        0.1095        0.2098      -10.03  *** >=5pp delta ***
+subarachnoid                  0.6905            0.7281        0.1104        0.2540      -14.36  *** >=5pp delta ***
+subdural                      0.5962            0.6523        0.1904        0.2275       -3.71  
+
+--- EDH (primary H1/H2 subtype of interest), baseline4b vs baseline2 ---
+  sensitivity_baseline4b=0.0000  sensitivity_baseline2=0.0210  delta=-2.10pp (threshold: 5.0pp)
+
+--- subtype table: baseline4a vs baseline4b ---
+
+subtype            AUROC(baseline4a) AUROC(baseline4b)sens(baseline4a)sens(baseline4b)   delta(pp)  flag
+epidural                      0.6048            0.6217        0.0420        0.0000        4.20  
+intraparenchymal              0.5973            0.5998        0.1385        0.0642        7.43  *** >=5pp delta ***
+intraventricular              0.7488            0.7355        0.2224        0.1095       11.29  *** >=5pp delta ***
+subarachnoid                  0.7592            0.6905        0.2777        0.1104       16.73  *** >=5pp delta ***
+subdural                      0.6674            0.5962        0.2312        0.1904        4.08  
+
+--- EDH (primary H1/H2 subtype of interest), baseline4a vs baseline4b ---
+  sensitivity_baseline4a=0.0420  sensitivity_baseline4b=0.0000  delta=+4.20pp (threshold: 5.0pp)
+
+size-tercile stratification: no lesion_size_mm3 available for this site (expected for RSNA/CQ500/PhysioNet-ICH per Section IV-E; BHSD-derived data is the primary size-stratification source)
+
+saved runs/baselines_bhsd_excluded/external_cq500_baselines4ab_result.json
+

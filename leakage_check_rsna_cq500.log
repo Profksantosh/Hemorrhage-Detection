@@ -1,0 +1,56 @@
+2026-09-03 09:21:31,866 INFO loading RSNA sample index (max_samples=20000)...
+2026-09-03 09:21:58,546 INFO using cached patient index at data/rsna/rsna-intracranial-hemorrhage-detection/patient_index_cache.parquet
+2026-09-03 09:21:59,243 INFO patient-grouped 5-fold split verified leakage-free (11890 total patients)
+using training config from runs/decisive_v2/decisive_wicl/config.json: rsna_root=data/rsna/rsna-intracranial-hemorrhage-detection max_samples=20000 n_folds=5 seed=0 fold=0
+RSNA training pool actually used for the decisive_v2 checkpoints (fold 0 train split): 16000 slices, 9512 unique patients
+building CQ500 sample list (same cq500_labels_aggregated.csv score_external.py read for external_cq500_result.json)...
+CQ500: 22309 slices, 473 unique patients/studies
+
+=== Check 1: exact patient/study-ID overlap (verify_disjoint_from_external, EXHAUSTIVE over all IDs) ===
+PASS: no patient/study ID string shared between the RSNA training pool and CQ500.
+
+=== Check 2: perceptual-hash near-duplicate check (find_near_duplicates, SUBSAMPLED -- see module docstring) ===
+hashing 400/16000 RSNA training slices and 2000/22309 CQ500 slices (seed=0); full all-pairs (16000x22309 = 356,944,000 pairs) is infeasible on CPU-only hardware in this session -- this is a documented subsample, not an exhaustive check.
+  ...RSNA: hashed 50/400
+  ...RSNA: hashed 100/400
+  ...RSNA: hashed 150/400
+  ...RSNA: hashed 200/400
+  ...RSNA: hashed 250/400
+  ...RSNA: hashed 300/400
+  ...RSNA: hashed 350/400
+  ...RSNA: hashed 400/400
+  ...CQ500: hashed 250/2000
+  ...CQ500: hashed 500/2000
+  ...CQ500: hashed 750/2000
+  ...CQ500: hashed 1000/2000
+  ...CQ500: hashed 1250/2000
+  ...CQ500: hashed 1500/2000
+  ...CQ500: hashed 1750/2000
+  ...CQ500: hashed 2000/2000
+
+near-duplicate candidates (Hamming distance <= 4) among 400 x 2000 = 800,000 compared pairs: 302
+  RSNA_4874cd8ebac6  ~  CQ500_611a723ed1a3   (hamming=0)
+  RSNA_4874cd8ebac6  ~  CQ500_5d949b3b965b   (hamming=0)
+  RSNA_d8c49e1a3b7f  ~  CQ500_b94475003f18   (hamming=0)
+  RSNA_5e539095106b  ~  CQ500_b94475003f18   (hamming=0)
+  RSNA_eb0baa45bec7  ~  CQ500_cf40d3d16680   (hamming=0)
+  RSNA_9f3d7f7c4a83  ~  CQ500_cf40d3d16680   (hamming=0)
+  RSNA_2896318153b2  ~  CQ500_611a723ed1a3   (hamming=2)
+  RSNA_2896318153b2  ~  CQ500_5d949b3b965b   (hamming=2)
+  RSNA_2896318153b2  ~  CQ500_5d3569dcd882   (hamming=2)
+  RSNA_2896318153b2  ~  CQ500_0a131b35183e   (hamming=2)
+  RSNA_2896318153b2  ~  CQ500_d0b3bc0d2966   (hamming=2)
+  RSNA_2896318153b2  ~  CQ500_3a444da19d0c   (hamming=2)
+  RSNA_4874cd8ebac6  ~  CQ500_c959de214b98   (hamming=2)
+  RSNA_4874cd8ebac6  ~  CQ500_8dcc9feb6451   (hamming=2)
+  RSNA_4874cd8ebac6  ~  CQ500_10d0e30b2b3a   (hamming=2)
+  RSNA_4874cd8ebac6  ~  CQ500_0a131b35183e   (hamming=2)
+  RSNA_4874cd8ebac6  ~  CQ500_9d0bd6259109   (hamming=2)
+  RSNA_4874cd8ebac6  ~  CQ500_5c5b1c01893e   (hamming=2)
+  RSNA_4874cd8ebac6  ~  CQ500_b2c1133ae714   (hamming=2)
+  RSNA_4874cd8ebac6  ~  CQ500_3a444da19d0c   (hamming=2)
+  ... and 282 more
+
+FLAGGED: 302 near-duplicate candidate pair(s) found in the subsample -- inspect before trusting the CQ500 zero-shot result as leakage-free.
+
+wrote runs/decisive_v2/leakage_check_rsna_cq500_result.json
