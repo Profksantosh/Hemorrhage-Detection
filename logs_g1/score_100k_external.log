@@ -1,0 +1,8 @@
+cq500: 22309 slices
+physionet: 2814 slices
+saved BIG_B2_seed0__cq500.npz
+saved BIG_B2_seed0__physionet.npz
+saved BIG_B4c_seed0__cq500.npz
+saved BIG_B4c_seed0__physionet.npz
+saved BIG_WICL_seed0__cq500.npz
+saved BIG_WICL_seed0__physionet.npz

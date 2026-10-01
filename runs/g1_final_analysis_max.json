@@ -1,0 +1,2098 @@
+{
+ "protocol": "G1 revision: final analysis at the correct unit (patient/study), all seeds available (2026-10-01).\n\nInputs (per seed s, model m in B2/B4c/WICL):\n  RSNA internal per-patient : runs/g1_rsna_patient/{m}_seed{s}.npz\n  CQ500                     : seed 0 runs/p4_rescore/{m}__cq500.npz, seeds 1-2 runs/g1_seeds_ext/{m}_seed{s}__cq500.npz\n  PhysioNet (reoriented)    : runs/g1_physionet_fixed/ (see g1_physionet_reoriented_infer.py)\n  H4 HU-corner              : seed 0 runs/baselines_bhsd_excluded/h4_4c_result.json, seeds 1-2 runs/g1_seeds/h4_seed{s}_result.json\nScore of a patient/study = max over its slices (primary) or mean of its 5 highest slice scores (secondary);\nlabel = max slice label.\n\nAnalyses\n  A. Per-site discrimination and operating point (AUROC any + subtypes, sens/spec at the RSNA-locked 0.5).\n  B. Corrected H1 (same unit, same threshold-free metric): relative degradation of pooled any-ICH AUROC versus the\n     mean relative degradation of the five subtype AUROCs, RSNA -> CQ500 (and PhysioNet, exploratory).\n  C. Operating-point transfer: change in sensitivity and specificity at 0.5, RSNA -> external.\n  D. H2 across seeds: WICL - B4c and WICL - B2 study-level AUROC on each external site.\n  E. H4 across seeds: mean corner degradation for B2, B4c, WICL.\nBootstrap: internal patients and external studies resampled independently (2,000 replicates, seed 0).\n",
+ "aggregation": "max",
+ "per_seed": {
+  "0": {
+   "n": {
+    "rsna": 2370,
+    "cq500": 473,
+    "physionet": 75
+   },
+   "sites": {
+    "rsna": {
+     "B2": {
+      "auroc": {
+       "any": 0.9677,
+       "epidural": 0.8737,
+       "intraparenchymal": 0.951,
+       "intraventricular": 0.9635,
+       "subarachnoid": 0.9115,
+       "subdural": 0.9351
+      },
+      "auroc_any_ci": [
+       0.9595,
+       0.9752
+      ],
+      "sens_any@0.5": 0.942,
+      "spec_any@0.5": 0.8551,
+      "ece_any": 0.0892,
+      "ece_any_ci": [
+       0.0792,
+       0.1019
+      ],
+      "prevalence_any": 0.3857,
+      "mean_score_any": 0.459,
+      "sub_sens@0.5": {
+       "epidural": "15/40",
+       "intraparenchymal": "500/572",
+       "intraventricular": "335/383",
+       "subarachnoid": "338/420",
+       "subdural": "388/435"
+      },
+      "positives": {
+       "any": 914,
+       "epidural": 40,
+       "intraparenchymal": 572,
+       "intraventricular": 383,
+       "subarachnoid": 420,
+       "subdural": 435
+      }
+     },
+     "B4c": {
+      "auroc": {
+       "any": 0.9647,
+       "epidural": 0.8887,
+       "intraparenchymal": 0.9546,
+       "intraventricular": 0.9669,
+       "subarachnoid": 0.9065,
+       "subdural": 0.9288
+      },
+      "auroc_any_ci": [
+       0.9562,
+       0.9721
+      ],
+      "sens_any@0.5": 0.9519,
+      "spec_any@0.5": 0.842,
+      "ece_any": 0.0978,
+      "ece_any_ci": [
+       0.0867,
+       0.1093
+      ],
+      "prevalence_any": 0.3857,
+      "mean_score_any": 0.4699,
+      "sub_sens@0.5": {
+       "epidural": "9/40",
+       "intraparenchymal": "506/572",
+       "intraventricular": "322/383",
+       "subarachnoid": "311/420",
+       "subdural": "384/435"
+      },
+      "positives": {
+       "any": 914,
+       "epidural": 40,
+       "intraparenchymal": 572,
+       "intraventricular": 383,
+       "subarachnoid": 420,
+       "subdural": 435
+      }
+     },
+     "WICL": {
+      "auroc": {
+       "any": 0.9653,
+       "epidural": 0.8655,
+       "intraparenchymal": 0.9557,
+       "intraventricular": 0.9717,
+       "subarachnoid": 0.9104,
+       "subdural": 0.9307
+      },
+      "auroc_any_ci": [
+       0.9564,
+       0.9729
+      ],
+      "sens_any@0.5": 0.9442,
+      "spec_any@0.5": 0.8551,
+      "ece_any": 0.0911,
+      "ece_any_ci": [
+       0.08,
+       0.1032
+      ],
+      "prevalence_any": 0.3857,
+      "mean_score_any": 0.4602,
+      "sub_sens@0.5": {
+       "epidural": "4/40",
+       "intraparenchymal": "488/572",
+       "intraventricular": "340/383",
+       "subarachnoid": "317/420",
+       "subdural": "379/435"
+      },
+      "positives": {
+       "any": 914,
+       "epidural": 40,
+       "intraparenchymal": 572,
+       "intraventricular": 383,
+       "subarachnoid": 420,
+       "subdural": 435
+      }
+     }
+    },
+    "cq500": {
+     "B2": {
+      "auroc": {
+       "any": 0.9054,
+       "epidural": 0.8664,
+       "intraparenchymal": 0.8884,
+       "intraventricular": 0.9799,
+       "subarachnoid": 0.9352,
+       "subdural": 0.8909
+      },
+      "auroc_any_ci": [
+       0.8737,
+       0.935
+      ],
+      "sens_any@0.5": 0.9086,
+      "spec_any@0.5": 0.692,
+      "ece_any": 0.1873,
+      "ece_any_ci": [
+       0.1564,
+       0.2244
+      ],
+      "prevalence_any": 0.4165,
+      "mean_score_any": 0.5526,
+      "sub_sens@0.5": {
+       "epidural": "2/12",
+       "intraparenchymal": "103/129",
+       "intraventricular": "23/26",
+       "subarachnoid": "50/57",
+       "subdural": "43/49"
+      },
+      "positives": {
+       "any": 197,
+       "epidural": 12,
+       "intraparenchymal": 129,
+       "intraventricular": 26,
+       "subarachnoid": 57,
+       "subdural": 49
+      }
+     },
+     "B4c": {
+      "auroc": {
+       "any": 0.9134,
+       "epidural": 0.8783,
+       "intraparenchymal": 0.8942,
+       "intraventricular": 0.9823,
+       "subarachnoid": 0.954,
+       "subdural": 0.8872
+      },
+      "auroc_any_ci": [
+       0.8863,
+       0.939
+      ],
+      "sens_any@0.5": 0.8934,
+      "spec_any@0.5": 0.7101,
+      "ece_any": 0.1653,
+      "ece_any_ci": [
+       0.1376,
+       0.2032
+      ],
+      "prevalence_any": 0.4165,
+      "mean_score_any": 0.542,
+      "sub_sens@0.5": {
+       "epidural": "0/12",
+       "intraparenchymal": "98/129",
+       "intraventricular": "25/26",
+       "subarachnoid": "52/57",
+       "subdural": "43/49"
+      },
+      "positives": {
+       "any": 197,
+       "epidural": 12,
+       "intraparenchymal": 129,
+       "intraventricular": 26,
+       "subarachnoid": 57,
+       "subdural": 49
+      }
+     },
+     "WICL": {
+      "auroc": {
+       "any": 0.9022,
+       "epidural": 0.8518,
+       "intraparenchymal": 0.9082,
+       "intraventricular": 0.9852,
+       "subarachnoid": 0.9379,
+       "subdural": 0.8784
+      },
+      "auroc_any_ci": [
+       0.8714,
+       0.9294
+      ],
+      "sens_any@0.5": 0.868,
+      "spec_any@0.5": 0.6993,
+      "ece_any": 0.1853,
+      "ece_any_ci": [
+       0.1557,
+       0.2226
+      ],
+      "prevalence_any": 0.4165,
+      "mean_score_any": 0.5412,
+      "sub_sens@0.5": {
+       "epidural": "0/12",
+       "intraparenchymal": "100/129",
+       "intraventricular": "26/26",
+       "subarachnoid": "52/57",
+       "subdural": "39/49"
+      },
+      "positives": {
+       "any": 197,
+       "epidural": 12,
+       "intraparenchymal": 129,
+       "intraventricular": 26,
+       "subarachnoid": 57,
+       "subdural": 49
+      }
+     }
+    },
+    "physionet": {
+     "B2": {
+      "auroc": {
+       "any": 0.9295,
+       "epidural": 0.7857,
+       "intraparenchymal": 0.8231,
+       "intraventricular": 0.9829,
+       "subarachnoid": 0.916,
+       "subdural": 0.8803
+      },
+      "auroc_any_ci": [
+       0.8607,
+       0.9821
+      ],
+      "sens_any@0.5": 0.9722,
+      "spec_any@0.5": 0.3077,
+      "ece_any": 0.3407,
+      "ece_any_ci": [
+       0.2467,
+       0.4383
+      ],
+      "prevalence_any": 0.48,
+      "mean_score_any": 0.8018,
+      "sub_sens@0.5": {
+       "epidural": "3/21",
+       "intraparenchymal": "13/16",
+       "intraventricular": "5/5",
+       "subarachnoid": "7/7",
+       "subdural": "4/4"
+      },
+      "positives": {
+       "any": 36,
+       "epidural": 21,
+       "intraparenchymal": 16,
+       "intraventricular": 5,
+       "subarachnoid": 7,
+       "subdural": 4
+      }
+     },
+     "B4c": {
+      "auroc": {
+       "any": 0.9573,
+       "epidural": 0.8298,
+       "intraparenchymal": 0.8347,
+       "intraventricular": 0.9943,
+       "subarachnoid": 0.7773,
+       "subdural": 0.919
+      },
+      "auroc_any_ci": [
+       0.9106,
+       0.9893
+      ],
+      "sens_any@0.5": 0.9722,
+      "spec_any@0.5": 0.6154,
+      "ece_any": 0.186,
+      "ece_any_ci": [
+       0.1239,
+       0.2685
+      ],
+      "prevalence_any": 0.48,
+      "mean_score_any": 0.6384,
+      "sub_sens@0.5": {
+       "epidural": "4/21",
+       "intraparenchymal": "13/16",
+       "intraventricular": "4/5",
+       "subarachnoid": "5/7",
+       "subdural": "4/4"
+      },
+      "positives": {
+       "any": 36,
+       "epidural": 21,
+       "intraparenchymal": 16,
+       "intraventricular": 5,
+       "subarachnoid": 7,
+       "subdural": 4
+      }
+     },
+     "WICL": {
+      "auroc": {
+       "any": 0.9195,
+       "epidural": 0.7795,
+       "intraparenchymal": 0.8167,
+       "intraventricular": 0.9914,
+       "subarachnoid": 0.7857,
+       "subdural": 0.8521
+      },
+      "auroc_any_ci": [
+       0.854,
+       0.9694
+      ],
+      "sens_any@0.5": 0.9444,
+      "spec_any@0.5": 0.7179,
+      "ece_any": 0.1844,
+      "ece_any_ci": [
+       0.1139,
+       0.2717
+      ],
+      "prevalence_any": 0.48,
+      "mean_score_any": 0.6065,
+      "sub_sens@0.5": {
+       "epidural": "0/21",
+       "intraparenchymal": "8/16",
+       "intraventricular": "5/5",
+       "subarachnoid": "5/7",
+       "subdural": "3/4"
+      },
+      "positives": {
+       "any": 36,
+       "epidural": 21,
+       "intraparenchymal": 16,
+       "intraventricular": 5,
+       "subarachnoid": 7,
+       "subdural": 4
+      }
+     }
+    }
+   },
+   "h1": {
+    "cq500": {
+     "B2": {
+      "pooled_auroc_rel_degradation": 0.0643,
+      "pooled_ci": [
+       0.0327,
+       0.0972
+      ],
+      "subtype_mean_auroc_rel_degradation": 0.0156,
+      "subtype_ci": [
+       -0.0112,
+       0.0429
+      ],
+      "diff_subtype_minus_pooled": -0.0487,
+      "diff_ci": [
+       -0.0786,
+       -0.0205
+      ],
+      "p": 0.0
+     },
+     "B4c": {
+      "pooled_auroc_rel_degradation": 0.0532,
+      "pooled_ci": [
+       0.025,
+       0.082
+      ],
+      "subtype_mean_auroc_rel_degradation": 0.0103,
+      "subtype_ci": [
+       -0.0204,
+       0.0423
+      ],
+      "diff_subtype_minus_pooled": -0.043,
+      "diff_ci": [
+       -0.0767,
+       -0.0099
+      ],
+      "p": 0.01
+     },
+     "WICL": {
+      "pooled_auroc_rel_degradation": 0.0653,
+      "pooled_ci": [
+       0.0358,
+       0.0972
+      ],
+      "subtype_mean_auroc_rel_degradation": 0.0155,
+      "subtype_ci": [
+       -0.0123,
+       0.0426
+      ],
+      "diff_subtype_minus_pooled": -0.0498,
+      "diff_ci": [
+       -0.0805,
+       -0.0189
+      ],
+      "p": 0.001
+     }
+    },
+    "physionet": {
+     "B2": {
+      "pooled_auroc_rel_degradation": 0.0395,
+      "pooled_ci": [
+       -0.0154,
+       0.1113
+      ],
+      "subtype_mean_auroc_rel_degradation": 0.0537,
+      "subtype_ci": [
+       0.0021,
+       0.1123
+      ],
+      "diff_subtype_minus_pooled": 0.0143,
+      "diff_ci": [
+       -0.0615,
+       0.0857
+      ],
+      "p": 0.644
+     },
+     "B4c": {
+      "pooled_auroc_rel_degradation": 0.0078,
+      "pooled_ci": [
+       -0.0281,
+       0.0568
+      ],
+      "subtype_mean_auroc_rel_degradation": 0.0633,
+      "subtype_ci": [
+       -0.0088,
+       0.1568
+      ],
+      "diff_subtype_minus_pooled": 0.0556,
+      "diff_ci": [
+       -0.0042,
+       0.1348
+      ],
+      "p": 0.073
+     },
+     "WICL": {
+      "pooled_auroc_rel_degradation": 0.0474,
+      "pooled_ci": [
+       -0.0052,
+       0.116
+      ],
+      "subtype_mean_auroc_rel_degradation": 0.0892,
+      "subtype_ci": [
+       0.0095,
+       0.187
+      ],
+      "diff_subtype_minus_pooled": 0.0418,
+      "diff_ci": [
+       -0.0343,
+       0.1308
+      ],
+      "p": 0.293
+     }
+    }
+   },
+   "operating_point": {
+    "cq500": {
+     "B2": {
+      "delta_sens": -0.0334,
+      "delta_sens_ci": [
+       -0.077,
+       0.0087
+      ],
+      "delta_spec": -0.1631,
+      "delta_spec_ci": [
+       -0.2205,
+       -0.1065
+      ],
+      "p_spec": 0.0
+     },
+     "B4c": {
+      "delta_sens": -0.0585,
+      "delta_sens_ci": [
+       -0.1084,
+       -0.0147
+      ],
+      "delta_spec": -0.1319,
+      "delta_spec_ci": [
+       -0.1887,
+       -0.0761
+      ],
+      "p_spec": 0.0
+     },
+     "WICL": {
+      "delta_sens": -0.0762,
+      "delta_sens_ci": [
+       -0.1273,
+       -0.0277
+      ],
+      "delta_spec": -0.1558,
+      "delta_spec_ci": [
+       -0.2116,
+       -0.099
+      ],
+      "p_spec": 0.0
+     }
+    },
+    "physionet": {
+     "B2": {
+      "delta_sens": 0.0302,
+      "delta_sens_ci": [
+       -0.0357,
+       0.0702
+      ],
+      "delta_spec": -0.5474,
+      "delta_spec_ci": [
+       -0.6868,
+       -0.3873
+      ],
+      "p_spec": 0.0
+     },
+     "B4c": {
+      "delta_sens": 0.0204,
+      "delta_sens_ci": [
+       -0.0415,
+       0.0587
+      ],
+      "delta_spec": -0.2266,
+      "delta_spec_ci": [
+       -0.3856,
+       -0.0677
+      ],
+      "p_spec": 0.0
+     },
+     "WICL": {
+      "delta_sens": 0.0002,
+      "delta_sens_ci": [
+       -0.0828,
+       0.0626
+      ],
+      "delta_spec": -0.1371,
+      "delta_spec_ci": [
+       -0.2861,
+       0.0001
+      ],
+      "p_spec": 0.051
+     }
+    }
+   },
+   "h2": {
+    "rsna": {
+     "WICL-B4c": {
+      "diff": 0.0005,
+      "ci": [
+       -0.0052,
+       0.0056
+      ],
+      "p": 0.858
+     },
+     "WICL-B2": {
+      "diff": -0.0024,
+      "ci": [
+       -0.0074,
+       0.0026
+      ],
+      "p": 0.357
+     },
+     "B4c-B2": {
+      "diff": -0.0029,
+      "ci": [
+       -0.0076,
+       0.0019
+      ],
+      "p": 0.21
+     }
+    },
+    "cq500": {
+     "WICL-B4c": {
+      "diff": -0.0112,
+      "ci": [
+       -0.0285,
+       0.0058
+      ],
+      "p": 0.203
+     },
+     "WICL-B2": {
+      "diff": -0.0032,
+      "ci": [
+       -0.0219,
+       0.0169
+      ],
+      "p": 0.727
+     },
+     "B4c-B2": {
+      "diff": 0.008,
+      "ci": [
+       -0.0118,
+       0.0274
+      ],
+      "p": 0.42
+     }
+    },
+    "physionet": {
+     "WICL-B4c": {
+      "diff": -0.0377,
+      "ci": [
+       -0.0887,
+       0.0014
+      ],
+      "p": 0.063
+     },
+     "WICL-B2": {
+      "diff": -0.01,
+      "ci": [
+       -0.067,
+       0.0479
+      ],
+      "p": 0.695
+     },
+     "B4c-B2": {
+      "diff": 0.0278,
+      "ci": [
+       -0.0145,
+       0.0775
+      ],
+      "p": 0.214
+     }
+    }
+   }
+  },
+  "1": {
+   "n": {
+    "rsna": 2370,
+    "cq500": 473,
+    "physionet": 75
+   },
+   "sites": {
+    "rsna": {
+     "B2": {
+      "auroc": {
+       "any": 0.966,
+       "epidural": 0.8723,
+       "intraparenchymal": 0.9558,
+       "intraventricular": 0.9643,
+       "subarachnoid": 0.9164,
+       "subdural": 0.9226
+      },
+      "auroc_any_ci": [
+       0.9574,
+       0.9739
+      ],
+      "sens_any@0.5": 0.9398,
+      "spec_any@0.5": 0.8839,
+      "ece_any": 0.0754,
+      "ece_any_ci": [
+       0.0657,
+       0.0866
+      ],
+      "prevalence_any": 0.3857,
+      "mean_score_any": 0.4427,
+      "sub_sens@0.5": {
+       "epidural": "13/40",
+       "intraparenchymal": "498/572",
+       "intraventricular": "343/383",
+       "subarachnoid": "322/420",
+       "subdural": "369/435"
+      },
+      "positives": {
+       "any": 914,
+       "epidural": 40,
+       "intraparenchymal": 572,
+       "intraventricular": 383,
+       "subarachnoid": 420,
+       "subdural": 435
+      }
+     },
+     "B4c": {
+      "auroc": {
+       "any": 0.9623,
+       "epidural": 0.9041,
+       "intraparenchymal": 0.9541,
+       "intraventricular": 0.9628,
+       "subarachnoid": 0.911,
+       "subdural": 0.9251
+      },
+      "auroc_any_ci": [
+       0.953,
+       0.9705
+      ],
+      "sens_any@0.5": 0.9245,
+      "spec_any@0.5": 0.8771,
+      "ece_any": 0.0787,
+      "ece_any_ci": [
+       0.0683,
+       0.0898
+      ],
+      "prevalence_any": 0.3857,
+      "mean_score_any": 0.4393,
+      "sub_sens@0.5": {
+       "epidural": "11/40",
+       "intraparenchymal": "499/572",
+       "intraventricular": "331/383",
+       "subarachnoid": "319/420",
+       "subdural": "358/435"
+      },
+      "positives": {
+       "any": 914,
+       "epidural": 40,
+       "intraparenchymal": 572,
+       "intraventricular": 383,
+       "subarachnoid": 420,
+       "subdural": 435
+      }
+     },
+     "WICL": {
+      "auroc": {
+       "any": 0.9661,
+       "epidural": 0.8566,
+       "intraparenchymal": 0.9536,
+       "intraventricular": 0.969,
+       "subarachnoid": 0.9095,
+       "subdural": 0.9263
+      },
+      "auroc_any_ci": [
+       0.9574,
+       0.974
+      ],
+      "sens_any@0.5": 0.93,
+      "spec_any@0.5": 0.9128,
+      "ece_any": 0.0614,
+      "ece_any_ci": [
+       0.0529,
+       0.0729
+      ],
+      "prevalence_any": 0.3857,
+      "mean_score_any": 0.4206,
+      "sub_sens@0.5": {
+       "epidural": "2/40",
+       "intraparenchymal": "489/572",
+       "intraventricular": "342/383",
+       "subarachnoid": "280/420",
+       "subdural": "349/435"
+      },
+      "positives": {
+       "any": 914,
+       "epidural": 40,
+       "intraparenchymal": 572,
+       "intraventricular": 383,
+       "subarachnoid": 420,
+       "subdural": 435
+      }
+     }
+    },
+    "cq500": {
+     "B2": {
+      "auroc": {
+       "any": 0.9014,
+       "epidural": 0.8811,
+       "intraparenchymal": 0.8897,
+       "intraventricular": 0.978,
+       "subarachnoid": 0.9338,
+       "subdural": 0.8733
+      },
+      "auroc_any_ci": [
+       0.8673,
+       0.931
+      ],
+      "sens_any@0.5": 0.8782,
+      "spec_any@0.5": 0.779,
+      "ece_any": 0.1539,
+      "ece_any_ci": [
+       0.1293,
+       0.1917
+      ],
+      "prevalence_any": 0.4165,
+      "mean_score_any": 0.5015,
+      "sub_sens@0.5": {
+       "epidural": "2/12",
+       "intraparenchymal": "103/129",
+       "intraventricular": "23/26",
+       "subarachnoid": "49/57",
+       "subdural": "42/49"
+      },
+      "positives": {
+       "any": 197,
+       "epidural": 12,
+       "intraparenchymal": 129,
+       "intraventricular": 26,
+       "subarachnoid": 57,
+       "subdural": 49
+      }
+     },
+     "B4c": {
+      "auroc": {
+       "any": 0.9107,
+       "epidural": 0.8684,
+       "intraparenchymal": 0.8935,
+       "intraventricular": 0.9775,
+       "subarachnoid": 0.9264,
+       "subdural": 0.8808
+      },
+      "auroc_any_ci": [
+       0.882,
+       0.9353
+      ],
+      "sens_any@0.5": 0.8782,
+      "spec_any@0.5": 0.7428,
+      "ece_any": 0.1526,
+      "ece_any_ci": [
+       0.1283,
+       0.1907
+      ],
+      "prevalence_any": 0.4165,
+      "mean_score_any": 0.5153,
+      "sub_sens@0.5": {
+       "epidural": "2/12",
+       "intraparenchymal": "97/129",
+       "intraventricular": "24/26",
+       "subarachnoid": "48/57",
+       "subdural": "39/49"
+      },
+      "positives": {
+       "any": 197,
+       "epidural": 12,
+       "intraparenchymal": 129,
+       "intraventricular": 26,
+       "subarachnoid": 57,
+       "subdural": 49
+      }
+     },
+     "WICL": {
+      "auroc": {
+       "any": 0.9008,
+       "epidural": 0.814,
+       "intraparenchymal": 0.8915,
+       "intraventricular": 0.9766,
+       "subarachnoid": 0.9258,
+       "subdural": 0.8815
+      },
+      "auroc_any_ci": [
+       0.8701,
+       0.9302
+      ],
+      "sens_any@0.5": 0.8426,
+      "spec_any@0.5": 0.8116,
+      "ece_any": 0.1314,
+      "ece_any_ci": [
+       0.109,
+       0.169
+      ],
+      "prevalence_any": 0.4165,
+      "mean_score_any": 0.4675,
+      "sub_sens@0.5": {
+       "epidural": "0/12",
+       "intraparenchymal": "96/129",
+       "intraventricular": "23/26",
+       "subarachnoid": "46/57",
+       "subdural": "40/49"
+      },
+      "positives": {
+       "any": 197,
+       "epidural": 12,
+       "intraparenchymal": 129,
+       "intraventricular": 26,
+       "subarachnoid": 57,
+       "subdural": 49
+      }
+     }
+    },
+    "physionet": {
+     "B2": {
+      "auroc": {
+       "any": 0.9231,
+       "epidural": 0.7804,
+       "intraparenchymal": 0.8686,
+       "intraventricular": 0.9743,
+       "subarachnoid": 0.916,
+       "subdural": 0.8592
+      },
+      "auroc_any_ci": [
+       0.8561,
+       0.9707
+      ],
+      "sens_any@0.5": 1.0,
+      "spec_any@0.5": 0.4872,
+      "ece_any": 0.2618,
+      "ece_any_ci": [
+       0.1817,
+       0.3471
+      ],
+      "prevalence_any": 0.48,
+      "mean_score_any": 0.7365,
+      "sub_sens@0.5": {
+       "epidural": "1/21",
+       "intraparenchymal": "13/16",
+       "intraventricular": "5/5",
+       "subarachnoid": "6/7",
+       "subdural": "4/4"
+      },
+      "positives": {
+       "any": 36,
+       "epidural": 21,
+       "intraparenchymal": 16,
+       "intraventricular": 5,
+       "subarachnoid": 7,
+       "subdural": 4
+      }
+     },
+     "B4c": {
+      "auroc": {
+       "any": 0.8917,
+       "epidural": 0.7716,
+       "intraparenchymal": 0.8549,
+       "intraventricular": 0.9943,
+       "subarachnoid": 0.8235,
+       "subdural": 0.8204
+      },
+      "auroc_any_ci": [
+       0.803,
+       0.9585
+      ],
+      "sens_any@0.5": 0.8056,
+      "spec_any@0.5": 0.7949,
+      "ece_any": 0.1496,
+      "ece_any_ci": [
+       0.1078,
+       0.2485
+      ],
+      "prevalence_any": 0.48,
+      "mean_score_any": 0.5337,
+      "sub_sens@0.5": {
+       "epidural": "4/21",
+       "intraparenchymal": "13/16",
+       "intraventricular": "4/5",
+       "subarachnoid": "4/7",
+       "subdural": "3/4"
+      },
+      "positives": {
+       "any": 36,
+       "epidural": 21,
+       "intraparenchymal": 16,
+       "intraventricular": 5,
+       "subarachnoid": 7,
+       "subdural": 4
+      }
+     },
+     "WICL": {
+      "auroc": {
+       "any": 0.9487,
+       "epidural": 0.8113,
+       "intraparenchymal": 0.8252,
+       "intraventricular": 0.9914,
+       "subarachnoid": 0.8004,
+       "subdural": 0.8521
+      },
+      "auroc_any_ci": [
+       0.8957,
+       0.9836
+      ],
+      "sens_any@0.5": 0.9167,
+      "spec_any@0.5": 0.7436,
+      "ece_any": 0.1323,
+      "ece_any_ci": [
+       0.0844,
+       0.2119
+      ],
+      "prevalence_any": 0.48,
+      "mean_score_any": 0.5534,
+      "sub_sens@0.5": {
+       "epidural": "0/21",
+       "intraparenchymal": "10/16",
+       "intraventricular": "5/5",
+       "subarachnoid": "5/7",
+       "subdural": "3/4"
+      },
+      "positives": {
+       "any": 36,
+       "epidural": 21,
+       "intraparenchymal": 16,
+       "intraventricular": 5,
+       "subarachnoid": 7,
+       "subdural": 4
+      }
+     }
+    }
+   },
+   "h1": {
+    "cq500": {
+     "B2": {
+      "pooled_auroc_rel_degradation": 0.0669,
+      "pooled_ci": [
+       0.0351,
+       0.1028
+      ],
+      "subtype_mean_auroc_rel_degradation": 0.0158,
+      "subtype_ci": [
+       -0.0122,
+       0.0433
+      ],
+      "diff_subtype_minus_pooled": -0.0511,
+      "diff_ci": [
+       -0.0854,
+       -0.0208
+      ],
+      "p": 0.0
+     },
+     "B4c": {
+      "pooled_auroc_rel_degradation": 0.0537,
+      "pooled_ci": [
+       0.0265,
+       0.0852
+      ],
+      "subtype_mean_auroc_rel_degradation": 0.0238,
+      "subtype_ci": [
+       -0.0056,
+       0.0572
+      ],
+      "diff_subtype_minus_pooled": -0.03,
+      "diff_ci": [
+       -0.0624,
+       0.0046
+      ],
+      "p": 0.086
+     },
+     "WICL": {
+      "pooled_auroc_rel_degradation": 0.0677,
+      "pooled_ci": [
+       0.0358,
+       0.1004
+      ],
+      "subtype_mean_auroc_rel_degradation": 0.0275,
+      "subtype_ci": [
+       -0.0053,
+       0.0622
+      ],
+      "diff_subtype_minus_pooled": -0.0402,
+      "diff_ci": [
+       -0.0754,
+       -0.0026
+      ],
+      "p": 0.039
+     }
+    },
+    "physionet": {
+     "B2": {
+      "pooled_auroc_rel_degradation": 0.0444,
+      "pooled_ci": [
+       -0.0046,
+       0.1117
+      ],
+      "subtype_mean_auroc_rel_degradation": 0.0511,
+      "subtype_ci": [
+       -0.0047,
+       0.1162
+      ],
+      "diff_subtype_minus_pooled": 0.0066,
+      "diff_ci": [
+       -0.0772,
+       0.083
+      ],
+      "p": 0.885
+     },
+     "B4c": {
+      "pooled_auroc_rel_degradation": 0.0734,
+      "pooled_ci": [
+       0.0018,
+       0.1666
+      ],
+      "subtype_mean_auroc_rel_degradation": 0.0854,
+      "subtype_ci": [
+       0.0186,
+       0.1666
+      ],
+      "diff_subtype_minus_pooled": 0.012,
+      "diff_ci": [
+       -0.0794,
+       0.0936
+      ],
+      "p": 0.808
+     },
+     "WICL": {
+      "pooled_auroc_rel_degradation": 0.018,
+      "pooled_ci": [
+       -0.0192,
+       0.0722
+      ],
+      "subtype_mean_auroc_rel_degradation": 0.0729,
+      "subtype_ci": [
+       -0.004,
+       0.1635
+      ],
+      "diff_subtype_minus_pooled": 0.0548,
+      "diff_ci": [
+       -0.0196,
+       0.1396
+      ],
+      "p": 0.165
+     }
+    }
+   },
+   "operating_point": {
+    "cq500": {
+     "B2": {
+      "delta_sens": -0.0617,
+      "delta_sens_ci": [
+       -0.1102,
+       -0.0158
+      ],
+      "delta_spec": -0.1049,
+      "delta_spec_ci": [
+       -0.159,
+       -0.056
+      ],
+      "p_spec": 0.0
+     },
+     "B4c": {
+      "delta_sens": -0.0463,
+      "delta_sens_ci": [
+       -0.0957,
+       0.0002
+      ],
+      "delta_spec": -0.1343,
+      "delta_spec_ci": [
+       -0.188,
+       -0.0833
+      ],
+      "p_spec": 0.0
+     },
+     "WICL": {
+      "delta_sens": -0.0873,
+      "delta_sens_ci": [
+       -0.14,
+       -0.0365
+      ],
+      "delta_spec": -0.1012,
+      "delta_spec_ci": [
+       -0.1537,
+       -0.0554
+      ],
+      "p_spec": 0.0
+     }
+    },
+    "physionet": {
+     "B2": {
+      "delta_sens": 0.0602,
+      "delta_sens_ci": [
+       0.0452,
+       0.0761
+      ],
+      "delta_spec": -0.3967,
+      "delta_spec_ci": [
+       -0.547,
+       -0.2361
+      ],
+      "p_spec": 0.0
+     },
+     "B4c": {
+      "delta_sens": -0.119,
+      "delta_sens_ci": [
+       -0.2585,
+       0.0058
+      ],
+      "delta_spec": -0.0822,
+      "delta_spec_ci": [
+       -0.2198,
+       0.0442
+      ],
+      "p_spec": 0.213
+     },
+     "WICL": {
+      "delta_sens": -0.0133,
+      "delta_sens_ci": [
+       -0.1125,
+       0.0689
+      ],
+      "delta_spec": -0.1692,
+      "delta_spec_ci": [
+       -0.3138,
+       -0.0336
+      ],
+      "p_spec": 0.01
+     }
+    }
+   },
+   "h2": {
+    "rsna": {
+     "WICL-B4c": {
+      "diff": 0.0038,
+      "ci": [
+       -0.0006,
+       0.0081
+      ],
+      "p": 0.096
+     },
+     "WICL-B2": {
+      "diff": 0.0001,
+      "ci": [
+       -0.0054,
+       0.0053
+      ],
+      "p": 0.96
+     },
+     "B4c-B2": {
+      "diff": -0.0037,
+      "ci": [
+       -0.0085,
+       0.0014
+      ],
+      "p": 0.15
+     }
+    },
+    "cq500": {
+     "WICL-B4c": {
+      "diff": -0.0099,
+      "ci": [
+       -0.0288,
+       0.0092
+      ],
+      "p": 0.314
+     },
+     "WICL-B2": {
+      "diff": -0.0006,
+      "ci": [
+       -0.0224,
+       0.0212
+      ],
+      "p": 0.957
+     },
+     "B4c-B2": {
+      "diff": 0.0093,
+      "ci": [
+       -0.0119,
+       0.0308
+      ],
+      "p": 0.434
+     }
+    },
+    "physionet": {
+     "WICL-B4c": {
+      "diff": 0.057,
+      "ci": [
+       0.0028,
+       0.1255
+      ],
+      "p": 0.039
+     },
+     "WICL-B2": {
+      "diff": 0.0256,
+      "ci": [
+       -0.0237,
+       0.0768
+      ],
+      "p": 0.298
+     },
+     "B4c-B2": {
+      "diff": -0.0313,
+      "ci": [
+       -0.0969,
+       0.025
+      ],
+      "p": 0.281
+     }
+    }
+   }
+  },
+  "2": {
+   "n": {
+    "rsna": 2370,
+    "cq500": 473,
+    "physionet": 75
+   },
+   "sites": {
+    "rsna": {
+     "B2": {
+      "auroc": {
+       "any": 0.9673,
+       "epidural": 0.8726,
+       "intraparenchymal": 0.9539,
+       "intraventricular": 0.9628,
+       "subarachnoid": 0.9149,
+       "subdural": 0.9295
+      },
+      "auroc_any_ci": [
+       0.959,
+       0.9747
+      ],
+      "sens_any@0.5": 0.954,
+      "spec_any@0.5": 0.8482,
+      "ece_any": 0.0949,
+      "ece_any_ci": [
+       0.0839,
+       0.1071
+      ],
+      "prevalence_any": 0.3857,
+      "mean_score_any": 0.467,
+      "sub_sens@0.5": {
+       "epidural": "14/40",
+       "intraparenchymal": "492/572",
+       "intraventricular": "341/383",
+       "subarachnoid": "348/420",
+       "subdural": "374/435"
+      },
+      "positives": {
+       "any": 914,
+       "epidural": 40,
+       "intraparenchymal": 572,
+       "intraventricular": 383,
+       "subarachnoid": 420,
+       "subdural": 435
+      }
+     },
+     "B4c": {
+      "auroc": {
+       "any": 0.9639,
+       "epidural": 0.8889,
+       "intraparenchymal": 0.9494,
+       "intraventricular": 0.9725,
+       "subarachnoid": 0.9137,
+       "subdural": 0.9323
+      },
+      "auroc_any_ci": [
+       0.955,
+       0.9717
+      ],
+      "sens_any@0.5": 0.9387,
+      "spec_any@0.5": 0.8537,
+      "ece_any": 0.0925,
+      "ece_any_ci": [
+       0.0812,
+       0.1043
+      ],
+      "prevalence_any": 0.3857,
+      "mean_score_any": 0.46,
+      "sub_sens@0.5": {
+       "epidural": "8/40",
+       "intraparenchymal": "502/572",
+       "intraventricular": "350/383",
+       "subarachnoid": "337/420",
+       "subdural": "383/435"
+      },
+      "positives": {
+       "any": 914,
+       "epidural": 40,
+       "intraparenchymal": 572,
+       "intraventricular": 383,
+       "subarachnoid": 420,
+       "subdural": 435
+      }
+     },
+     "WICL": {
+      "auroc": {
+       "any": 0.967,
+       "epidural": 0.8577,
+       "intraparenchymal": 0.9549,
+       "intraventricular": 0.9679,
+       "subarachnoid": 0.914,
+       "subdural": 0.926
+      },
+      "auroc_any_ci": [
+       0.959,
+       0.9743
+      ],
+      "sens_any@0.5": 0.9453,
+      "spec_any@0.5": 0.8468,
+      "ece_any": 0.0928,
+      "ece_any_ci": [
+       0.0817,
+       0.1055
+      ],
+      "prevalence_any": 0.3857,
+      "mean_score_any": 0.4682,
+      "sub_sens@0.5": {
+       "epidural": "2/40",
+       "intraparenchymal": "485/572",
+       "intraventricular": "342/383",
+       "subarachnoid": "337/420",
+       "subdural": "367/435"
+      },
+      "positives": {
+       "any": 914,
+       "epidural": 40,
+       "intraparenchymal": 572,
+       "intraventricular": 383,
+       "subarachnoid": 420,
+       "subdural": 435
+      }
+     }
+    },
+    "cq500": {
+     "B2": {
+      "auroc": {
+       "any": 0.9089,
+       "epidural": 0.818,
+       "intraparenchymal": 0.9041,
+       "intraventricular": 0.9798,
+       "subarachnoid": 0.9341,
+       "subdural": 0.8652
+      },
+      "auroc_any_ci": [
+       0.8792,
+       0.9359
+      ],
+      "sens_any@0.5": 0.8934,
+      "spec_any@0.5": 0.7029,
+      "ece_any": 0.1789,
+      "ece_any_ci": [
+       0.1504,
+       0.2173
+      ],
+      "prevalence_any": 0.4165,
+      "mean_score_any": 0.5476,
+      "sub_sens@0.5": {
+       "epidural": "2/12",
+       "intraparenchymal": "100/129",
+       "intraventricular": "25/26",
+       "subarachnoid": "51/57",
+       "subdural": "41/49"
+      },
+      "positives": {
+       "any": 197,
+       "epidural": 12,
+       "intraparenchymal": 129,
+       "intraventricular": 26,
+       "subarachnoid": 57,
+       "subdural": 49
+      }
+     },
+     "B4c": {
+      "auroc": {
+       "any": 0.9024,
+       "epidural": 0.8496,
+       "intraparenchymal": 0.8974,
+       "intraventricular": 0.9767,
+       "subarachnoid": 0.9357,
+       "subdural": 0.8778
+      },
+      "auroc_any_ci": [
+       0.8706,
+       0.9322
+      ],
+      "sens_any@0.5": 0.8985,
+      "spec_any@0.5": 0.721,
+      "ece_any": 0.1745,
+      "ece_any_ci": [
+       0.1442,
+       0.2095
+      ],
+      "prevalence_any": 0.4165,
+      "mean_score_any": 0.5338,
+      "sub_sens@0.5": {
+       "epidural": "1/12",
+       "intraparenchymal": "97/129",
+       "intraventricular": "25/26",
+       "subarachnoid": "51/57",
+       "subdural": "42/49"
+      },
+      "positives": {
+       "any": 197,
+       "epidural": 12,
+       "intraparenchymal": 129,
+       "intraventricular": 26,
+       "subarachnoid": 57,
+       "subdural": 49
+      }
+     },
+     "WICL": {
+      "auroc": {
+       "any": 0.9045,
+       "epidural": 0.7708,
+       "intraparenchymal": 0.9002,
+       "intraventricular": 0.9832,
+       "subarachnoid": 0.927,
+       "subdural": 0.8664
+      },
+      "auroc_any_ci": [
+       0.8735,
+       0.9337
+      ],
+      "sens_any@0.5": 0.8782,
+      "spec_any@0.5": 0.7391,
+      "ece_any": 0.1684,
+      "ece_any_ci": [
+       0.1416,
+       0.2086
+      ],
+      "prevalence_any": 0.4165,
+      "mean_score_any": 0.5285,
+      "sub_sens@0.5": {
+       "epidural": "0/12",
+       "intraparenchymal": "95/129",
+       "intraventricular": "26/26",
+       "subarachnoid": "49/57",
+       "subdural": "40/49"
+      },
+      "positives": {
+       "any": 197,
+       "epidural": 12,
+       "intraparenchymal": 129,
+       "intraventricular": 26,
+       "subarachnoid": 57,
+       "subdural": 49
+      }
+     }
+    },
+    "physionet": {
+     "B2": {
+      "auroc": {
+       "any": 0.9387,
+       "epidural": 0.8598,
+       "intraparenchymal": 0.8697,
+       "intraventricular": 0.9257,
+       "subarachnoid": 0.7878,
+       "subdural": 0.9049
+      },
+      "auroc_any_ci": [
+       0.8792,
+       0.9819
+      ],
+      "sens_any@0.5": 1.0,
+      "spec_any@0.5": 0.3846,
+      "ece_any": 0.3202,
+      "ece_any_ci": [
+       0.2318,
+       0.4135
+      ],
+      "prevalence_any": 0.48,
+      "mean_score_any": 0.7872,
+      "sub_sens@0.5": {
+       "epidural": "3/21",
+       "intraparenchymal": "14/16",
+       "intraventricular": "3/5",
+       "subarachnoid": "6/7",
+       "subdural": "4/4"
+      },
+      "positives": {
+       "any": 36,
+       "epidural": 21,
+       "intraparenchymal": 16,
+       "intraventricular": 5,
+       "subarachnoid": 7,
+       "subdural": 4
+      }
+     },
+     "B4c": {
+      "auroc": {
+       "any": 0.9074,
+       "epidural": 0.7884,
+       "intraparenchymal": 0.8591,
+       "intraventricular": 0.98,
+       "subarachnoid": 0.7878,
+       "subdural": 0.912
+      },
+      "auroc_any_ci": [
+       0.828,
+       0.9656
+      ],
+      "sens_any@0.5": 0.9444,
+      "spec_any@0.5": 0.7179,
+      "ece_any": 0.1679,
+      "ece_any_ci": [
+       0.1121,
+       0.2632
+      ],
+      "prevalence_any": 0.48,
+      "mean_score_any": 0.6066,
+      "sub_sens@0.5": {
+       "epidural": "1/21",
+       "intraparenchymal": "12/16",
+       "intraventricular": "4/5",
+       "subarachnoid": "5/7",
+       "subdural": "4/4"
+      },
+      "positives": {
+       "any": 36,
+       "epidural": 21,
+       "intraparenchymal": 16,
+       "intraventricular": 5,
+       "subarachnoid": 7,
+       "subdural": 4
+      }
+     },
+     "WICL": {
+      "auroc": {
+       "any": 0.958,
+       "epidural": 0.8439,
+       "intraparenchymal": 0.8326,
+       "intraventricular": 0.9714,
+       "subarachnoid": 0.7164,
+       "subdural": 0.919
+      },
+      "auroc_any_ci": [
+       0.8974,
+       0.9986
+      ],
+      "sens_any@0.5": 0.9444,
+      "spec_any@0.5": 0.641,
+      "ece_any": 0.195,
+      "ece_any_ci": [
+       0.1327,
+       0.278
+      ],
+      "prevalence_any": 0.48,
+      "mean_score_any": 0.643,
+      "sub_sens@0.5": {
+       "epidural": "0/21",
+       "intraparenchymal": "8/16",
+       "intraventricular": "4/5",
+       "subarachnoid": "5/7",
+       "subdural": "4/4"
+      },
+      "positives": {
+       "any": 36,
+       "epidural": 21,
+       "intraparenchymal": 16,
+       "intraventricular": 5,
+       "subarachnoid": 7,
+       "subdural": 4
+      }
+     }
+    }
+   },
+   "h1": {
+    "cq500": {
+     "B2": {
+      "pooled_auroc_rel_degradation": 0.0604,
+      "pooled_ci": [
+       0.0318,
+       0.0918
+      ],
+      "subtype_mean_auroc_rel_degradation": 0.029,
+      "subtype_ci": [
+       0.0007,
+       0.0583
+      ],
+      "diff_subtype_minus_pooled": -0.0314,
+      "diff_ci": [
+       -0.0625,
+       0.0017
+      ],
+      "p": 0.067
+     },
+     "B4c": {
+      "pooled_auroc_rel_degradation": 0.0639,
+      "pooled_ci": [
+       0.0315,
+       0.0965
+      ],
+      "subtype_mean_auroc_rel_degradation": 0.0258,
+      "subtype_ci": [
+       -0.003,
+       0.0562
+      ],
+      "diff_subtype_minus_pooled": -0.0381,
+      "diff_ci": [
+       -0.0741,
+       -0.001
+      ],
+      "p": 0.045
+     },
+     "WICL": {
+      "pooled_auroc_rel_degradation": 0.0647,
+      "pooled_ci": [
+       0.033,
+       0.0971
+      ],
+      "subtype_mean_auroc_rel_degradation": 0.0386,
+      "subtype_ci": [
+       0.0031,
+       0.0771
+      ],
+      "diff_subtype_minus_pooled": -0.0261,
+      "diff_ci": [
+       -0.0636,
+       0.0139
+      ],
+      "p": 0.192
+     }
+    },
+    "physionet": {
+     "B2": {
+      "pooled_auroc_rel_degradation": 0.0296,
+      "pooled_ci": [
+       -0.0162,
+       0.0927
+      ],
+      "subtype_mean_auroc_rel_degradation": 0.0613,
+      "subtype_ci": [
+       -0.0072,
+       0.1351
+      ],
+      "diff_subtype_minus_pooled": 0.0318,
+      "diff_ci": [
+       -0.0317,
+       0.098
+      ],
+      "p": 0.313
+     },
+     "B4c": {
+      "pooled_auroc_rel_degradation": 0.0586,
+      "pooled_ci": [
+       -0.002,
+       0.1414
+      ],
+      "subtype_mean_auroc_rel_degradation": 0.072,
+      "subtype_ci": [
+       0.011,
+       0.1412
+      ],
+      "diff_subtype_minus_pooled": 0.0134,
+      "diff_ci": [
+       -0.0512,
+       0.0809
+      ],
+      "p": 0.709
+     },
+     "WICL": {
+      "pooled_auroc_rel_degradation": 0.0094,
+      "pooled_ci": [
+       -0.0328,
+       0.0716
+      ],
+      "subtype_mean_auroc_rel_degradation": 0.0728,
+      "subtype_ci": [
+       0.0005,
+       0.1565
+      ],
+      "diff_subtype_minus_pooled": 0.0635,
+      "diff_ci": [
+       -0.0081,
+       0.143
+      ],
+      "p": 0.09
+     }
+    }
+   },
+   "operating_point": {
+    "cq500": {
+     "B2": {
+      "delta_sens": -0.0606,
+      "delta_sens_ci": [
+       -0.1031,
+       -0.0181
+      ],
+      "delta_spec": -0.1453,
+      "delta_spec_ci": [
+       -0.2071,
+       -0.0864
+      ],
+      "p_spec": 0.0
+     },
+     "B4c": {
+      "delta_sens": -0.0403,
+      "delta_sens_ci": [
+       -0.0861,
+       0.0026
+      ],
+      "delta_spec": -0.1327,
+      "delta_spec_ci": [
+       -0.1894,
+       -0.0754
+      ],
+      "p_spec": 0.0
+     },
+     "WICL": {
+      "delta_sens": -0.0671,
+      "delta_sens_ci": [
+       -0.115,
+       -0.0199
+      ],
+      "delta_spec": -0.1077,
+      "delta_spec_ci": [
+       -0.1685,
+       -0.0532
+      ],
+      "p_spec": 0.0
+     }
+    },
+    "physionet": {
+     "B2": {
+      "delta_sens": 0.046,
+      "delta_sens_ci": [
+       0.0334,
+       0.06
+      ],
+      "delta_spec": -0.4636,
+      "delta_spec_ci": [
+       -0.6041,
+       -0.3078
+      ],
+      "p_spec": 0.0
+     },
+     "B4c": {
+      "delta_sens": 0.0057,
+      "delta_sens_ci": [
+       -0.0824,
+       0.0685
+      ],
+      "delta_spec": -0.1358,
+      "delta_spec_ci": [
+       -0.2824,
+       0.004
+      ],
+      "p_spec": 0.056
+     },
+     "WICL": {
+      "delta_sens": -0.0009,
+      "delta_sens_ci": [
+       -0.0885,
+       0.0615
+      ],
+      "delta_spec": -0.2058,
+      "delta_spec_ci": [
+       -0.3668,
+       -0.0617
+      ],
+      "p_spec": 0.009
+     }
+    }
+   },
+   "h2": {
+    "rsna": {
+     "WICL-B4c": {
+      "diff": 0.0031,
+      "ci": [
+       -0.0014,
+       0.0077
+      ],
+      "p": 0.178
+     },
+     "WICL-B2": {
+      "diff": -0.0003,
+      "ci": [
+       -0.0052,
+       0.0046
+      ],
+      "p": 0.927
+     },
+     "B4c-B2": {
+      "diff": -0.0034,
+      "ci": [
+       -0.0088,
+       0.0017
+      ],
+      "p": 0.183
+     }
+    },
+    "cq500": {
+     "WICL-B4c": {
+      "diff": 0.0021,
+      "ci": [
+       -0.015,
+       0.0189
+      ],
+      "p": 0.821
+     },
+     "WICL-B2": {
+      "diff": -0.0044,
+      "ci": [
+       -0.024,
+       0.0147
+      ],
+      "p": 0.681
+     },
+     "B4c-B2": {
+      "diff": -0.0065,
+      "ci": [
+       -0.0272,
+       0.0153
+      ],
+      "p": 0.585
+     }
+    },
+    "physionet": {
+     "WICL-B4c": {
+      "diff": 0.0506,
+      "ci": [
+       0.0057,
+       0.1053
+      ],
+      "p": 0.02
+     },
+     "WICL-B2": {
+      "diff": 0.0192,
+      "ci": [
+       -0.0242,
+       0.0654
+      ],
+      "p": 0.398
+     },
+     "B4c-B2": {
+      "diff": -0.0313,
+      "ci": [
+       -0.0867,
+       0.0117
+      ],
+      "p": 0.169
+     }
+    }
+   }
+  }
+ },
+ "h4": {
+  "0": {
+   "baseline2": 0.236,
+   "b4c": 0.1476,
+   "wicl": 0.0829,
+   "pairwise_p": {
+    "baseline2_vs_b4c": 0.0,
+    "baseline2_vs_wicl": 0.0,
+    "b4c_vs_wicl": 0.0
+   }
+  },
+  "1": {
+   "baseline2": 0.2779,
+   "b4c": 0.1449,
+   "wicl": 0.0821,
+   "pairwise_p": {
+    "baseline2_vs_b4c": 0.0,
+    "baseline2_vs_wicl": 0.0,
+    "b4c_vs_wicl": 0.0
+   }
+  },
+  "2": {
+   "baseline2": 0.2464,
+   "b4c": 0.11,
+   "wicl": 0.0872,
+   "pairwise_p": {
+    "baseline2_vs_b4c": 0.0,
+    "baseline2_vs_wicl": 0.0,
+    "b4c_vs_wicl": 0.136
+   }
+  }
+ },
+ "across_seeds_mean_sd": {
+  "rsna/B2/auroc_any": [
+   0.967,
+   0.0009
+  ],
+  "rsna/B2/spec@0.5": [
+   0.8624,
+   0.0189
+  ],
+  "rsna/B4c/auroc_any": [
+   0.9636,
+   0.0012
+  ],
+  "rsna/B4c/spec@0.5": [
+   0.8576,
+   0.0179
+  ],
+  "rsna/WICL/auroc_any": [
+   0.9661,
+   0.0009
+  ],
+  "rsna/WICL/spec@0.5": [
+   0.8716,
+   0.0359
+  ],
+  "rsna/WICL-B4c": {
+   "per_seed": [
+    0.0005,
+    0.0038,
+    0.0031
+   ],
+   "mean": 0.0025,
+   "same_sign": true
+  },
+  "rsna/WICL-B2": {
+   "per_seed": [
+    -0.0024,
+    0.0001,
+    -0.0003
+   ],
+   "mean": -0.0009,
+   "same_sign": false
+  },
+  "rsna/B4c-B2": {
+   "per_seed": [
+    -0.0029,
+    -0.0037,
+    -0.0034
+   ],
+   "mean": -0.0033,
+   "same_sign": true
+  },
+  "cq500/B2/auroc_any": [
+   0.9052,
+   0.0038
+  ],
+  "cq500/B2/spec@0.5": [
+   0.7246,
+   0.0474
+  ],
+  "cq500/B4c/auroc_any": [
+   0.9088,
+   0.0057
+  ],
+  "cq500/B4c/spec@0.5": [
+   0.7246,
+   0.0167
+  ],
+  "cq500/WICL/auroc_any": [
+   0.9025,
+   0.0019
+  ],
+  "cq500/WICL/spec@0.5": [
+   0.75,
+   0.0569
+  ],
+  "cq500/WICL-B4c": {
+   "per_seed": [
+    -0.0112,
+    -0.0099,
+    0.0021
+   ],
+   "mean": -0.0063,
+   "same_sign": false
+  },
+  "cq500/WICL-B2": {
+   "per_seed": [
+    -0.0032,
+    -0.0006,
+    -0.0044
+   ],
+   "mean": -0.0027,
+   "same_sign": true
+  },
+  "cq500/B4c-B2": {
+   "per_seed": [
+    0.008,
+    0.0093,
+    -0.0065
+   ],
+   "mean": 0.0036,
+   "same_sign": false
+  },
+  "physionet/B2/auroc_any": [
+   0.9304,
+   0.0078
+  ],
+  "physionet/B2/spec@0.5": [
+   0.3932,
+   0.0901
+  ],
+  "physionet/B4c/auroc_any": [
+   0.9188,
+   0.0343
+  ],
+  "physionet/B4c/spec@0.5": [
+   0.7094,
+   0.0901
+  ],
+  "physionet/WICL/auroc_any": [
+   0.9421,
+   0.0201
+  ],
+  "physionet/WICL/spec@0.5": [
+   0.7008,
+   0.0534
+  ],
+  "physionet/WICL-B4c": {
+   "per_seed": [
+    -0.0377,
+    0.057,
+    0.0506
+   ],
+   "mean": 0.0233,
+   "same_sign": false
+  },
+  "physionet/WICL-B2": {
+   "per_seed": [
+    -0.01,
+    0.0256,
+    0.0192
+   ],
+   "mean": 0.0116,
+   "same_sign": false
+  },
+  "physionet/B4c-B2": {
+   "per_seed": [
+    0.0278,
+    -0.0313,
+    -0.0313
+   ],
+   "mean": -0.0116,
+   "same_sign": false
+  }
+ }
+}

@@ -1,0 +1,10 @@
+{
+ "n_val_patients": 2370,
+ "n_val_slices_full_pool": 100433,
+ "n_val_slices_training_pool": 4000,
+ "models": [
+  "CNX_B2_seed2",
+  "CNX_B4c_seed2",
+  "CNX_WICL_seed2"
+ ]
+}

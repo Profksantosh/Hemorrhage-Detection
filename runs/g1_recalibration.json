@@ -1,0 +1,617 @@
+{
+ "protocol": "Local threshold recalibration after site transfer (G1 revision, 2026-10-01).\n\nFor each external site, studies are split deterministically into halves A and B (sorted IDs, alternating). A threshold is\nchosen on k randomly drawn labelled studies from half A to reach >= 90% any-ICH sensitivity (200 draws; draws with fewer\nthan 2 positives skipped) and evaluated on half B, against the RSNA-locked 0.5 threshold. Max aggregation; B2/B4c/WICL,\nseeds 0-2; PhysioNet in radiological orientation.\n",
+ "results": {
+  "cq500/B2/seed0": {
+   "n_half_B": 236,
+   "fixed_0.5": [
+    0.8812,
+    0.6519
+   ],
+   "k=10": {
+    "sens_median": 0.7723,
+    "spec_median": 0.8815,
+    "spec_iqr": [
+     0.6963,
+     0.9407
+    ],
+    "draws": 197
+   },
+   "k=20": {
+    "sens_median": 0.8317,
+    "spec_median": 0.763,
+    "spec_iqr": [
+     0.3704,
+     0.8815
+    ],
+    "draws": 200
+   },
+   "k=50": {
+    "sens_median": 0.8317,
+    "spec_median": 0.763,
+    "spec_iqr": [
+     0.6556,
+     0.8815
+    ],
+    "draws": 200
+   },
+   "k=100": {
+    "sens_median": 0.8317,
+    "spec_median": 0.763,
+    "spec_iqr": [
+     0.6741,
+     0.8593
+    ],
+    "draws": 200
+   }
+  },
+  "cq500/B2/seed1": {
+   "n_half_B": 236,
+   "fixed_0.5": [
+    0.8317,
+    0.7259
+   ],
+   "k=10": {
+    "sens_median": 0.7921,
+    "spec_median": 0.8148,
+    "spec_iqr": [
+     0.7333,
+     0.9704
+    ],
+    "draws": 199
+   },
+   "k=20": {
+    "sens_median": 0.7921,
+    "spec_median": 0.8074,
+    "spec_iqr": [
+     0.1926,
+     0.837
+    ],
+    "draws": 200
+   },
+   "k=50": {
+    "sens_median": 0.7921,
+    "spec_median": 0.8074,
+    "spec_iqr": [
+     0.5259,
+     0.8167
+    ],
+    "draws": 200
+   },
+   "k=100": {
+    "sens_median": 0.7921,
+    "spec_median": 0.8074,
+    "spec_iqr": [
+     0.7333,
+     0.8148
+    ],
+    "draws": 200
+   }
+  },
+  "cq500/B2/seed2": {
+   "n_half_B": 236,
+   "fixed_0.5": [
+    0.8812,
+    0.6889
+   ],
+   "k=10": {
+    "sens_median": 0.7525,
+    "spec_median": 0.8741,
+    "spec_iqr": [
+     0.3333,
+     0.963
+    ],
+    "draws": 193
+   },
+   "k=20": {
+    "sens_median": 0.901,
+    "spec_median": 0.6667,
+    "spec_iqr": [
+     0.2444,
+     0.8963
+    ],
+    "draws": 200
+   },
+   "k=50": {
+    "sens_median": 0.802,
+    "spec_median": 0.7852,
+    "spec_iqr": [
+     0.5852,
+     0.8815
+    ],
+    "draws": 200
+   },
+   "k=100": {
+    "sens_median": 0.802,
+    "spec_median": 0.7852,
+    "spec_iqr": [
+     0.6667,
+     0.8741
+    ],
+    "draws": 200
+   }
+  },
+  "cq500/B4c/seed0": {
+   "n_half_B": 236,
+   "fixed_0.5": [
+    0.8515,
+    0.6815
+   ],
+   "k=10": {
+    "sens_median": 0.7228,
+    "spec_median": 0.8667,
+    "spec_iqr": [
+     0.637,
+     0.9185
+    ],
+    "draws": 189
+   },
+   "k=20": {
+    "sens_median": 0.797,
+    "spec_median": 0.7778,
+    "spec_iqr": [
+     0.5481,
+     0.8815
+    ],
+    "draws": 200
+   },
+   "k=50": {
+    "sens_median": 0.7822,
+    "spec_median": 0.8,
+    "spec_iqr": [
+     0.6889,
+     0.8389
+    ],
+    "draws": 200
+   },
+   "k=100": {
+    "sens_median": 0.7822,
+    "spec_median": 0.8,
+    "spec_iqr": [
+     0.7556,
+     0.8296
+    ],
+    "draws": 200
+   }
+  },
+  "cq500/B4c/seed1": {
+   "n_half_B": 236,
+   "fixed_0.5": [
+    0.8713,
+    0.7111
+   ],
+   "k=10": {
+    "sens_median": 0.802,
+    "spec_median": 0.837,
+    "spec_iqr": [
+     0.4444,
+     0.9519
+    ],
+    "draws": 195
+   },
+   "k=20": {
+    "sens_median": 0.901,
+    "spec_median": 0.6148,
+    "spec_iqr": [
+     0.3556,
+     0.8519
+    ],
+    "draws": 200
+   },
+   "k=50": {
+    "sens_median": 0.8812,
+    "spec_median": 0.7037,
+    "spec_iqr": [
+     0.4444,
+     0.837
+    ],
+    "draws": 200
+   },
+   "k=100": {
+    "sens_median": 0.901,
+    "spec_median": 0.6148,
+    "spec_iqr": [
+     0.4444,
+     0.763
+    ],
+    "draws": 200
+   }
+  },
+  "cq500/B4c/seed2": {
+   "n_half_B": 236,
+   "fixed_0.5": [
+    0.8713,
+    0.6889
+   ],
+   "k=10": {
+    "sens_median": 0.802,
+    "spec_median": 0.8296,
+    "spec_iqr": [
+     0.5407,
+     0.9259
+    ],
+    "draws": 189
+   },
+   "k=20": {
+    "sens_median": 0.8416,
+    "spec_median": 0.763,
+    "spec_iqr": [
+     0.4074,
+     0.8833
+    ],
+    "draws": 200
+   },
+   "k=50": {
+    "sens_median": 0.8416,
+    "spec_median": 0.763,
+    "spec_iqr": [
+     0.5407,
+     0.8296
+    ],
+    "draws": 200
+   },
+   "k=100": {
+    "sens_median": 0.8416,
+    "spec_median": 0.763,
+    "spec_iqr": [
+     0.7333,
+     0.7778
+    ],
+    "draws": 200
+   }
+  },
+  "cq500/WICL/seed0": {
+   "n_half_B": 236,
+   "fixed_0.5": [
+    0.8416,
+    0.6963
+   ],
+   "k=10": {
+    "sens_median": 0.7525,
+    "spec_median": 0.8815,
+    "spec_iqr": [
+     0.563,
+     0.9704
+    ],
+    "draws": 194
+   },
+   "k=20": {
+    "sens_median": 0.901,
+    "spec_median": 0.6222,
+    "spec_iqr": [
+     0.4519,
+     0.8815
+    ],
+    "draws": 200
+   },
+   "k=50": {
+    "sens_median": 0.8515,
+    "spec_median": 0.6667,
+    "spec_iqr": [
+     0.5111,
+     0.8815
+    ],
+    "draws": 200
+   },
+   "k=100": {
+    "sens_median": 0.8317,
+    "spec_median": 0.7556,
+    "spec_iqr": [
+     0.563,
+     0.8556
+    ],
+    "draws": 200
+   }
+  },
+  "cq500/WICL/seed1": {
+   "n_half_B": 236,
+   "fixed_0.5": [
+    0.8416,
+    0.8
+   ],
+   "k=10": {
+    "sens_median": 0.8713,
+    "spec_median": 0.763,
+    "spec_iqr": [
+     0.5407,
+     0.9333
+    ],
+    "draws": 191
+   },
+   "k=20": {
+    "sens_median": 0.901,
+    "spec_median": 0.637,
+    "spec_iqr": [
+     0.4074,
+     0.8148
+    ],
+    "draws": 200
+   },
+   "k=50": {
+    "sens_median": 0.901,
+    "spec_median": 0.6889,
+    "spec_iqr": [
+     0.5704,
+     0.763
+    ],
+    "draws": 200
+   },
+   "k=100": {
+    "sens_median": 0.901,
+    "spec_median": 0.6889,
+    "spec_iqr": [
+     0.5704,
+     0.763
+    ],
+    "draws": 200
+   }
+  },
+  "cq500/WICL/seed2": {
+   "n_half_B": 236,
+   "fixed_0.5": [
+    0.8416,
+    0.7185
+   ],
+   "k=10": {
+    "sens_median": 0.7921,
+    "spec_median": 0.8519,
+    "spec_iqr": [
+     0.4519,
+     0.9481
+    ],
+    "draws": 188
+   },
+   "k=20": {
+    "sens_median": 0.8218,
+    "spec_median": 0.7778,
+    "spec_iqr": [
+     0.4519,
+     0.8889
+    ],
+    "draws": 200
+   },
+   "k=50": {
+    "sens_median": 0.8218,
+    "spec_median": 0.7778,
+    "spec_iqr": [
+     0.6815,
+     0.8519
+    ],
+    "draws": 200
+   },
+   "k=100": {
+    "sens_median": 0.8218,
+    "spec_median": 0.7778,
+    "spec_iqr": [
+     0.7111,
+     0.8444
+    ],
+    "draws": 200
+   }
+  },
+  "physionet/B2/seed0": {
+   "n_half_B": 37,
+   "fixed_0.5": [
+    0.9444,
+    0.2105
+   ],
+   "k=10": {
+    "sens_median": 0.8889,
+    "spec_median": 0.7895,
+    "spec_iqr": [
+     0.7895,
+     0.9474
+    ],
+    "draws": 194
+   },
+   "k=20": {
+    "sens_median": 0.8889,
+    "spec_median": 0.7895,
+    "spec_iqr": [
+     0.7895,
+     0.9474
+    ],
+    "draws": 200
+   }
+  },
+  "physionet/B2/seed1": {
+   "n_half_B": 37,
+   "fixed_0.5": [
+    1.0,
+    0.5263
+   ],
+   "k=10": {
+    "sens_median": 0.8889,
+    "spec_median": 0.6842,
+    "spec_iqr": [
+     0.6316,
+     0.9474
+    ],
+    "draws": 197
+   },
+   "k=20": {
+    "sens_median": 0.8889,
+    "spec_median": 0.6842,
+    "spec_iqr": [
+     0.6316,
+     0.6842
+    ],
+    "draws": 200
+   }
+  },
+  "physionet/B2/seed2": {
+   "n_half_B": 37,
+   "fixed_0.5": [
+    1.0,
+    0.3684
+   ],
+   "k=10": {
+    "sens_median": 0.8333,
+    "spec_median": 0.7895,
+    "spec_iqr": [
+     0.3684,
+     0.9474
+    ],
+    "draws": 198
+   },
+   "k=20": {
+    "sens_median": 0.8333,
+    "spec_median": 0.7895,
+    "spec_iqr": [
+     0.3684,
+     0.7895
+    ],
+    "draws": 200
+   }
+  },
+  "physionet/B4c/seed0": {
+   "n_half_B": 37,
+   "fixed_0.5": [
+    1.0,
+    0.5263
+   ],
+   "k=10": {
+    "sens_median": 0.7222,
+    "spec_median": 0.9474,
+    "spec_iqr": [
+     0.3684,
+     1.0
+    ],
+    "draws": 199
+   },
+   "k=20": {
+    "sens_median": 0.7778,
+    "spec_median": 0.8947,
+    "spec_iqr": [
+     0.3684,
+     0.9474
+    ],
+    "draws": 200
+   }
+  },
+  "physionet/B4c/seed1": {
+   "n_half_B": 37,
+   "fixed_0.5": [
+    0.7778,
+    0.7368
+   ],
+   "k=10": {
+    "sens_median": 0.7778,
+    "spec_median": 0.6053,
+    "spec_iqr": [
+     0.3684,
+     0.8947
+    ],
+    "draws": 196
+   },
+   "k=20": {
+    "sens_median": 0.7778,
+    "spec_median": 0.5263,
+    "spec_iqr": [
+     0.3684,
+     0.6842
+    ],
+    "draws": 200
+   }
+  },
+  "physionet/B4c/seed2": {
+   "n_half_B": 37,
+   "fixed_0.5": [
+    0.9444,
+    0.6842
+   ],
+   "k=10": {
+    "sens_median": 0.6667,
+    "spec_median": 0.8421,
+    "spec_iqr": [
+     0.4211,
+     0.8947
+    ],
+    "draws": 199
+   },
+   "k=20": {
+    "sens_median": 0.8333,
+    "spec_median": 0.7368,
+    "spec_iqr": [
+     0.4211,
+     0.8421
+    ],
+    "draws": 200
+   }
+  },
+  "physionet/WICL/seed0": {
+   "n_half_B": 37,
+   "fixed_0.5": [
+    1.0,
+    0.5789
+   ],
+   "k=10": {
+    "sens_median": 0.8889,
+    "spec_median": 0.6842,
+    "spec_iqr": [
+     0.4211,
+     0.8421
+    ],
+    "draws": 199
+   },
+   "k=20": {
+    "sens_median": 1.0,
+    "spec_median": 0.4211,
+    "spec_iqr": [
+     0.4211,
+     0.6842
+    ],
+    "draws": 200
+   }
+  },
+  "physionet/WICL/seed1": {
+   "n_half_B": 37,
+   "fixed_0.5": [
+    0.8889,
+    0.7895
+   ],
+   "k=10": {
+    "sens_median": 0.7222,
+    "spec_median": 0.8947,
+    "spec_iqr": [
+     0.8026,
+     1.0
+    ],
+    "draws": 196
+   },
+   "k=20": {
+    "sens_median": 0.7778,
+    "spec_median": 0.8421,
+    "spec_iqr": [
+     0.6842,
+     0.8947
+    ],
+    "draws": 200
+   }
+  },
+  "physionet/WICL/seed2": {
+   "n_half_B": 37,
+   "fixed_0.5": [
+    0.9444,
+    0.4737
+   ],
+   "k=10": {
+    "sens_median": 0.8889,
+    "spec_median": 0.9474,
+    "spec_iqr": [
+     0.4737,
+     1.0
+    ],
+    "draws": 197
+   },
+   "k=20": {
+    "sens_median": 0.8889,
+    "spec_median": 0.9474,
+    "spec_iqr": [
+     0.4737,
+     1.0
+    ],
+    "draws": 200
+   }
+  }
+ }
+}

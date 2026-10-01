@@ -1,0 +1,59 @@
+{
+  "held_out_subset": {
+    "n_slices": 991,
+    "n_patients": 924,
+    "n_removed_for_patient_overlap": 2009
+  },
+  "observed": {
+    "baseline2": {
+      "identity_auroc": 0.9246013093839182,
+      "mean_corner_degradation": 0.24636768430512823,
+      "ci95": [
+        0.20883815065141884,
+        0.2873380803061475
+      ]
+    },
+    "b4c": {
+      "identity_auroc": 0.9173661238878629,
+      "mean_corner_degradation": 0.11002561873827697,
+      "ci95": [
+        0.07108967016127252,
+        0.1456379128968499
+      ]
+    },
+    "wicl": {
+      "identity_auroc": 0.9342034581165017,
+      "mean_corner_degradation": 0.08722742832499275,
+      "ci95": [
+        0.06295638031346061,
+        0.11146485840147963
+      ]
+    }
+  },
+  "pairwise": {
+    "baseline2_vs_b4c": {
+      "diff_a_minus_b": 0.13634206556685124,
+      "p_value": 0.0
+    },
+    "baseline2_vs_wicl": {
+      "diff_a_minus_b": 0.15914025598013548,
+      "p_value": 0.0
+    },
+    "b4c_vs_wicl": {
+      "diff_a_minus_b": 0.022798190413284222,
+      "p_value": 0.136
+    }
+  },
+  "models": {
+    "baseline2": {
+      "run_dir": "runs/g1_seeds/b2_seed2:plain"
+    },
+    "b4c": {
+      "run_dir": "runs/g1_seeds/b4c_seed2:plain"
+    },
+    "wicl": {
+      "run_dir": "runs/g1_seeds/wicl_seed2:wicl"
+    }
+  },
+  "method_note": "held-out subset, grid, corner definition and bootstrap reused unchanged from h4_wicl_ablation.py"
+}

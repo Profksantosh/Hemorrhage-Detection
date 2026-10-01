@@ -1,0 +1,10 @@
+{
+ "n_val_patients": 3720,
+ "n_val_slices_full_pool": 147421,
+ "n_val_slices_training_pool": 20000,
+ "models": [
+  "BIG_B2_seed0",
+  "BIG_B4c_seed0",
+  "BIG_WICL_seed0"
+ ]
+}
