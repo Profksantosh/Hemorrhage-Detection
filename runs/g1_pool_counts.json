@@ -1,0 +1,17 @@
+{
+  "source": "g1_pool_counts.py run on hp100 on 2026-10-03 (pool, fold 0) plus the RSNA index counts logged by ich_gen/datasets/rsna.py (release totals and BHSD exclusion)",
+  "release_slices": 752803,
+  "release_patients": 18938,
+  "bhsd_excluded_slices": 10088,
+  "bhsd_excluded_patients": 191,
+  "release_slices_after_exclusion": 742715,
+  "release_patients_after_exclusion": 18747,
+  "pool_slices": 20000,
+  "pool_patients": 11854,
+  "pool_any_slice_prevalence": 0.1446,
+  "train_slices": 16000,
+  "train_patients": 9484,
+  "val_slices": 4000,
+  "val_patients": 2370,
+  "train_val_patient_overlap": 0
+}
